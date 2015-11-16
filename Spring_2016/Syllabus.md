@@ -74,7 +74,8 @@ February 5 & 12
 * ***Assignment: Create two different maps based on 311 data, one quantitative and one qualitative***
 * ***Assignment: Create your own dataset (including metadata) and map it***
 
-### Weeks 5 & 6: Working with census data (Feb 19 & 26)
+### Weeks 5 & 6: Working with census data
+February 19 & 26
 * Understanding census data (decennial, ACS, samples, margins of error, etc)
 * Downloading census data and joining it to shapefiles
 * Making new fields and calculating new values
@@ -86,22 +87,28 @@ February 5 & 12
 	* PLUTO dataset
 * ***Assignment: Create map of census data showing new fields***
 
-### Week 6: Projections (Mar 4)
+### Week 6: Projections
+March 4
 * Understanding basic map projections concepts
 * How to project or re-project existing datasets
 
-### Week 7: Midterm presentations (Mar 11)
+### Week 7: Midterm presentations
+March 11
 
-### Week 8: Spring break - no class (Mar 18)
+### Week 8: Spring break - no class
+March 18
+* ***Assignment: Written critique of a map***
 
-### Week 9: Geocoding, georeferencing and editing (Mar 25)
+### Week 9: Geocoding, georeferencing and editing
+March 25
 * Working with address data (APIs), address locator, other methods
 * Georeferencing existing maps
 * How to create and edit spatial data
 * ***Assignment: Georeference an existing map (old or new) and create new dataset from it***
 * ***Assignment: Create a map with personal data (sound and location)***
 
-### Week 10: Working with raster data (Apr 1)
+### Week 10: Working with raster data
+April 1
 * Understanding the difference between vector and raster data
 * Understanding the different types of raster datasets
 * understanding raster bands
@@ -110,13 +117,17 @@ February 5 & 12
 * Extracting data from raster files
 * ***Assignment: Create a 'false color composite' map based on Landsat images***
 
-### Week 11 & 12: Webmapping and crowdsourced data (Apr 8 & 15)
+### Week 11 & 12: Webmapping and crowdsourced data
+April 8 & 15
 * Concepts and tools of webmapping
 * Overview of webmapping platforms
 * Working with webmapping platforms (CartoDB, MapBox, Tilemill, etc)
 * Exporting files ready for webmapping
 * ***Assignment: Create a webmap using both CartoDB and Tilemill***
 
-### Weeks 13 & 14: Lab work on final projects (Apr 22 & 29)
+### Weeks 13 & 14: Lab work on final projects
+April 22 & 29
 
-### Week 15: Final review (May 6)
+### Week 15: Final review
+May 6
+* ***Assignment: Final report (individually)
