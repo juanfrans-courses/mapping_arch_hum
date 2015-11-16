@@ -33,16 +33,19 @@ The readings for the class will be duly uploaded to Courseworks. Similarly, stud
 to the blog. Students will be required to upload some of their own work as well as inspirational material, encouraging and developing a critical stance and visual skills.
 
 **These two next things need to be updated**
+
 [Link to the blog](http://gsappadvgis2015fall.tumblr.com/).
 
 [Link to number of posts](https://docs.google.com/spreadsheets/d/11O2WTCk-XuzbKksEJHnpIR-pAACmjbIqgfVusWHabV0/edit?usp=sharing).
 
 ## Schedule
-### Week 1: Introduction to mapping concepts and techniques
+### Weeks 1 & 2: Introduction to mapping concepts and techniques
 * Course administration and syllabus
 * What is GIS?
 * Working with geographic data (vectors and rasters)
 * Mapping software (qGIS)
+* What is a shapefile
+* Emphasis on *metadata*
 * Elements of cartography (notations and conventions)
 * Creating and exporting basic maps
 * Datasets:
@@ -54,3 +57,40 @@ to the blog. Students will be required to upload some of their own work as well 
 	* Water
 	* PLUTO Lots for this area
 * ***Assignment: Create and export a basic map with proper notation, labels and symbology***
+* Readings:
+	* *Meirelles, Isabel. Design For Information, Chapters 4 and 5*
+
+### Week 3: Maps and data
+* Data types
+* Understanding different classification methods (qualitative and quantitative)
+* Common design pitfalls ("How to Lie with Maps")
+* Joining spatial data to existing shapefiles (join by location)
+* Datasets:
+	* 311 data
+	* Community districts or census block groups
+* ***Assignment: Create two different maps based on 311 data, one quantitative and one qualitative***
+* ***Assignment: Create your own dataset (including metadata) and map it***
+
+### Week 4 & 5: Working with census data
+* Understanding census data (decennial, ACS, samples, margins of error, etc)
+* Downloading census data and joining it to shapefiles
+* Making new fields and calculating new values
+* Estimation methods
+* Geoprocessing tools: buffers, clips, unions, update, dissolve, etc
+* Advanced selection methods: select by location, select by attribute, etc
+* Datasets:
+	* Census tracts and census block groups shapefiles
+	* PLUTO dataset
+* ***Assignment: Create map of census data showing new fields***
+
+### Week 6: Georeferencing and geocoding
+* Working with address data (APIs), address locator, other methods
+* Working with coordinate data (adding X & Y data)
+* ***Assignment: Create a map with personal data (sound and location)***
+
+
+
+
+
+
+
