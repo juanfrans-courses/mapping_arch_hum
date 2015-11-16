@@ -45,4 +45,12 @@ to the blog. Students will be required to upload some of their own work as well 
 * Mapping software (qGIS)
 * Elements of cartography (notations and conventions)
 * Creating and exporting basic maps
-* ***Assingment: Create and export a basic map with proper notation, labels and symbology***
+* Datasets:
+	* Building footprints with PLUTO data
+	* Streets (Lion)
+	* Pavement edge
+	* Point data (schools, public facilities, other?)
+	* Raster image of Columbia area
+	* Water
+	* PLUTO Lots for this area
+* ***Assignment: Create and export a basic map with proper notation, labels and symbology***
