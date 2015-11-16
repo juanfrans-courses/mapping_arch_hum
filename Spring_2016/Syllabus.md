@@ -39,7 +39,7 @@ to the blog. Students will be required to upload some of their own work as well 
 [Link to number of posts](https://docs.google.com/spreadsheets/d/11O2WTCk-XuzbKksEJHnpIR-pAACmjbIqgfVusWHabV0/edit?usp=sharing).
 
 ## Schedule
-### Weeks 1 & 2: Introduction to mapping concepts and techniques
+### Weeks 1 & 2: Introduction to mapping concepts and techniques (Jan 22 & 29)
 * Course administration and syllabus
 * What is GIS?
 * Working with geographic data (vectors and rasters)
@@ -60,10 +60,11 @@ to the blog. Students will be required to upload some of their own work as well 
 * Readings:
 	* *Meirelles, Isabel. Design For Information, Chapters 4 and 5*
 
-### Week 3: Maps and data
+### Weeks 3 & 4: Maps and data (Feb 5 & 12)
 * Data types
 * Understanding different classification methods (qualitative and quantitative)
 * Common design pitfalls ("How to Lie with Maps")
+* Adding X & Y data
 * Joining spatial data to existing shapefiles (join by location)
 * Datasets:
 	* 311 data
@@ -71,7 +72,7 @@ to the blog. Students will be required to upload some of their own work as well 
 * ***Assignment: Create two different maps based on 311 data, one quantitative and one qualitative***
 * ***Assignment: Create your own dataset (including metadata) and map it***
 
-### Week 4 & 5: Working with census data
+### Weeks 5 & 6: Working with census data (Feb 19 & 26)
 * Understanding census data (decennial, ACS, samples, margins of error, etc)
 * Downloading census data and joining it to shapefiles
 * Making new fields and calculating new values
@@ -83,10 +84,72 @@ to the blog. Students will be required to upload some of their own work as well 
 	* PLUTO dataset
 * ***Assignment: Create map of census data showing new fields***
 
-### Week 6: Georeferencing and geocoding
+### Week 6: Projections (Mar 4)
+* Understanding basic map projections concepts
+* How to project or re-project existing datasets
+
+### Week 7: Midterm presentations (Mar 11)
+
+### Week 8: Spring break - no class (Mar 18)
+
+### Week 9: Geocoding, georeferencing and editing (Mar 25)
 * Working with address data (APIs), address locator, other methods
-* Working with coordinate data (adding X & Y data)
+* Georeferencing existing maps
+* How to create and edit spatial data
+* ***Assignment: Georeference an existing map (old or new) and create new dataset from it***
 * ***Assignment: Create a map with personal data (sound and location)***
+
+### Week 10: Working with raster data (Apr 1)
+* Understanding the difference between vector and raster data
+* Understanding the different types of raster datasets
+* understanding raster bands
+* Downloading Landsat images
+* Creating 'true color' and 'false color composite' images
+* Extracting data from raster files
+* ***Assignment: Create a 'false color composite' map based on Landsat images***
+
+### Week 11 & 12: Webmapping and crowdsourced data (Apr 8 & 15)
+* Concepts and tools of webmapping
+* Overview of webmapping platforms
+* Working with webmapping platforms (CartoDB, MapBox, Tilemill, etc)
+* Exporting files ready for webmapping
+* ***Assignment: Create a webmap using both CartoDB and Tilemill***
+
+### Weeks 13 & 14: Lab work on final projects (Apr 22 & 29)
+
+### Week 15: Final review (May 6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
