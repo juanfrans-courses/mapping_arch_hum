@@ -39,7 +39,8 @@ to the blog. Students will be required to upload some of their own work as well 
 [Link to number of posts](https://docs.google.com/spreadsheets/d/11O2WTCk-XuzbKksEJHnpIR-pAACmjbIqgfVusWHabV0/edit?usp=sharing).
 
 ## Schedule
-### Weeks 1 & 2: Introduction to mapping concepts and techniques (Jan 22 & 29)
+### Weeks 1 & 2: Introduction to mapping concepts and techniques
+January 22 & 29
 * Course administration and syllabus
 * What is GIS?
 * Working with geographic data (vectors and rasters)
@@ -60,7 +61,8 @@ to the blog. Students will be required to upload some of their own work as well 
 * Readings:
 	* *Meirelles, Isabel. Design For Information, Chapters 4 and 5*
 
-### Weeks 3 & 4: Maps and data (Feb 5 & 12)
+### Weeks 3 & 4: Maps and data
+February 5 & 12
 * Data types
 * Understanding different classification methods (qualitative and quantitative)
 * Common design pitfalls ("How to Lie with Maps")
@@ -118,42 +120,3 @@ to the blog. Students will be required to upload some of their own work as well 
 ### Weeks 13 & 14: Lab work on final projects (Apr 22 & 29)
 
 ### Week 15: Final review (May 6)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
