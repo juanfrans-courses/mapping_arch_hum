@@ -11,7 +11,7 @@ To create this map, we will be using the following datasets:
 * hydropol - U.S. Hydrographic features. Originally downloadde from [here](http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/polygon).
 
 ### Creating a Basic Land Use Map of Manhattan
-#### Open qGIS and add all the layers that you downloaded:
+First you need to open qGIS and add the layers you downloaded.
 * To add *shapefiles* click on the `Add Vector Layer` button
 
 ### Notes
