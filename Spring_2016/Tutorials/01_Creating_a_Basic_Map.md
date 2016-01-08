@@ -12,9 +12,15 @@ To create this map, we will be using the following datasets:
 
 ### Creating a Basic Land Use Map of Manhattan
 First you need to open qGIS and add the layers you downloaded:
-* To add *shapefiles* click on the `Add Vector Layer` button.
+* To add *shapefiles* click on the `Add Vector Layer` button. Other types of data will be added using the other buttons, but in this tutorial we will only be using vector data (shapefiles). Other types of data include *rasters*, *csv* (comma separated values), and *postGIS* layers.
 ![Add Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/01_Adding_Layers.png)
-* Make sure you select the files with the extension `.shp`.
+* Make sure you select the files with the extension `.shp`. Remember that a *shapefile* is actually made up of 5 or 6 individual files with different extensions. Normally, these individual files are the following:
+  * .shp - The main file that stores the feature geometry (required).
+  * .shx - The index file that stores the index of the feature geometry (required).
+  * .dbf - The dBASE table that stores the attribute information of features (required).
+  * .sbn and .sbx - The files that store the spatial index of features (these might get corrupted, see note at the end of this tutorial).
+  * .prj - The file that stores the coordinate system information.
+  * For more information on these extensions and others see [this explanation by ESRI](http://webhelp.esri.com/arcgisdesktop/9.2/index.cfm?TopicName=Shapefile_file_extensions).
 * Once you've added all the layers you downloaded, you need to organize them in the layer panel. Remember that the layers will be drawn in the same order they appear in the panel: the top layer will be drawn last, on top of the other ones.
 * The final order of the layers should be something like this (from top to bottom):
   * DOITT_SUBWAY_STATION_01_13SEPT2010
