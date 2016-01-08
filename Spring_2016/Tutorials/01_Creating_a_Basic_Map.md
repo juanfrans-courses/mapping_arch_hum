@@ -80,9 +80,21 @@ Next we need to change the appearance of the MNMapPLUTO layer based on each lot'
   * 11 - Vacant Land
 * Now we need to symbolize using these codes and assign a specific color to each of them.
 * To do this, right-click on the MNMapPLUTO layer and select `Properties` and go to the `Style` tab. You will see that at the top of this tab there is a drop-down menu that normally says `Single Symbol` which means that every feature in the layer will be drawn with a the same appearance. To symbolize by category, change that menu to `Categorized`.
-* Under the `Column` option (at the right) click on the little filter symbol (to the left of the `ε` symbol) and choose the 'LandUse' filed.
+* Under the `Column` option (at the right) click on the little filter symbol (to the left of the `ε` symbol) and choose the `LandUse` filed.
 ![Categorize by Field](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/06_Categorize.png)
-
+* Finally, click on `Classify` to add all the different values in that field. Once you do this, you will be able to rename each of the values and change their appearance.
+* By double-clicking on the symbol and on the `Lengend` value, change the appearance and the name of each value following this key (note that for all of them you should use a `Border style` `Solid Line` with a `Border Width` of 0.1 and a `Border color` #999999 (HTML notation):
+  * 01 - One & Two Family Buildings - fill 
+  * 02 - Multi-Family Walk-Up Buildings
+  * 03 - Multi-Family Elevator Buildings
+  * 04 - Mixed Residential & Commercial Buildings
+  * 05 - Commercial & Office Buildings
+  * 06 - Industrial & Manufacturing
+  * 07 - Transportation & Utility
+  * 08 - Public Facilities & Institutions
+  * 09 - Open Space & Outdoor Recreation
+  * 10 - Parking Facilities
+  * 11 - Vacant Land
 
 ### Notes
 * If, after adding some dataset, you zoom in and some of the features disappear, you probably need to rebuild the dataset's "Spatial Index". To do this right-click on the layer, select `Properties` and go to `General`. Under `Coordinate reference system` click on `Create spatial index`. This should solve your problem. Sometimes, specially with the New York City PLUTO files, the "Spatial Index" is tied to one of the attribute fields and when you zoom in only the features with that specific attribute show up. "Spatial Index" are specially useful when doing operations over large datasets, for example see this [post](http://nathanw.net/2013/01/04/using-a-qgis-spatial-index-to-speed-up-your-code/).
