@@ -56,7 +56,16 @@ Next we need to change the appearance of the MNMapPLUTO layer based on each lot'
 * Fist, to get an idea of the data that we will use to symbolize, right-click on the MNMapPLUTO layer and select `Open Attribute Table`. The attribute table has all the data that's associated with each of the features. Each line of data corresponds to one feature in the dataset. As you can see, the MNMapPLUTO layer has a lot of data associated with it.
 ![MNMapPLUTO Attribute Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/05_Attribute_Table.png)
 * Some of the most useful fields are:
-  * 
+  * ZoneDist1 - The main zoning district classification of the lot.
+  * BldgClass - A code describing the major use of structures on the tax lot.
+  * LandUse - A code for the tax lot's land use category (this is the one we will use for this map).
+  * LotArea - Total area of the lot.
+  * BldgArea - Total gross area in square feet.
+  * NumBldgs - Number of buildings on the lot.
+  * NumFloors - Number of floors in the primary building on the lot (this filed is sometimes used to do a very approximate calculation of the height of the buildings on the lot. You could assume that each floor is 12ft high and multiply the number of floors by 12. Again, this is not an accurate measurement, just a rough approximation).
+  * YearBuilt - The year construction of the building was completed.
+  * BuiltFAR - The total building floor area divided by the area of the tax lot.
+  * You will find a further explanation of all the fields in the [PLUTO Data Dictionary](http://www.nyc.gov/html/dcp/pdf/bytes/pluto_datadictionary.pdf?r=2).
 
 ### Notes
 * If, after adding some dataset, you zoom in and some of the features disappear, you probably need to rebuild the dataset's "Spatial Index". To do this right-click on the layer, select `Properties` and go to `General`. Under `Coordinate reference system` click on `Create spatial index`. This should solve your problem. Sometimes, specially with the New York City PLUTO files, the "Spatial Index" is tied to one of the attribute fields and when you zoom in only the features with that specific attribute show up. "Spatial Index" are specially useful when doing operations over large datasets, for example see this [post](http://nathanw.net/2013/01/04/using-a-qgis-spatial-index-to-speed-up-your-code/).
