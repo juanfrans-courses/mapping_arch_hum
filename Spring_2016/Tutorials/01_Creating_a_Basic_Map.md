@@ -98,6 +98,27 @@ Next we need to change the appearance of the MNMapPLUTO layer based on each lot'
   * For the values that have no `LandUse` value, use #ffffff (HTML notation)
 * It should look something like this:
 ![Land Use Classification](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/07_Land_Use_Classification.png)
+* Finally, double-click on the DOITT_SUBWAY icon and adjust it's appearance in the following way:
+  * Size: 5
+  * Fill: ##00aaff
+  * Outline width: 0.5
+  * Border: #4d4d4d
+* And, to add a label for each of the stations, go to the `Labels` tab and do the following:
+  * Check where it says `Label this layer with` and in the drop-down menu choose the `NAME` field.
+  * Under `Text style` change the size of the font to 12
+  * And in the `Placement` option, change the `Distance` to 3.
+![Labels Properties](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/08_Labels.png)
+* Now, none of these values are final. We need to prepare the `Print Composer` first and then adjust the values based on our output format.
+
+The `Print Composer` is where you will format your map for its final output. Here you will specify the output size, you will add a legend, a scale bar, a north arrow (if needed) and any additional text (titles, sources, explanations and credits). Although the `Print Composer` exists as its own window it will still be linked to the map `Project` we have been working on.
+* First, create a new `Print Composer` in `Project` `New Print Composer`.
+* Give it a name if you want, although this is not necessary.
+* Once you are in the `Print Composer` you need to add a new map. Think of it as if you had a blank piece of paper and you were adding a window onto the map you've been working on. That window is a link to your `Project` and if you change things in the `Project` those changes will still be reflected in the `Print Composer`.
+* To add a new map, click on the button `Add new map` on the left-hand panel and draw a rectangle on the blank page.
+![Add New Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/09_Add_New_Map.png)
+* Once you add the map you can adjust its size and position by dragging it from its corners.
+* You might notice that if you change the size of the map it doesn't necessarily update. To avoid this, on the right-hand panel, where it says `Main properties`, click on `Update preview`. Or, you can also click on the drop-down menu where it says `Cache` and change it to `Render` so that it is constantly updating.
+![Update Preview](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/10_Update_Preview.png)
 
 
 ### Notes
