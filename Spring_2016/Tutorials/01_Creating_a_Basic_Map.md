@@ -27,7 +27,7 @@ First you need to open qGIS and add the layers you downloaded:
 
 As you may have seen, qGIS assigns random colors to each of the layers you add. To change the appearance of each layer do the following:
 * First, since we are interested in creating a land use of Manhattan, you should zoom in into this layer. To do this, right-click on the MNMapPLUTO layer and click `Zoom to Layer`.
-![Zoom to Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/02_Zoom_to_Layers.png)
+![Zoom to Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/02_Zoom_to_Layer.png)
 * 
 
 
