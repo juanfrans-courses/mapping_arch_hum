@@ -119,7 +119,28 @@ The `Print Composer` is where you will format your map for its final output. Her
 * Once you add the map you can adjust its size and position by dragging it from its corners.
 * You might notice that if you change the size of the map it doesn't necessarily update. To avoid this, on the right-hand panel, where it says `Main properties`, click on `Update preview`. Or, you can also click on the drop-down menu where it says `Cache` and change it to `Render` so that it is constantly updating.
 ![Update Preview](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/10_Update_Preview.png)
+* You can also move the content of the map by clicking on the `Move item content` button just above the `Add new map` button.
+* Next, you need to center and zoom in the map on the area you want to focus on. For the purposes of this tutorial, we will zoom into the area around 125th street. To do this, move the content of the map to this area and on the left hand panel, adjust your `Scale` to 15000. Center your map so that you are focusing on this area but also so that you have some space up on the left-hand corner to put the title and the legend.
+* If the text of the subway stations seems too big, you can always go back to the `Project` and change the size of the font in the label. When you return to your `Print Composer` you can update your preview and the changes will be reflected.
+* Add a scale bar by going to `Layout` `Add scalebar` and clicking on the map.
+* The default scale bar is too big and has some values left of the zero. To change this, go to the left-hand panel and in the `Segments` section change the `Segments` to 'left 0'.
+* You can also adjust the `Height` of the scale bar to 2mm.
+* Under `Fonts and colors` change the values to:
+  * Font color: #4d4d4d
+  * Fill color: #4d4d4d
+  * Stroke color: #4d4d4d
+* And in the `Display` section, change the `Line width` to 0.25mm
+* To add a legend click on `Layout` `Add legend` and then click on the map. You will notice that qGIS automatically puts an icon for every layer in the map. We only need the ones for the PLUTO land use, so we need to customize the legend:
+  * On the right-hand panel, under `Legend items` uncheck `Auto update` and then select the layers that you don't want in the legend and remove them with the 'minus' button.
+  * Select the MNMapPLUTO layer and click on the edit button right next to the 'minus' button. Change the name of the layer to 'Land Use'.
+  * On the top of the `Item properties`, under `Main properties`, remove the 'Legend' in the `Title`.
+  * Also, further down, uncheck the `Background` option.
+* Since we did not rotate the map we don't need to add a north arrow. If you rotate your map you MUST add a north arrow. If you wanted to, you could add a north arrow by clicking on `Layout` `Add arrow`.
+* Finally, to add a title and a 'source' text, click on the `Add new label` button on the left-hand panel and click on the map. Customize these labels by changing their color, size and location.
+* Your final map should look something like this:
+![Final Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/11_Final_Map.png)
 
+The last step is to export the map as a PDF file. Use the `Export as PDF` button on the top toolbar and save your final map.
 
 ### Notes
 * If, after adding some dataset, you zoom in and some of the features disappear, you probably need to rebuild the dataset's "Spatial Index". To do this right-click on the layer, select `Properties` and go to `General`. Under `Coordinate reference system` click on `Create spatial index`. This should solve your problem. Sometimes, specially with the New York City PLUTO files, the "Spatial Index" is tied to one of the attribute fields and when you zoom in only the features with that specific attribute show up. "Spatial Index" are specially useful when doing operations over large datasets, for example see this [post](http://nathanw.net/2013/01/04/using-a-qgis-spatial-index-to-speed-up-your-code/).
