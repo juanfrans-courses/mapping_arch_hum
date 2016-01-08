@@ -36,12 +36,22 @@ As you may have seen, qGIS assigns random colors to each of the layers you add. 
 ![Zoom to Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/02_Zoom_To_Layers.png)
 * There are multiple ways of changing the appearance of a layer. The easiest (and simplest) is to double-click on the icon (point, line or polygon) next to the layer name on the layer panel. This brings up the `Style` tab in the `Layer Properties` panel. In there you can change the fill (color), stroke weight and fill (outline) and the size of the icon (if using points or icons).
 ![Style Tab](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/03_Style_Layer_Properties.png)
-* In this panel change the style for the following layers in the following ways:
+* In this panel change the style for the following layers in the following ways (we will leave the DOITT_SUBWAY and the MNMapPLUTO for the end):
   * hydropol:
     * Border style: No Pen
     * Fill: #cccccc (HTML notation)
-
-
+  * nybb:
+    * Border style: No Pen
+    * Fill: #ffffff (HTML notation)
+  * HYDRO:
+    * Border style: No Pen
+    * Fill: #cccccc (HTML notation)
+  * RORADBED:
+    * Border style: No Pen
+    * Fill: #999999 (HTML notation)
+* To change the appearance of the background, select the `Project` menu, and in there select `Project Properties`. Then, in the `General` tab you can change the `Background color` to #ffffff (HTML notation).
+![Project Properties](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/04_Project_Properties.png)
+* 
 
 ### Notes
 * If, after adding some dataset, you zoom in and some of the features disappear, you probably need to rebuild the dataset's "Spatial Index". To do this right-click on the layer, select `Properties` and go to `General`. Under `Coordinate reference system` click on `Create spatial index`. This should solve your problem. Sometimes, specially with the New York City PLUTO files, the "Spatial Index" is tied to one of the attribute fields and when you zoom in only the features with that specific attribute show up. "Spatial Index" are specially useful when doing operations over large datasets, for example see this [post](http://nathanw.net/2013/01/04/using-a-qgis-spatial-index-to-speed-up-your-code/).
