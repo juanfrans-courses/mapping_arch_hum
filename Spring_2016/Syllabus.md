@@ -93,6 +93,7 @@ February 19 & 26
 March 4
 * Understanding basic map projections concepts
 * How to project or re-project existing datasets
+* Link: [Comparing sizes across the globe](http://bl.ocks.org/zanarmstrong/raw/caa2da1ea1558cdc3357/#scale=471.85&center0=6.52865,20.3586336&center1=48.2392291,-98.9443219)
 
 ### Week 7: Midterm presentations
 March 11
