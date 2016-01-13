@@ -31,7 +31,7 @@ Other datasets we will be using are (some of these you already downloaded for th
 * Roadbed - New York roadbed. Originally downloaded [here](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd).
 * HYDRO - New York hydrography. Originally downloaded [here](https://data.cityofnewyork.us/Environment/Hydrography/drh3-e2fd).
 * hydropol - U.S. Hydrographic features. Originally downloaded from [here](http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/polygon).
-* tl_2015_36_bg - New York State census block groups. Originally downloaded from [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php).
+* tl_2015_36_bg - New York State census block groups. Originally downloaded from [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php). Here you should download the census block groups for New York state for 2015.
 
 ### Creating Noise Maps of 311 Data in New York City
 #### Downloading 311 Data
@@ -39,7 +39,12 @@ The first step in this tutorial is to select, filter and download the 311 data. 
 
 Once you've accessed the dataset you will see something like this:
 ![311 Dataset](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/01_311_Dataset.png)
-
+Here, we need to filter the database to download only the records regarding noise complaints from October 2015. You could attempt to download records for a longer period of time, but the files might get too large. To filter the data do the following:
+* On the right-hand panel, where it says "Filter", create a small query with the drop-down menus that says 'Complaint Type' 'is' and then type in 'Noise'. Make sure there is a check-mark next to the word 'Noise'. You will see how the dataset is filtered and you only get the complaints of type 'Noise'.
+* Next, click on 'Add a New Filter Condition' and create another query that reads 'Created Date' 'is between' '10/1/2015 12:00:00 AM' and '11/1/2015 12:00:00 AM'.
+You should now see the data only for 'Noise' complaints created in October 2015.
+![311 Filters](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/02_Filters.png)
+Finally, click on the 'Export' button at the top right-hand corner of the site and choose the 'CSV' format. Your file should start downloading then.
 
 
 
