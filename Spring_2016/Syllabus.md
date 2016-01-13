@@ -61,7 +61,11 @@ January 22 & 29
 	* PLUTO Lots for this area
 * ***Assignment: Create and export a basic map with proper notation, labels and symbology***
 * Readings:
-	* *Meirelles, Isabel. Design For Information, Chapters 4 and 5*
+	* *Meirelles, Isabel. Design For Information, Chapters 4 and 5* (Required)
+	* *[Harley, J., Deconstructing the Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/1989_harley_deconstructing-the-map.pdf)* (Required)
+	* *[Crampton, J., Maps as social constructions: power, communication and visualization](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2001_crampton_maps-as-social-constructions.pdf)* (Required)
+	* *[Harvey, F., Introduction: Critical GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2005_harvey_introduction-to-critical-GIS.pdf)* (Optional)
+	* *[Edney, M., Plus ça change: Defining Academic Cartography for the Twenty-First Century](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2012_edney_plus-ca-change.pdf)* (Optional)
 
 ### Weeks 3 & 4: Maps and data
 February 5 & 12
