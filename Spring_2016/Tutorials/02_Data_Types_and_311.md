@@ -43,7 +43,9 @@ Here, we need to filter the database to download only the records regarding nois
 * On the right-hand panel, where it says "Filter", create a small query with the drop-down menus that says 'Complaint Type' 'is' and then type in 'Noise'. Make sure there is a check-mark next to the word 'Noise'. You will see how the dataset is filtered and you only get the complaints of type 'Noise'.
 * Next, click on 'Add a New Filter Condition' and create another query that reads 'Created Date' 'is between' '10/1/2015 12:00:00 AM' and '11/1/2015 12:00:00 AM'.
 You should now see the data only for 'Noise' complaints created in October 2015.
+Your filters should look something like this:
 ![311 Filters](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/02_Filters.png)
+
 Finally, click on the 'Export' button at the top right-hand corner of the site and choose the 'CSV' format. Your file should start downloading then.
 
 
