@@ -46,6 +46,7 @@ You should now see the data only for 'Noise' complaints created in October 2015.
 * Your filters should look something like this:
 ![311 Filters](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/02_Filters.png)
 * Finally, click on the 'Export' button at the top right-hand corner of the site and choose the 'CSV' format. Your file should start downloading then.
+* If you open your .csv file in Excel you will see that there are about 6,180 records and that they have both X and Y coordinates and Latitude and Longitude. In the next steps we will use these fields to add the 311 data to a qGIS map.
 
 
 

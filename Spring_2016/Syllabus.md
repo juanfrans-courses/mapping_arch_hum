@@ -41,13 +41,19 @@ to the blog. Students will be required to upload some of their own work as well 
 [Link to number of posts](https://docs.google.com/spreadsheets/d/11O2WTCk-XuzbKksEJHnpIR-pAACmjbIqgfVusWHabV0/edit?usp=sharing).
 
 ## Schedule
-### Weeks 1 & 2: Introduction to mapping concepts and techniques
-January 22 & 29
+### Week 1: Introduction to course
+January 22
 * Course administration and syllabus
 * What is GIS?
 * Working with geographic data (vectors and rasters)
 * Mapping software (qGIS)
 * What is a shapefile
+* Readings:
+	* *Meirelles, Isabel. Design For Information, Chapters 4 and 5* (Required)
+	* *[Harley, J., Deconstructing the Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/1989_harley_deconstructing-the-map.pdf)* (Required)
+
+### Week 2: Introduction to mapping concepts and techniques
+January 29
 * Emphasis on *metadata*
 * Elements of cartography (notations and conventions)
 * Creating and exporting basic maps
@@ -59,11 +65,10 @@ January 22 & 29
 	* Raster image of Columbia area
 	* Water
 	* PLUTO Lots for this area
-* ***Assignment: Create and export a basic map with proper notation, labels and symbology***
+* ***Assignment: [Tutorial 01](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/01_Creating_a_Basic_Map.md) - Create and export a basic map with proper notation, labels and symbology***
 * Readings:
-	* *Meirelles, Isabel. Design For Information, Chapters 4 and 5* (Required)
-	* *[Harley, J., Deconstructing the Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/1989_harley_deconstructing-the-map.pdf)* (Required)
 	* *[Crampton, J., Maps as social constructions: power, communication and visualization](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2001_crampton_maps-as-social-constructions.pdf)* (Required)
+	* *[Alves, D., Exploring Literary Landscapes: From Texts to Spatiotemporal Analysis Through Collaborative Work and GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2015_alves_exploring-literary-landscapes.pdf)* (Required)
 	* *[Harvey, F., Introduction: Critical GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2005_harvey_introduction-to-critical-GIS.pdf)* (Optional)
 	* *[Edney, M., Plus ça change: Defining Academic Cartography for the Twenty-First Century](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2012_edney_plus-ca-change.pdf)* (Optional)
 
