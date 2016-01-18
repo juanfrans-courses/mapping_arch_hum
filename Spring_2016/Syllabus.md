@@ -36,9 +36,9 @@ to the blog. Students will be required to upload some of their own work as well 
 
 **These two next things need to be updated**
 
-[Link to the blog](http://gsappadvgis2015fall.tumblr.com/).
+[Link to the blog](http://mapping2016.tumblr.com/).
 
-[Link to number of posts](https://docs.google.com/spreadsheets/d/11O2WTCk-XuzbKksEJHnpIR-pAACmjbIqgfVusWHabV0/edit?usp=sharing).
+[Link to number of posts](https://docs.google.com/spreadsheets/d/1no2V9fNUFap1bPdV1ztd_ppZWb5xp6CJWbbmEgNMnoA/edit?usp=sharing).
 
 ## Schedule
 ### Week 1: Introduction to course
