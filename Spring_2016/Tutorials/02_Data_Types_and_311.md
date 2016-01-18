@@ -48,7 +48,15 @@ You should now see the data only for 'Noise' complaints created in October 2015.
 * Finally, click on the 'Export' button at the top right-hand corner of the site and choose the 'CSV' format. Your file should start downloading then.
 * If you open your .csv file in Excel you will see that there are about 6,180 records and that they have both X and Y coordinates and Latitude and Longitude. In the next steps we will use these fields to add the 311 data to a qGIS map.
 
-
+#### Adding CSV data to qGIS
+* First, open qGIS and add the following layers (downloaded for the first tutorial):
+  * nybb
+  * Roadbed
+  * HYDRO
+  * hydropol
+* Organize your layers so that you have the roads on top, then water for New York, then boroughs and the last the water for the country.
+* Now, to add the CSV file we downloaded, click on the `Add Delimited Text Layer` button on the top toolbar.
+![Add CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/03_Add_CSV.png)
 
 
 
