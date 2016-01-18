@@ -46,14 +46,14 @@ As you may have seen, qGIS assigns random colors to each of the layers you add. 
   * HYDRO:
     * Border style: No Pen
     * Fill: #cccccc (HTML notation)
-  * RORADBED:
+  * ROADBED:
     * Border style: No Pen
     * Fill: #999999 (HTML notation)
 * To change the appearance of the background, select the `Project` menu, and in there select `Project Properties`. Then, in the `General` tab you can change the `Background color` to #ffffff (HTML notation).
 ![Project Properties](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/04_Project_Properties.png)
 
 Next we need to change the appearance of the MNMapPLUTO layer based on each lot's land use designation. This is called *symbolizing by category*. We will use data stored in the layer's attribute table to assign a symbology (fill and stroke) to each land use category.
-* Fist, to get an idea of the data that we will use to symbolize, right-click on the MNMapPLUTO layer and select `Open Attribute Table`. The attribute table has all the data that's associated with each of the features. Each line of data corresponds to one feature in the dataset. As you can see, the MNMapPLUTO layer has a lot of data associated with it.
+* First, to get an idea of the data that we will use to symbolize, right-click on the MNMapPLUTO layer and select `Open Attribute Table`. The attribute table has all the data that's associated with each of the features. Each line of data corresponds to one feature in the dataset. As you can see, the MNMapPLUTO layer has a lot of data associated with it.
 ![MNMapPLUTO Attribute Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/05_Attribute_Table.png)
 * Some of the most useful fields are:
   * ZoneDist1 - The main zoning district classification of the lot.
@@ -83,7 +83,7 @@ Next we need to change the appearance of the MNMapPLUTO layer based on each lot'
 * Under the `Column` option (at the right) click on the little filter symbol (to the left of the `ε` symbol) and choose the `LandUse` filed.
 ![Categorize by Field](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/06_Categorize.png)
 * Finally, click on `Classify` to add all the different values in that field. Once you do this, you will be able to rename each of the values and change their appearance.
-* By double-clicking on the symbol and on the `Lengend` value, change the appearance and the name of each value following this key (note that for all of them you should use a `Border style` `Solid Line`, with a `Border Width` of 0.1 and a `Border color` of #4d4d4d (HTML notation)):
+* By double-clicking on the symbol and on the `Legend` value, change the appearance and the name of each value following this key (note that for all of them you should use a `Border style` `Solid Line`, with a `Border Width` of 0.1 and a `Border color` of #4d4d4d (HTML notation)):
   * 01 - One & Two Family Buildings - Fill: 255,255,0 (rgb notation)
   * 02 - Multi-Family Walk-Up Buildings - Fill: 255,200,0 (rgb notation)
   * 03 - Multi-Family Elevator Buildings - Fill: 230,175,0 (rgb notation)
@@ -100,7 +100,7 @@ Next we need to change the appearance of the MNMapPLUTO layer based on each lot'
 ![Land Use Classification](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/01_Creating_a_Basic_Map/07_Land_Use_Classification.png)
 * Finally, double-click on the DOITT_SUBWAY icon and adjust it's appearance in the following way:
   * Size: 5
-  * Fill: ##00aaff
+  * Fill: #00aaff
   * Outline width: 0.5
   * Border: #4d4d4d
 * And, to add a label for each of the stations, go to the `Labels` tab and do the following:
@@ -123,7 +123,7 @@ The `Print Composer` is where you will format your map for its final output. Her
 * Next, you need to center and zoom in the map on the area you want to focus on. For the purposes of this tutorial, we will zoom into the area around 125th street. To do this, move the content of the map to this area and on the left hand panel, adjust your `Scale` to 15000. Center your map so that you are focusing on this area but also so that you have some space up on the left-hand corner to put the title and the legend.
 * If the text of the subway stations seems too big, you can always go back to the `Project` and change the size of the font in the label. When you return to your `Print Composer` you can update your preview and the changes will be reflected.
 * Add a scale bar by going to `Layout` `Add scalebar` and clicking on the map.
-* The default scale bar is too big and has some values left of the zero. To change this, go to the left-hand panel and in the `Segments` section change the `Segments` to 'left 0'.
+* The default scale bar is too big and has some values left of the zero. To change this, go to the right-hand panel and in the `Segments` section change the `Segments` to 'left 0'.
 * You can also adjust the `Height` of the scale bar to 2mm.
 * Under `Fonts and colors` change the values to:
   * Font color: #4d4d4d
