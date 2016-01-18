@@ -57,6 +57,27 @@ You should now see the data only for 'Noise' complaints created in October 2015.
 * Organize your layers so that you have the roads on top, then water for New York, then boroughs and the last the water for the country.
 * Now, to add the CSV file we downloaded, click on the `Add Delimited Text Layer` button on the top toolbar.
 ![Add CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/03_Add_CSV.png)
+* In the menu that comes up, look for your .csv (311 data) file. Once you've selected your file qGIS will automatically select some presets. You should have the following options selected:
+  * File format: `CSV (comma separated values)` - (this is the format our data is in: each value is separated by a comma)
+  * Record options: `First record has field names` - (the first row of our file contains the field names)
+  * Geometry definition: `Point coordinates` - (our data has latitude and longitude data)
+  * X field: `Longitude` and Y field: `Latitude` - (these are the columns in our dataset that contain our location coordinates)
+  * Your menu should look something like this:
+![CSV Menu](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/04_CSV_Menu.png)
+* Once you click `OK` you will get a warning that says that 97 number of records were discarded because they didn't have geometry definitions. Click `Close`. These were some records in the dataset that we downloaded that for some reason didn't include location data.
+* Next, qGIS will ask you to select a coordinate reference system (map projection) for this layer. Since we are adding this data based on the latitude and longitude information (decimal degrees, as opposed to feet) we need to select the `WGS 84`, which is the coordinate system that will correctly interpret this data. You will find it under `Geographic Coordinate Systems`. You will find more information on this coordinate system [here](https://en.wikipedia.org/wiki/World_Geodetic_System). Once you select the correct coordinate system, your points will appear on the map.
+* Even though your points are already on the map, this is just a temporary layer. If you remove the layer, you will need to go through the whole importing process to add them again. To avoid this, export the points as a Shapefile:
+  * Right-click on the new layer and select `Save As...`.
+  * In the menu choose the following:
+    * Format: `ESRI Shapefile` - (this is the same format of our other layers)
+    * Save as: choose the right location and name your file `311_Data`
+    * CRS: `EPSG:102718 - NAD_1983_StatePlane_New_York_Long_Island_FIPS_3104_Feet` - (this is the coordinate system we are working with and we want this layer to have the same one)
+    * Uncheck `Skip attribute creation` - (you still want to retain the attributes associated with each point)
+    * Check `Add saved file to map` - (so that once you export the layer, the layer is added to your map)
+  * Once you export your layer (and it's automatically added to your map) you can remove the original one by right-clicking and choosing `Remove`.
+  
+
+
 
 
 
