@@ -39,14 +39,14 @@ The first step in this tutorial is to select, filter and download the 311 data. 
 
 Once you've accessed the dataset you will see something like this:
 ![311 Dataset](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/01_311_Dataset.png)
-Here, we need to filter the database to download only the records regarding noise complaints from October 2015. You could attempt to download records for a longer period of time, but the files might get too large. To filter the data do the following:
+Here, we need to filter the database to download only the records regarding noise complaints the last 6 months of 2015. You could attempt to download records for a longer period of time, but the files might get too large. To filter the data do the following:
 * On the right-hand panel, where it says "Filter", create a small query with the drop-down menus that says 'Complaint Type' 'is' and then type in 'Noise'. Make sure there is a check-mark next to the word 'Noise'. You will see how the dataset is filtered and you only get the complaints of type 'Noise'.
-* Next, click on 'Add a New Filter Condition' and create another query that reads 'Created Date' 'is between' '10/1/2015 12:00:00 AM' and '11/1/2015 12:00:00 AM'.
-You should now see the data only for 'Noise' complaints created in October 2015.
+* Next, click on 'Add a New Filter Condition' and create another query that reads 'Created Date' 'is between' '07/1/2015 12:00:00 AM' and '1/1/2016 12:00:00 AM'.
+You should now see the data only for 'Noise' complaints created between the start of July and the end of December 2015.
 * Your filters should look something like this:
 ![311 Filters](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/02_Filters.png)
 * Finally, click on the 'Export' button at the top right-hand corner of the site and choose the 'CSV' format. Your file should start downloading then.
-* If you open your .csv file in Excel you will see that there are about 6,180 records and that they have both X and Y coordinates and Latitude and Longitude. In the next steps we will use these fields to add the 311 data to a qGIS map.
+* If you open your .csv file in Excel you will see that there are about 30,380 records and that they have both X and Y coordinates and Latitude and Longitude. In the next steps we will use these fields to add the 311 data to a qGIS map.
 
 #### Adding CSV data to qGIS
 * First, open qGIS and add the following layers (downloaded for the first tutorial):
@@ -64,18 +64,18 @@ You should now see the data only for 'Noise' complaints created in October 2015.
   * X field: `Longitude` and Y field: `Latitude` - (these are the columns in our dataset that contain our location coordinates)
   * Your menu should look something like this:
 ![CSV Menu](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/04_CSV_Menu.png)
-* Once you click `OK` you will get a warning that says that 97 number of records were discarded because they didn't have geometry definitions. Click `Close`. These were some records in the dataset that we downloaded that for some reason didn't include location data.
+* Once you click `OK` you will get a warning that says that 547 records were discarded because they didn't have geometry definitions. Click `Close`. These were some records in the dataset that we downloaded that for some reason didn't include location data.
 * Next, qGIS will ask you to select a coordinate reference system (map projection) for this layer. Since we are adding this data based on the latitude and longitude information (decimal degrees, as opposed to feet) we need to select the `WGS 84`, which is the coordinate system that will correctly interpret this data. You will find it under `Geographic Coordinate Systems`. You will find more information on this coordinate system [here](https://en.wikipedia.org/wiki/World_Geodetic_System). Once you select the correct coordinate system, your points will appear on the map.
 * Even though your points are already on the map, this is just a temporary layer. If you remove the layer, you will need to go through the whole importing process to add them again. To avoid this, export the points as a Shapefile:
-  * Right-click on the new layer and select `Save As...`.
+  * Right-click on the new layer and select `Save As...`
   * In the menu choose the following:
     * Format: `ESRI Shapefile` - (this is the same format of our other layers)
-    * Save as: choose the right location and name your file `311_Data`
+    * Save as: choose the right location and name your file '311_Data'
     * CRS: `EPSG:102718 - NAD_1983_StatePlane_New_York_Long_Island_FIPS_3104_Feet` - (this is the coordinate system we are working with and we want this layer to have the same one)
     * Uncheck `Skip attribute creation` - (you still want to retain the attributes associated with each point)
     * Check `Add saved file to map` - (so that once you export the layer, the layer is added to your map)
   * Once you export your layer (and it's automatically added to your map) you can remove the original one by right-clicking and choosing `Remove`.
-  
+
 
 
 
