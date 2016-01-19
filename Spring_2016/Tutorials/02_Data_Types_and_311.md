@@ -36,12 +36,14 @@ Other datasets we will be using are (some of these you already downloaded for th
 The first step in this tutorial is to select, filter and download the 311 data. The [NYC Open Data portal](https://nycopendata.socrata.com/) is a great resource for data related to New York City and it provides an easy way of accessing 311 data. In it's search bar type "311" and it should take you to a list of datasets related to 311 data. The one we are looking for is called "311 Service Requests from 2010 to Present". Alternatively, you might see a big yellow icon at the top of this page related to 311; this will also take you to the dataset.
 
 Once you've accessed the dataset you will see something like this:
+
 ![311 Dataset](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/01_311_Dataset.png)
 Here, we need to filter the database to download only the records regarding noise complaints for the last 6 months of 2015. You could attempt to download records for a longer period of time, but the files might get too large. To filter the data do the following:
 * On the right-hand panel, where it says "Filter", create a small query with the drop-down menus. Where it says 'Unique Key', change it to 'Comolaint Type'. Keep the 'is' and then type in 'Noise' in the space below (The query should read 'Complaint type is noise'. Make sure there is a check-mark next to the word 'Noise'. You will see how the dataset is filtered and you only get the complaints of type 'Noise'.
 * Next, click on 'Add a New Filter Condition' and create another query that reads 'Created Date' 'is between' '07/1/2015 12:00:00 AM' and '1/1/2016 12:00:00 AM'.
 You should now see the data only for 'Noise' complaints created between the start of July and the end of December 2015.
 * Your filters should look something like this:
+
 ![311 Filters](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/02_Filters.png)
 * Finally, click on the 'Export' button at the top right-hand corner of the site and choose the 'CSV' format. Your file should start downloading then.
 * If you open your .csv file in Excel you will see that there are about 30,380 records and that they have both X and Y coordinates and Latitude and Longitude. In the next steps we will use these fields to add the 311 data to a qGIS map.
@@ -62,6 +64,7 @@ You should now see the data only for 'Noise' complaints created between the star
   * Geometry definition: `Point coordinates` - (our data has latitude and longitude data)
   * X field: `Longitude` and Y field: `Latitude` - (these are the columns in our dataset that contain our location coordinates)
   * Your menu should look something like this:
+
 ![CSV Menu](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/04_CSV_Menu.png)
 * Once you click `OK` you will get a warning that says that 547 records were discarded because they didn't have geometry definitions. Click `Close`. These were some records in the dataset that we downloaded that for some reason didn't include location data.
 * Next, qGIS will ask you to select a coordinate reference system (map projection) for this layer. Since we are adding this data based on the latitude and longitude information (decimal degrees, as opposed to feet) we need to select the `WGS 84`, which is the coordinate system that will correctly interpret this data. You will find it under `Geographic Coordinate Systems`. You will find more information on this coordinate system [here](https://en.wikipedia.org/wiki/World_Geodetic_System). Once you select the correct coordinate system, your points will appear on the map.
@@ -74,6 +77,15 @@ You should now see the data only for 'Noise' complaints created between the star
     * Uncheck `Skip attribute creation` - (you still want to retain the attributes associated with each point)
     * Check `Add saved file to map` - (so that once you export the layer, the layer is added to your map)
   * Once you export your layer (and it's automatically added to your map) you can remove the original one by right-clicking and choosing `Remove`.
+
+#### Symbolizing the Data
+The last step in creating a qualitative map of the 311 data is a simple one: we need to symbolize each complaint using its subcategory. This is very similar to what we did in the previous tutorial when we were classifying the PLUTO dataset by land use.
+* Right-click on the 311_Data layer and choose `Properties`.
+* In the `Style` tab, change the drop-down menu that says `Single Symbol` to `Categorized` and then in the `Column` menu select `Descriptor` (this is the field we will symbolize).
+* Now click on the `Classify` button at the bottom and you will get all the different sub-categories.
+* Lastly, you should change the appearance of the dots: adjust their size, stroke and fill color like you did for the land use map.
+* Once you've adjusted that, click 'OK'.
+* Finally, you need to change the appearance of the other layers, create a print composer, add a scale bar, legend, title, source and brief description, and export your map as a PDF file.
 
 
 
