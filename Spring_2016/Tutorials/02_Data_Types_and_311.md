@@ -109,6 +109,15 @@ Let's say you want to identify which census block group has the highest number o
 
     ![Selected Block Groups](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/07_Selected_Block_Groups.png)
 
+    * Finally, to create a shapefile with only the selected features, right-click on the census block group layer and select `Save As...`. In the next menu choose the following settings:
+      * Format: `ESRI Shapefile`
+      * Save as: choose the right location and name your file 'NYC_BlkGrp'
+      * CRS: `EPSG:102718 - NAD_1983_StatePlane_New_York_Long_Island_FIPS_3104_Feet`
+      * Check `Save only selected features` - (this one is very important; if you don't check it you will just export a copy of your original layer with all the features, selected or not)
+      * Uncheck `Skip attribute creation` - (you still want to retain the attributes associated with each point)
+      * Check `Add saved file to map` - (so that once you export the layer, the layer is added to your map)
+    * Click `OK` and you should see a new layer with only New York City block groups.
+
 #### Deliverables
 Upload two (PDF) 311 data maps to Courseworks. They should both be of something different than 'noise' complaints. One should be a qualitative map, showing the location of each complaint, and the other should be a quantitative map, showing the number of complaints per census block group in New York City. Your maps should include proper legends, scale bars, titles, explanations and sources. Choose colors, line weights and fonts wisely.
 
