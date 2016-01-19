@@ -105,7 +105,9 @@ Let's say you want to identify which census block group has the highest number o
 
     ![Attribute Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/06_Selection_Query.png)
 
-    * 
+    * Click the 'Select' button on the bottom-right side to select those features that match your query; then close your selection menu and your attribute table. You should see all the census block groups for New York City highlighted in yellow.
+
+    ![Selected Block Groups](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/07_Selected_Block_Groups.png)
 
 #### Deliverables
 Upload two (PDF) 311 data maps to Courseworks. They should both be of something different than 'noise' complaints. One should be a qualitative map, showing the location of each complaint, and the other should be a quantitative map, showing the number of complaints per census block group in New York City. Your maps should include proper legends, scale bars, titles, explanations and sources. Choose colors, line weights and fonts wisely.
