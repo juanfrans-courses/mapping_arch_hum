@@ -87,11 +87,13 @@ The last step in creating a qualitative map of the 311 data is a simple one: we 
 * Once you've adjusted that, click 'OK'.
 * Finally, you need to change the appearance of the other layers, create a print composer, add a scale bar, legend, title, source and brief description, and export your map as a PDF file.
 
+#### Creating a Quantitative Map of 311 Data
+Let's say you want to identify which census block group has the highest number of 311 noise complaints. To do this, you first have to join your 311 data to a layer containing the census block groups.
 
 
 
-
-
+#### Deliverables
+Upload two (PDF) 311 data maps to Courseworks. They should both be of something different than 'noise' complaints. One should be a qualitative map, showing the location of each complaint, and the other should be a quantitative map, showing the number of complaints per census block group in New York City. Your maps should include proper legends, scale bars, titles, explanations and sources. Choose colors, line weights and fonts wisely.
 
 
 
