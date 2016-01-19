@@ -99,6 +99,12 @@ Let's say you want to identify which census block group has the highest number o
     ![Attribute Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/05_Attribute_Table.png)
 
     * The selecting by expression menu has three different panels: the left-hand one is where you will construct your query; the middle one is where you will find the different functions, operator and, more importantly, the attribute table fields; and the right-hand panel will have a description of whatever you select in the middle panel.
+    * To build the query, expand the 'Fields and Values' drop-down menu in the middle panel and double-click on 'COUNTYFP'. You will notice the  "COUNTYFP" is added to the left-hand panel. Now type '=' after that and then click on the `all unique` button below the right-hand panel; this will show a list of all the unique values this field contains. Double-click on '005' to complete the first part of the query on the left-hand panel.
+    * The query so far reads "COUNTYFP" = '005'. Notice that the '005' is under single quotation marks. This is because the value is a string (text), not a number. If it was a number you would only type 5, without quotations, and you would be able to do normal math operations with it. Instead, since it's a string, you have to type it with quotations and it behaves like text.
+    * Now we need to add the other possibilities, with the operator `or` which we could type or select from the 'Operators' menu. Your final query should read something like this: `"COUNTYFP" = '005' or "COUNTYFP" = '047' or "COUNTYFP" = '061' or "COUNTYFP" = '081' or "COUNTYFP" = '085'`.
+
+    ![Attribute Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/06_Selection_Query.png)
+
     * 
 
 #### Deliverables
