@@ -88,9 +88,16 @@ The last step in creating a qualitative map of the 311 data is a simple one: we 
 * Finally, you need to change the appearance of the other layers, create a print composer, add a scale bar, legend, title, source and brief description, and export your map as a PDF file.
 
 #### Creating a Quantitative Map of 311 Data
-Let's say you want to identify which census block group has the highest number of 311 noise complaints. To do this, you first have to join your 311 data to a layer containing the census block groups.
+Let's say you want to identify which census block group has the highest number of 311 noise complaints. To do this, you first have to join your 311 data to a layer containing the boundaries of New York City's census block groups.
+* First, add the census block group shapefile (tl_2015_36_bg) you downloaded from the census website.
+* Move this layer so that it's located below the HYDRO layer.
+* If you zoom out, you will notice that this layer includes the census block groups for the whole State. However, we only need the ones for New York City. There are couple of ways of selecting just these ones. We will go over both methods.
+  * Option A is to 'select by attributes' which means selecting based on data in one of the fields of the layer. The census block group layer contains a field listing the specific county each block group is located in; we will use this field to select only the census block groups located in any of the 5 counties that make up New York City.
+    * First, right-click on the census block group layer and select `Open Attribute Table`. Here you will see the data associated with each of the census block groups. The second column, the one called 'COUNTYFP', contains the county identifiers, and this is the one we will use to select only the New York City block group.
 
+![Attribute Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/05_Attribute_Table.png)
 
+    * 
 
 #### Deliverables
 Upload two (PDF) 311 data maps to Courseworks. They should both be of something different than 'noise' complaints. One should be a qualitative map, showing the location of each complaint, and the other should be a quantitative map, showing the number of complaints per census block group in New York City. Your maps should include proper legends, scale bars, titles, explanations and sources. Choose colors, line weights and fonts wisely.
