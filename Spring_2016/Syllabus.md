@@ -82,7 +82,7 @@ February 5 & 12
 * Datasets:
 	* 311 data
 	* Community districts or census block groups
-* ***Assignment: Create two different maps based on 311 data, one quantitative and one qualitative***
+* ***Assignment: [Tutorial 02](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/02_Data_Types_and_311.md) - Create two different maps based on 311 data, one quantitative and one qualitative***
 * ***Assignment: Create your own dataset (including metadata) and map it***
 
 ### Weeks 5 & 6: Working with census data
