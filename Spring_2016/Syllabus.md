@@ -49,7 +49,7 @@ January 22
 * Mapping software (qGIS)
 * What is a shapefile
 * Readings:
-	* *Meirelles, Isabel. Design For Information, Chapters 4 and 5* (Required)
+	* *[Meirelles, Isabel. Design For Information, Chapters 4 and 5](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2013_meirelles_design_for_information_chp_4_5.pdf)* (Required)
 	* *[Harley, J., Deconstructing the Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/1989_harley_deconstructing-the-map.pdf)* (Required)
 
 ### Week 2: Introduction to mapping concepts and techniques
