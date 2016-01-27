@@ -21,10 +21,7 @@ The two images below show census block groups in orange and census tracts in blu
 
 ![Census Tracts](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/02_Census_Tracts.png)
 
-
-
-
-* tl_2015_36_bg - New York State census block groups. Originally downloaded from [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php). Here you should download the census block groups for New York state for 2015.
+To download the census tracts boundaries for New York State go [here] and choose `2015` and `Census Tracts` and then `New York` and download.
 
 * Place of birth for foreign born (B05006)
   * Census Tracts
