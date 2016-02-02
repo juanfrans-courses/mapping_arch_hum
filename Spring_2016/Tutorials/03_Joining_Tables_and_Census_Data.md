@@ -28,7 +28,7 @@ Once we have the 'empty' geography boundaries for the census tracts we need to d
 Once you are on the American FactFinder website, click on the `ADVANCED SEARCH` tab. Here we will search for the data at multiple levels:
 * Geography: census tracts for New York City counties
 * Dataset: American Community Survey (ACS) 2014 5-year estimates
-* Topic: Place of birth for foreign born and place of birth by nativity and citizenship status
+* Topic: Place of birth by nativity and citizenship status
 
 First, let's narrow down the options by dataset. The U.S. Census has two main surveys, the Decennial Census and the American Community Survey. The [Decennial Census](https://www.census.gov/history/www/programs/demographic/decennial_census.html) is the major census survey, carried out every 10 years and attempting to count every person in the country. However, it has two major disadvantages: one, it only happens every 10 years, so for the years in between, like where we are now, the last census might be too outdated and the next one too far away; and two, because it is not using any sampling techniques, it often under-represents minorities. More information about it can be found here *****************************
 
@@ -44,6 +44,33 @@ Next, let's select the geography. Click on the `Geographies` tab and set the fol
 Once you've done this you will have the option to select the county. Select 'Bronx' and once the window below populates, highlight 'All Census Tracts Within Bronx County, New York' and click `ADD TO YOUR SELECTIONS`. Again, you should see this item added to your selections window. Do the same thing for all the census tracts in the rest of the counties in the city: New York (Manhattan), Kings (Brooklyn), Queens and Richmond (Staten Island).
 
 ![Geographies](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/04_Geographies.png)
+
+Finally, we need to select the tables that we will be exporting. In this tutorial we will be using the table for 'Place of birth by nativity and citizenship status (B05002)'. To select this table click on the 'Topics' tab again, and expand 'People' and 'Origins' and click on 'Citizenship'. Once it's been added to your selections you can close that little window. Now you should see a list of all the tables that match your selection criteria. Click on the 'PLACE OF BIRTH BY NATIVITY AND CITIZENSHIP STATUS (B05002)' table. You should now see the selected table with the data for the selected census tracts.
+
+As you can see this table has data on where everyone was born and it comes in the following form:
+* Total
+  * Native
+    * Born in state of residence
+    * Born in other state in the United States
+      * Northeast
+      * Midwest
+      * South
+      * West
+    * Born outside the United States
+      * Puerto Rico
+      * U.S. Island Areas
+      * Born abroad of American parent(s)
+  * Foreign born
+    * Naturalized U.S. citizen
+    * Not a US citizen
+
+On the top, we have every single census tract with the corresponding value and a margin of error. It is important to note that these are not exact values, they are estimates based on the statistical methods the census is using. That's also why they include the margin of error. However, even though these numbers are not 100% accurate they still give us a pretty good idea of what is happening no the ground.
+
+The last thing we need to do is modify the table so that it fits the way data is organized in qGIS. If you remember when we opened attribute tables in qGIS, every row represented a feature and every column a different field. Here, it's the other way around, so we need to 'transpose' the table to make it match qGIS. To do this click on `Modify Table` at the top left and then on `Transpose Rows/Columns`. Now you should see the table with the census tracts on the left-hand column and the fields on the first row.
+
+![Final table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/05_Final_Table.png)
+
+Finally, click on `Download` and make sure you are selecting 'Comma delimited (.csv) format (data rows only)', 'Data and annotations in a single file' and 'Include descriptive data element names'. Click `OK` and then once your files are ready `Download` again.
 
 * Place of birth for foreign born (B05006)
   * Census Tracts
