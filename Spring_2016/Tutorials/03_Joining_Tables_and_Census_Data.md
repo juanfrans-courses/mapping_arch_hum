@@ -13,7 +13,7 @@ This tutorial will be dealing with two main datasets, both provided by the U.S. 
 #### Downloading Census Data
 The first step will be to download the 'empty' geography files for our unit of analysis (by 'empty' I mean without any census attributes, apart from unique identifiers). However, before doing this we should actually decide what unit of analysis we will use.
 
-The [American Community Survey](https://www.census.gov/programs-surveys/acs/), which is the statistical survey we will be using, provides data at multiple geographic levels, all the way from the whole country to the block group (which in Manhattan can be anywhere between 1 and 4 normal city blocks). Some of the other geographic units of analysis include regions, states, counties and metropolitan statistical areas. However, not all the data comes at every geographical level, so in general, we will try to find the smallest unit of analysis available for our dataset. In our case, that will be the census tract level, which roughly corresponds to 8 Manhattan city blocks, or four block groups.
+The [American Community Survey](https://www.census.gov/programs-surveys/acs/), which is the statistical survey we will be using, provides data at multiple geographic levels, all the way from the whole country to the block group (which in Manhattan can be anywhere between 1 and 4 city blocks). Some of the other geographic units of analysis include regions, states, counties and metropolitan statistical areas. However, not all the data comes at every geographical level, so in general, we will try to find the smallest unit of analysis available for our dataset. In our case, that will be the census tract level, which roughly corresponds to 8 Manhattan city blocks, or four block groups.
 
 The two images below show census block groups in orange and census tracts in blue over a portion of city blocks in Harlem.
 
@@ -21,7 +21,7 @@ The two images below show census block groups in orange and census tracts in blu
 
 ![Census Tracts](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/02_Census_Tracts.png)
 
-To download the census tracts boundaries for New York State go [here] and choose `2015` and `Census Tracts` and then `New York` and download.
+To download the census tracts boundaries for New York State go [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php) and choose `2015` and `Census Tracts` and then `New York` and download.
 
 * Place of birth for foreign born (B05006)
   * Census Tracts
