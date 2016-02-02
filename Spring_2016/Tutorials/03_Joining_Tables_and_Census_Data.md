@@ -23,6 +23,21 @@ The two images below show census block groups in orange and census tracts in blu
 
 To download the census tracts boundaries for New York State go [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php) and choose `2015` and `Census Tracts` and then `New York` and download.
 
+Once we have the 'empty' geography boundaries for the census tracts we need to download the actual data. For this we will use the [American FactFinder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) which is one of the portals where you can download census data. However, note that this is not the only place to download census data. Some other resources are the [U.S. Census Bureau website](https://www.census.gov/en.html) and ***********************************************. For this exercise, though, we will use the [American FactFinder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml).
+
+Once you are on the American FactFinder website, click on the `ADVANCED SEARCH` tab. Here we will search for the data at multiple levels:
+* Geography: census tracts for New York City counties
+* Dataset: American Community Survey (ACS) 2014 5-year estimates
+* Topic: Place of birth for foreign born and place of birth by nativity and citizenship status
+
+First, let's narrow down the options by dataset. The U.S. Census has two main surveys, the Decennial Census and the American Community Survey. The [Decennial Census](https://www.census.gov/history/www/programs/demographic/decennial_census.html) is the major census survey, carried out every 10 years and attempting to count every person in the country. However, it has two major disadvantages: one, it only happens every 10 years, so for the years in between, like where we are now, the last census might be too outdated and the next one too far away; and two, because it is not using any sampling techniques, it often under-represents minorities. More information about it can be found here *****************************
+
+The second main survey is called the [American Community Survey (ACS)](https://www.census.gov/history/www/programs/demographic/american_community_survey.html) and happens continuously. Its questionnaire is sent to 295,000 addresses monthly and it gathers data on topics such as ancestry, educational attainment, income, language proficiency, migration, disability, employment, and housing characteristics. Its results come in 3 forms: 1-year estimates, 3-year estimates and 5-year estimates. The 1-year estimates are the most current but the least reliable. The 5-year estimates are not as current but are much more reliable. For this exercise we will be using the 2014 ACS 5-year estimate data.
+
+In the left hand side of the `ADVANCED SEARCH` window, expand the `Topics` tab, and expand the `Dataset` option. Here, choose the `2014 ACS 5-year estimates`. You should see that dataset move to the top right-hand panel called `Your Selections`.
+
+![ACS 2014 5-year estimates](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/03_Datasets.png)
+
 * Place of birth for foreign born (B05006)
   * Census Tracts
     * Continents
