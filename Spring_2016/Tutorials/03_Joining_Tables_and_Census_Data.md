@@ -38,6 +38,13 @@ In the left hand side of the `ADVANCED SEARCH` window, expand the `Topics` tab, 
 
 ![ACS 2014 5-year estimates](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/03_Datasets.png)
 
+Next, let's select the geography. Click on the `Geographies` tab and set the following parameters:
+* Geographic type: Census Tract - 140
+* State: New York
+Once you've done this you will have the option to select the county. Select 'Bronx' and once the window below populates, highlight 'All Census Tracts Within Bronx County, New York' and click `ADD TO YOUR SELECTIONS`. Again, you should see this item added to your selections window. Do the same thing for all the census tracts in the rest of the counties in the city: New York (Manhattan), Kings (Brooklyn), Queens and Richmond (Staten Island).
+
+![Geographies](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/04_Geographies.png)
+
 * Place of birth for foreign born (B05006)
   * Census Tracts
     * Continents
