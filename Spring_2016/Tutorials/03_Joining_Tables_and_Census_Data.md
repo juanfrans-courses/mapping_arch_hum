@@ -23,7 +23,7 @@ The two images below show census block groups in orange and census tracts in blu
 
 To download the census tracts boundaries for New York State go [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php) and choose `2015` and `Census Tracts` and then `New York` and download.
 
-Once we have the 'empty' geography boundaries for the census tracts we need to download the actual data. For this we will use the [American FactFinder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) which is one of the portals where you can download census data. However, note that this is not the only place to download census data. Some other resources are the [U.S. Census Bureau website](https://www.census.gov/en.html) and ***********************************************. For this exercise, though, we will use the [American FactFinder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml).
+Once we have the 'empty' geography boundaries for the census tracts we need to download the actual data. For this we will use the [American FactFinder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) which is one of the portals where you can download census data.
 
 Once you are on the American FactFinder website, click on the `ADVANCED SEARCH` tab. Here we will search for the data at multiple levels:
 * Geography: census tracts for New York City counties
@@ -71,6 +71,24 @@ The last thing we need to do is modify the table so that it fits the way data is
 ![Final table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/05_Final_Table.png)
 
 Finally, click on `Download` and make sure you are selecting 'Comma delimited (.csv) format (data rows only)', 'Data and annotations in a single file' and 'Include descriptive data element names'. Click `OK` and then once your files are ready `Download` again.
+
+#### Formatting Census Data
+In order to bring this census data into qGIS we need to re-format the table, so that it is correctly read by the program and we can join it to its geographic boundaries. This is a two step process: first, we will format the actual table in Excel, Google Spreadsheet or a simple text editor and, second, we will create a .csvt file, which will tell qGIS the exact format for each of the fields in the table.
+
+Again, as with many things GIS, there are multiple ways of formatting the data. In our case we could do it using Excel, Google Documents (Spreadsheet) or even a simple text editor. Here, though, I will show you how to do it both through Excel and through a text editor. If you know how to do it in Excel you should be able to figure out how to re-format the data using a Google Docs Spreadsheet.
+
+The great advantage of using Excel (or Google Docs) is that if you need to, you can add and **calculate** new fields into your data; for example, in our case, you would be able to calculate what percentage of the total population was foreign born and add that as a field (you could also do that inside qGIS). However, if you were to do that in a text editor, you would need to manually calculate the value for every single row. On the other hand, doing the re-formating through a simple text editor means that you can control the format of the data much more and that you won't have any problems with Excel auto-converting your data into other types, for example, from text into numbers or vice versa.
+
+* Re-formating data in Excel:
+  * First, open a new file in Excel.
+  * Once you've opened it, click on `File`, `Open...` and navigate to the folder where you saved your downloaded census tables.
+  * Make sure you are able to open `All Files` not just `All Readable Files`. In my Mac, that option is called `Enable` and in Windows you should select the option `All Files (*.*)` instead of `All Excel Files (...)`.
+  * Once you've done this you will be able to select the file called 'ACS_14_5YR_B02005_with_ann.csv' and open it.
+  * Here's a preview of the raw file:
+
+  ![Excel Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/06_Excel_Table.png)
+
+
 
 * Place of birth for foreign born (B05006)
   * Census Tracts
