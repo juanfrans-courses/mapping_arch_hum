@@ -175,10 +175,34 @@ Another great advantage of using Excel or Google Docs is that if you need to del
 
 ![Import options .txt file](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/13_Import_Options_Txt.png)
 
+* Click `OK` to import the table, and once you do it you should have it listed on your 'Layers Panel'. If you right-click on the table and open the attribute table you should see all your values there.
 
+#### Joining tables to shapefiles
+* To join the census table to the shapefile with the geographic boundaries right-click on the census boundaries and go to the properties panel. There, choose the `Joins` tab.
+* In the `Joins` tab, click on the button with the plus sign to create a new join with the following settings:
+  * Join layer: B05002 (the census table)
+  * Join field: GeoID2 (the field that contains the unique identifier for each census tract)
+  * Target field: GEOID (the filed in the census boundaries that contains the unique identifier)
+  * Custom field name prefix: checked and delete what is in there. This is useful when you want to add a prefix for the fields that are joined, for example, when you are joining multiple tables and you want to differentiate them. In our case, since we are only joining one table we don't need this prefix.
+  * The menu should look something like this:
 
+  ![Join menu](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/14_Join_Menu.png)
 
+  * Click `OK` and then `OK` again.
 
+* Now, if you open the attribute table of the census boundaries you will notice that a lot of the census tracts have the information from the table that we added. The ones that have `NULL` values are the ones outside New York City. Remember that we downloaded census tract boundaries not just for New York City but for New York State, so now we need to filter those census tracts out.
+* An easy way to do this is to select all the census tracts that are not `NULL` for one of our main field, for example the GeoDisplay field.
+* To do this, go to the attribute table and create a selection expression that says `"GeoDisplay" IS NOT NULL` and click `Select`. You should have now 2,167 features selected and if you click `Close` and close the attribute table too, these selected features should correspond to New York City.
+
+![Selected Features](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/15_Selected_Features.png)
+
+* Now export these selected features as a new shapefile and make sure it takes the right projection for New York City. Make sure also that when you are exporting you check the option that says `Save only selected features`, otherwise you will export all features, including the ones that don't have any census data.
+* Now you have a shapefile only with New York City census tracts with all the data that we downloaded.
+
+#### Symbolizing the data
+The last part in our process is to finally symbolize the data and see what comes out of it. For this tutorial we will symbolize the number of people who are foreign born in each census tract. However, it is very important to **normalize** the data. Since not all census tracts have the same number of people living in them, showing just total count of foreign born people would not be useful; the census tracts with more inhabitants would probably have more foreigners too. That's why we should normalize by the total number of people living in each census tract.
+
+In general, you should always try to normalize your data and this is usually going to be either by population or by area. Some examples are, cars per inhabitant, murders per 1,000 people, cell phones per person, square feet per acre, income per capita. Always ask yourself if it wouldn't make more sense to view the data normalized by something else instead of just raw numbers.
 
 
 
