@@ -186,7 +186,7 @@ Another great advantage of using Excel or Google Docs is that if you need to del
   * Custom field name prefix: checked and delete what is in there. This is useful when you want to add a prefix for the fields that are joined, for example, when you are joining multiple tables and you want to differentiate them. In our case, since we are only joining one table we don't need this prefix.
   * The menu should look something like this:
 
-  ![Join menu](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/14_Join_Menu.png)
+  ![Join menu](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/14_Join_Menu.png | width=200)
 
   * Click `OK` and then `OK` again.
 
