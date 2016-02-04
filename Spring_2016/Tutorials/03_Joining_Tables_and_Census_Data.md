@@ -79,14 +79,59 @@ Again, as with many things GIS, there are multiple ways of formatting the data. 
 
 The great advantage of using Excel (or Google Docs) is that if you need to, you can add and **calculate** new fields into your data; for example, in our case, you would be able to calculate what percentage of the total population was foreign born and add that as a field (you could also do that inside qGIS). However, if you were to do that in a text editor, you would need to manually calculate the value for every single row. On the other hand, doing the re-formating through a simple text editor means that you can control the format of the data much more and that you won't have any problems with Excel auto-converting your data into other types, for example, from text into numbers or vice versa.
 
+Another great advantage of using Excel or Google Docs is that if you need to delete multiple fields (for example, all the margin of error fields), you can easily do it. Doing it in the text editor would be a nightmare. That being said, there are options, when downloading the data from American FactFinder, to not get the margin of error fields.
+
 * Re-formating data in Excel:
   * First, open a new file in Excel.
   * Once you've opened it, click on `File`, `Open...` and navigate to the folder where you saved your downloaded census tables.
   * Make sure you are able to open `All Files` not just `All Readable Files`. In my Mac, that option is called `Enable` and in Windows you should select the option `All Files (*.*)` instead of `All Excel Files (...)`.
-  * Once you've done this you will be able to select the file called 'ACS_14_5YR_B02005_with_ann.csv' and open it.
+  * Once you've done this you will be able to select the file called 'ACS_14_5YR_B05002_with_ann.csv' and open it.
   * Here's a preview of the raw file:
 
   ![Excel Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/06_Excel_Table.png)
+
+  * What we need to do now is two things: One, to rename the field names (header) and get rid of the second row, which is also a kind of header. And two, delete all the margin of error fields since we are not going to use them.
+  * In terms of renaming the fields, ArcGIS is pretty peculiar about field names and although I haven't tested it, I assume qGIS is too. In any case it's better to be on the safe side and rename the fields to match the ArcGIS requirements. These are: maximum 8 characters, no spaces, no weird characters and start with a letter, not a number.
+  * So first, delete all the margin of error columns. Just right-click on the column and say `Delete`. You should be left with 18 columns.
+  * Now, rename the fields in the following way:
+    * GeoID
+    * GeoID2
+    * GeoDisplay
+    * TotalPop
+    * Native
+    * InState
+    * OtherSt
+    * OtherNE
+    * OtherMW
+    * OtherS
+    * OtherW
+    * N_Out
+    * PuertoR
+    * USIsland
+    * AbroadAP
+    * Foreign
+    * FrgNat
+    * FrgNonC
+  * The names don't necessarily need to be like these ones. There's no standard way of naming these fields. The only thing I would recommend is to name them as close as possible to something you can actually read, so that you and the other people who use these files can easily understand what they mean. In the end, that is what metadata is there for, to tell you exactly what each of the fields means.
+  * Once you've renamed your fields, delete the second row. Now you are left with only one header field and the actual data.
+
+  ![Excel Final Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/07_Excel_Final_Table.png)
+
+  * Finally, save your file as a .csv file. If you are on a Mac, make sure you save your file as `Windows Comma Separated (.csv)`. There seems to be a problem with the line endings when you save it as the default .csv format.
+* Re-formating in a text editor:
+  * If you don't have Excel, or you don't want to use it, you can also re-format your file in a simple text editor. Here, I'll use the default Mac TextEdit application. You can also use your Windows Notepad or Sublime Text. As a side note, I highly recommend [Sublime Text](https://www.sublimetext.com/) as a text editor, specially if you are going to be doing some coding.
+  * First, open the original census table ('ACS_14_5YR_B05002_with_ann.csv') with your text editor.
+
+  ![Text Edit Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/08_Text_Edit_Table.png)
+
+  * Next, before you modify the file, save it as something else, so that you don't overwrite the original one. In my case I will save it as B05002_Text_Edit. Mac will automatically save it as a .txt file, which is not the right format. However, once we are done modifying the file we will change the extension back to .csv. For now, .txt is fine.
+  * Next, you need to replace the first line (the one that goes from 'GEO.id' to 'HD02_VD15') with the right headers. However, since we are not deleting the columns for the margins of error we need to add those headers. The new first line should be something like this:
+    * `GeoID,GeoID2,GeoDisplay,TotalPop,MOTotP,Native,MONat,InState,MOIS,OtherSt,MOOthS,OtherNE,MONE,OtherMW,MOMW,OtherS,MOS,OtherW,MOW,N_Out,MONatO,PuertoR,MOPR,USIsland,MOIsl,AbroadAP,MOAbr,Foreign,MOFrg,FrgNat,MOFrgNt,FrgNonC,MOFrgNC`
+    * Notice all the MO (margin of error) and the commas separating all the headers. These are very important.
+  * Now delete the second line, the one that goes from 'Id' to 'Not a U.S. citizen'.
+  * Your new file should look something like this:
+
+  ![Text Edit Final Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/09_Text_Edit_Final_Table.png)
 
 
 
