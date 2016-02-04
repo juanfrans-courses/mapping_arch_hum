@@ -117,14 +117,14 @@ Another great advantage of using Excel or Google Docs is that if you need to del
 
   ![Excel Final Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/07_Excel_Final_Table.png)
 
-  * Finally, save your file as a .csv file. If you are on a Mac, make sure you save your file as `Windows Comma Separated (.csv)`. There seems to be a problem with the line endings when you save it as the default .csv format.
+  * Finally, save your file as a .csv file. If you are on a Mac, make sure you save your file as `Windows Comma Separated (.csv)`. There seems to be a problem with the line endings when you save it as the default .csv format. I am saving my file as `B05002.csv`.
 * Re-formating in a text editor:
   * If you don't have Excel, or you don't want to use it, you can also re-format your file in a simple text editor. Here, I'll use the default Mac TextEdit application. You can also use your Windows Notepad or Sublime Text. As a side note, I highly recommend [Sublime Text](https://www.sublimetext.com/) as a text editor, specially if you are going to be doing some coding.
   * First, open the original census table ('ACS_14_5YR_B05002_with_ann.csv') with your text editor.
 
   ![Text Edit Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/08_Text_Edit_Table.png)
 
-  * Next, before you modify the file, save it as something else, so that you don't overwrite the original one. In my case I will save it as B05002_Text_Edit. Mac will automatically save it as a .txt file, which is not the right format. However, once we are done modifying the file we will change the extension back to .csv. For now, .txt is fine.
+  * Next, before you modify the file, save it as something else, so that you don't overwrite the original one. In my case I will save it as B05002_Text_Edit. TextEdit or Notepad will automatically save it as a .txt file, which is fine.
   * Next, you need to replace the first line (the one that goes from 'GEO.id' to 'HD02_VD15') with the right headers. However, since we are not deleting the columns for the margins of error we need to add those headers. The new first line should be something like this:
     * `GeoID,GeoID2,GeoDisplay,TotalPop,MOTotP,Native,MONat,InState,MOIS,OtherSt,MOOthS,OtherNE,MONE,OtherMW,MOMW,OtherS,MOS,OtherW,MOW,N_Out,MONatO,PuertoR,MOPR,USIsland,MOIsl,AbroadAP,MOAbr,Foreign,MOFrg,FrgNat,MOFrgNt,FrgNonC,MOFrgNC`
     * Notice all the MO (margin of error) and the commas separating all the headers. These are very important.
@@ -132,6 +132,26 @@ Another great advantage of using Excel or Google Docs is that if you need to del
   * Your new file should look something like this:
 
   ![Text Edit Final Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/09_Text_Edit_Final_Table.png)
+
+* Creating the .csvt file:
+  * In both cases you need to create also a .csvt file. This file will tell qGIS exactly what type of data each of the fields is in. The different types of data your fields can take are:
+    * String - Represents text
+    * Integer - Represents whole numbers
+    * Real - Represents both negative and positive numbers, with decimal points
+    * Date - Date in the format YYYY-MM-DD
+    * Time - Time in the format HH:MM:SS+nn
+    * DateTime - Date and time in the format YYYY-MM-DD HH:MM:SS+nn
+  * So, for every column we need to specify what type the data is in.
+  * In your text editor, open a new file.
+  * Now, for every field, write the type of data it takes in quotation marks. So, for the Excel file, where we don't have the margin of error fields you would write: `"String","String","String","Integer","Integer","Integer","Integer","Integer","Integer","Integer","Integer","Integer","Integer","Integer","Integer","Integer","Integer","Integer"` Note that every item is separated by a comma and that the first three fields, even though they seem like they are numbers, are actually text fields. This is very important, since we are going to use those fields to join our census table to the census boundaries, which also contain those fields as text. If we have one file with text and another with integers or real numbers, the program won't be able to match it.
+  * If you are working on Mac's TextEdit you need to format your file as 'Plain Text'. To do this click on `Format` and then `Make Plain Text`. This will change your file from an .rtf to a simple .txt.
+  * Save your file with the same name as the table but with a different extension. It is important to do this so that qGIS understands that this .csvt file corresponds to the other .csv or .txt file. In both Windows Notepad and in Mac TextEdit you need to manually type the extension (.csvt) and in TextEdit you need to un-check the option that says 'If no extension is provided, use .txt'.
+  * If you are using the table we modified with Excel your .csvt file would be named `B05002.csvt`
+  * If you were using the table we modified with TextEdit or Notepad you would name your file `B05002_Text_Edit.csvt`
+
+  * Your final file should look something like this:
+
+  ![CSVT File](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/10_CSVT_File.png)
 
 
 
