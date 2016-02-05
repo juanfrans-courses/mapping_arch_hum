@@ -1,4 +1,4 @@
-## Notes - Maps and Data (2/4/2016)
+## Notes - Maps and Data (2/5/2016)
 
 ### 1. New Students, blog and software
 * New students? If so, blog, assignments, final project and syllabus
