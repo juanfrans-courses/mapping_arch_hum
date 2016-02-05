@@ -84,6 +84,9 @@ February 5 & 12
 	* Community districts or census block groups
 * ***Assignment: [Tutorial 02](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/02_Data_Types_and_311.md) - Create two different maps based on 311 data, one quantitative and one qualitative***
 * ***Assignment: Create your own dataset (including metadata) and map it***
+* Readings:
+  * *[Goodchild, M., Toward critical spatial thinking in the social sciences and humanities](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2010_goodchild_toward-critical-spatial-thinking.pdf)* (Required)
+  * *[Pavlovskaya, M., Non-quantitative GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2009_pavlovskaya_non-quantitative-GIS.pdf)
 
 ### Weeks 5 & 6: Working with census data
 February 19 & 26
