@@ -273,7 +273,7 @@ Finally, to create the last version of our map we need to normalize our data by 
 
 Once you are finished with this go ahead and adjust colors, strokes and layer order. And finally, create a print composer, add a legend, title, explanation, source and a scale bar, and export your map as a PDF file. Your final map should look something like this:
 
-![Final Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/22_Final_Map.png)
+![Final Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/22_Final_Map.png)
 
 #### Deliverables
 Upload one (PDF) census data map to Courseworks. The map should be of something different than 'Foreign Born Population'. Your map should include proper legend, scale bar, title, explanation and source. Choose colors, line weights and fonts wisely.
