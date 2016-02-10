@@ -249,11 +249,32 @@ First, just so you can see the difference between the different classification m
 
   ![Standard Deviations](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/19_Standard_Deviations.png)
 
+* In any case, this little exercise shows you the importance of choosing the right classification method for your data.
+
+Finally, to create the last version of our map we need to normalize our data by the total population in the census tract. So the actual data that we will use is going to be: 'Foreign Population' / 'Total Population'. In other words, we will shoe percentage of foreign born population per census tract.
+* To do this first go to the classification option for the census dataset.
+* In the `Column` option, click on the `ε` option. Here we will write a little expression to normalize our data.
+
+![Expression](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/20_Expression.png)
+
+* In this panel, choose the 'Foreign' field and divide it by the 'TotalPop' field. Your expression should read: ` "Foreign" / "TotalPop"`.
+
+![Normalize](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/21_Normalize.png)
+
+* Once you've done this, choose the right classification method (in our case that's probably going to be 'Natural Breaks' or 'Equal Intervals') and the right color scheme.
+* You can always modify slightly the values for the classes to round off the numbers and make the value ranges be more understandable. You do this by clicking on the specific value under `Values`.
+* In my case, my value ranges are:
+  * 0 - 0.2
+  * 0.2 - 0.3
+  * 0.3 - 0.4
+  * 0.4 - 0.5
+  * 0.5 - 0.85
+* Once you've classified correctly your data, click `OK` and make sure your map makes sense.
 
 Once you are finished with this go ahead and adjust colors, strokes and layer order. And finally, create a print composer, add a legend, title, explanation, source and a scale bar, and export your map as a PDF file. Your final map should look something like this:
 
-![Final Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/11_Final_Map.png)
+![Final Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/12_Final_Map.png)
 
 #### Deliverables
-Upload two (PDF) 311 data maps to Courseworks. They should both be of something different than 'noise' complaints. One should be a qualitative map, showing the location of each complaint, and the other should be a quantitative map, showing the number of complaints per census block group in New York City. Your maps should include proper legends, scale bars, titles, explanations and sources. Choose colors, line weights and fonts wisely.
+Upload one (PDF) census data map to Courseworks. The map should be of something different than 'Foreign Born Population'. Your map should include proper legend, scale bar, title, explanation and source. Choose colors, line weights and fonts wisely.
 
