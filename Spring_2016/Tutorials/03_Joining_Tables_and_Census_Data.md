@@ -212,7 +212,7 @@ First, just so you can see the difference between the different classification m
   * The default mode of classification is `Equal Interval`.
   * You will notice that the breaks start from 0 and advance in increments of 1660.2. The `Equal Interval` takes the full range of the *values* and divides it into the number of classes (in our case, 5).
   * If you click on the `Histogram` option and then on the `Load values` button you will see how the program divides the data.
-  * Click `OK` and take a look at the map.
+  * Click `OK` and take a look at the map:
 
   ![Equal Interval](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/16_Equal_Interval.png)
 
@@ -224,16 +224,22 @@ First, just so you can see the difference between the different classification m
   * Choose `Quantile (Equal Count)` as the classification mode.
   * This classification method gets the total number of features and divides it by the number of classes, so that each class has an equal number of features. The problem with this method is that features that might be very far apart in terms of their values might end up in the same class.
   * Go to the `Histogram` option and click on `Load values` to see how this classification method splits the data.
-  * Click `OK` and take a look at the map.
+  * Click `OK` and take a look at the map:
 
   ![Quantiles](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/17_Quantiles.png)
 
   * Here you see how every class has an equal number of features, but for example the census tract for Co-Op City, which we know has one of the highest counts of foreigners in the city, gets lumped up with many other census tracts, some of which might not have that many foreigners.
 
+* Natural Breaks (Jenks)
+  * Now change the classification method to `Natural Breaks (Jenks)`.
+  * This classification method looks at the data and tries to maximize the difference between classes while minimizing the difference inside each class.
+  * Take a look at the `Histogram` to see how this classification method treats the data.
+  * You see how the divisions in the data follow the general pattern of the histogram.
+  * Click `OK` and take a look at the map:
 
+  ![Natural Breaks](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/18_Natural_Breaks.png)
 
-
-
+  * This map is probably the most balanced one, clearly underlining the census tracts that have high values but still showing the variation in the rest of the census tracts.
 
 
 
