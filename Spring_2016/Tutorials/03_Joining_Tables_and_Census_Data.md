@@ -204,7 +204,20 @@ The last part in our process is to finally symbolize the data and see what comes
 
 In general, you should always try to normalize your data and this is usually going to be either by population or by area. Some examples are, cars per inhabitant, murders per 1,000 people, cell phones per person, built square footage per acre of land, income per capita. Always ask yourself if it wouldn't make more sense to view the data normalized by something else instead of just raw numbers.
 
+First, just so you can see the difference between the different classification methods, let's classify the census data. We will do it with the raw numbers, knowing that for our final map we will normalize the data based on the total population in each census tract:
+* Equal Interval classification:
+  * Go to the properties of your census data shapefile and then to the style tab.
+  * Change the classification from `Single Symbol` to `Graduated`.
+  * In the column field, choose 'Foreign' and click on the `Classify` button. The panel in the middle should populate with 5 different ranges of values.
+  * The default mode of classification is `Equal Interval`.
+  * You will notice that the breaks start from 0 and advance in increments of 1660.2. The `Equal Interval` takes the full range of the *values* and divides it into the number of classes (in our case, 5).
+  * If you click on the `Histogram` option and then on the `Load Values` button you will see how the program divides the data.
+  * Click `OK` and take a look at the map.
 
+  ![Equal Interval](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/16_Equal_Interval.png)
+
+  * You will notice that most census tracts fall within the first or second class and that there are only a handful of them in the third, fourth or fifth.
+  * With this classification method we see the effect an extreme value can have on the graphic representation of data: the census tract in the Bronx that represents Co-Op City is skewing the data towards the top so that there are too few census tracts in the intermediate classes.
 
 
 
