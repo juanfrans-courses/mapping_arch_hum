@@ -211,7 +211,7 @@ First, just so you can see the difference between the different classification m
   * In the column field, choose 'Foreign' and click on the `Classify` button. The panel in the middle should populate with 5 different ranges of values.
   * The default mode of classification is `Equal Interval`.
   * You will notice that the breaks start from 0 and advance in increments of 1660.2. The `Equal Interval` takes the full range of the *values* and divides it into the number of classes (in our case, 5).
-  * If you click on the `Histogram` option and then on the `Load Values` button you will see how the program divides the data.
+  * If you click on the `Histogram` option and then on the `Load values` button you will see how the program divides the data.
   * Click `OK` and take a look at the map.
 
   ![Equal Interval](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/16_Equal_Interval.png)
@@ -219,6 +219,16 @@ First, just so you can see the difference between the different classification m
   * You will notice that most census tracts fall within the first or second class and that there are only a handful of them in the third, fourth or fifth.
   * With this classification method we see the effect an extreme value can have on the graphic representation of data: the census tract in the Bronx that represents Co-Op City is skewing the data towards the top so that there are too few census tracts in the intermediate classes.
 
+* Quantile (Equal Count)
+  * Now return to the classification option in the properties of the dataset.
+  * Choose `Quantile (Equal Count)` as the classification mode.
+  * This classification method gets the total number of features and divides it by the number of classes, so that each class has an equal number of features. The problem with this method is that features that might be very far apart in terms of their values might end up in the same class.
+  * Go to the `Histogram` option and click on `Load values` to see how this classification method splits the data.
+  * Click `OK` and take a look at the map.
+
+  ![Quantiles](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/17_Quantiles.png)
+
+  * Here you see how every class has an equal number of features, but for example the census tract for Co-Op City, which we know has one of the highest counts of foreigners in the city, gets lumped up with many other census tracts, some of which might not have that many foreigners.
 
 
 
