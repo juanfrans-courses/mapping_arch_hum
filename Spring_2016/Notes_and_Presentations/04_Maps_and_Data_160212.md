@@ -5,3 +5,5 @@
 * How to package maps with layers through [QConsolidate](http://plugins.qgis.org/plugins/qconsolidate/)
 * Chrome blocking scripts when you try to download things from the TIGER [website](https://www.census.gov/cgi-bin/geo/shapefiles/index.php).
 * Dock the attribute table in the qGIS window: Under qGIS preferences, in the data sources tab and under feature attributes and table, there's an option to open attribute table in a dock window.
+* [Adobe Kuler](https://color.adobe.com)
+* [Color Brewer](http://colorbrewer2.org/)

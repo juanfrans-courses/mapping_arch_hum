@@ -241,9 +241,13 @@ First, just so you can see the difference between the different classification m
 
   * This map is probably the most balanced one, clearly underlining the census tracts that have high values but still showing the variation in the rest of the census tracts.
 
+* Standard Deviation
+  * Finally, change the classification method to `Standard Deviation`.
+  * With this classification method it's always good to also change the color scale to a 'diverging' color scheme, something that starts with one color, goes through a neutral (or white) color and ends up in another color. This type of color scale makes it clear that there are some 'neutral' values and that there are some other values that are higher or lower than those.
+  * However, there's a problem with how qGIS classifies values here. The problem that qGIS has here is that it doesn't make the 'neutral' color correspond to the values around the mean or within 1 standard deviation of the mean. In this case, if you click `OK` you will see that the 'neutral' color actually corresponds to the values between 2 and 4 standard deviations away from the mean, which is pretty misleading. This classification method would only actually work well with a normally distributed dataset, which doesn't always happen.
+  * Take a look at these two maps: they are based on the same dataset. The only difference is that the left one was made with qGIS and the other one with ArcMap. The ArcMap one correctly makes the 'neutral' color correspond to the values that are between -0.5 and +0.5 standard deviations away from the mean, so the most 'normal' values.
 
-
-
+  ![Standard Deviations](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/03_Joining_Tables_and_Census_Data/19_Standard_Deviations.png)
 
 
 Once you are finished with this go ahead and adjust colors, strokes and layer order. And finally, create a print composer, add a legend, title, explanation, source and a scale bar, and export your map as a PDF file. Your final map should look something like this:
