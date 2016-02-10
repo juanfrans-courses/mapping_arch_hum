@@ -202,7 +202,9 @@ Another great advantage of using Excel or Google Docs is that if you need to del
 #### Symbolizing the data
 The last part in our process is to finally symbolize the data and see what comes out of it. For this tutorial we will symbolize the number of people who are foreign born in each census tract. However, it is very important to **normalize** the data. Since not all census tracts have the same number of people living in them, showing just total count of foreign born people would not be useful; the census tracts with more inhabitants would probably have more foreigners too. That's why we should normalize by the total number of people living in each census tract.
 
-In general, you should always try to normalize your data and this is usually going to be either by population or by area. Some examples are, cars per inhabitant, murders per 1,000 people, cell phones per person, square feet per acre, income per capita. Always ask yourself if it wouldn't make more sense to view the data normalized by something else instead of just raw numbers.
+In general, you should always try to normalize your data and this is usually going to be either by population or by area. Some examples are, cars per inhabitant, murders per 1,000 people, cell phones per person, built square footage per acre of land, income per capita. Always ask yourself if it wouldn't make more sense to view the data normalized by something else instead of just raw numbers.
+
+
 
 
 
