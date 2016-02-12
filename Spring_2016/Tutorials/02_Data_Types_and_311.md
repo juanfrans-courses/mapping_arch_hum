@@ -72,11 +72,17 @@ You should now see the data only for 'Noise' complaints created between the star
 * Even though your points are already on the map, this is just a temporary layer. If you remove the layer, you will need to go through the whole importing process to add them again. To avoid this, we need to export the layer as a shapefile.
 * However before you export it, you need to select only the records that have actual coordinate data. If you open the attribute table and look at the `Latitude` or `Longitude` fields you will notice that some entries don't have any geographic data (they are `Null`). We need, therefore, to select only the features that have geographic information and export only those:
   * Open the attribute table and click on the `Select features using an expression` button.
-  * Build a query that reads ` "Latitude" IS NULL` and click on the `Select` button at the bottom right corner.
+
+  ![Select Features with Expression](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/14_Select_Expression.png)
+
+  * In this menu we will construct a query selecting only the features that have a `Null` value for latitude or longitude (and then we will invert that selection to get all the records that have geographic attributes and export those as a new layer).
+  * The selecting by expression menu has three different panels: the left-hand one is where you will construct your query; the middle one is where you will find the different functions, operator and, more importantly, the attribute table fields; and the right-hand panel will have a description of whatever you select in the middle panel.
+  * To build the query, expand the 'Fields and Values' drop-down menu in the middle panel and double-click on 'Latitude'. You will notice the  "Latitude" is added to the left-hand panel. Now type 'IS NULL' after that. This means that we will select only the records where the field 'Latitude' has a `Null` value.
 
   ![Select Null](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/12_Selecting_Null.png)
 
-  * Once you've selected the `Null` records, close the 'Select by expression' window. At the top of the attribute table you should read that there are around 547 features selected.
+  * Now click on the `Select` button at the bottom right corner.
+  * Once you've selected the `Null` records, close the 'Select by expression' window (click the `Close` button). At the top of the attribute table you should read that there are around 547 features selected.
   * Now, switch the selection, so that we only select the records that have correct geographic data. To do this press the `Invert Selection` button at the top:
 
   ![Invert Selection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/13_Invert_Selection.png)
@@ -111,7 +117,6 @@ Let's say you want to identify which census block group has the highest number o
 
   ![Attribute Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/05_Attribute_Table.png)
 
-  * The selecting by expression menu has three different panels: the left-hand one is where you will construct your query; the middle one is where you will find the different functions, operator and, more importantly, the attribute table fields; and the right-hand panel will have a description of whatever you select in the middle panel.
   * To build the query, expand the 'Fields and Values' drop-down menu in the middle panel and double-click on 'COUNTYFP'. You will notice the  "COUNTYFP" is added to the left-hand panel. Now type '=' after that and then click on the `all unique` button below the right-hand panel; this will show a list of all the unique values this field contains. Double-click on '005' to complete the first part of the query on the left-hand panel.
   * The query so far reads "COUNTYFP" = '005'. Notice that the '005' is under single quotation marks. This is because the value is a string (text), not a number. If it was a number you would only type 5, without quotations, and you would be able to do normal math operations with it. Instead, since it's a string, you have to type it with quotations and it behaves like text.
   * Now we need to add the other possibilities, with the operator `or` which we could type or select from the 'Operators' menu. Your final query should read something like this: `"COUNTYFP" = '005' or "COUNTYFP" = '047' or "COUNTYFP" = '061' or "COUNTYFP" = '081' or "COUNTYFP" = '085'`.
