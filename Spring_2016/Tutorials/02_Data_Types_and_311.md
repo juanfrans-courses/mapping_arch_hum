@@ -69,12 +69,25 @@ You should now see the data only for 'Noise' complaints created between the star
 ![CSV Menu](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/04_CSV_Menu.png)
 * Once you click `OK` you will get a warning that says that 547 records were discarded because they didn't have geometry definitions. Click `Close`. These were some records in the dataset that we downloaded that for some reason didn't include location data.
 * Next, qGIS will ask you to select a coordinate reference system (map projection) for this layer. Since we are adding this data based on the latitude and longitude information (decimal degrees, as opposed to feet) we need to select the `WGS 84`, which is the coordinate system that will correctly interpret this data. You will find it under `Geographic Coordinate Systems`. You will find more information on this coordinate system [here](https://en.wikipedia.org/wiki/World_Geodetic_System). Once you select the correct coordinate system, your points will appear on the map.
-* Even though your points are already on the map, this is just a temporary layer. If you remove the layer, you will need to go through the whole importing process to add them again. To avoid this, export the points as a Shapefile:
-  * Right-click on the new layer and select `Save As...`
+* Even though your points are already on the map, this is just a temporary layer. If you remove the layer, you will need to go through the whole importing process to add them again. To avoid this, we need to export the layer as a shapefile.
+* However before you export it, you need to select only the records that have actual coordinate data. If you open the attribute table and look at the `Latitude` or `Longitude` fields you will notice that some entries don't have any geographic data (they are `Null`). We need, therefore, to select only the features that have geographic information and export only those:
+  * Open the attribute table and click on the `Select features using an expression` button.
+  * Build a query that reads ` "Latitude" IS NULL` and click on the `Select` button at the bottom right corner.
+
+  ![Select Null](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/12_Selecting_Null.png)
+
+  * Once you've selected the `Null` records, close the 'Select by expression' window. At the top of the attribute table you should read that there are around 547 features selected.
+  * Now, switch the selection, so that we only select the records that have correct geographic data. To do this press the `Invert Selection` button at the top:
+
+  ![Invert Selection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/02_Data_Types_and_311/13_Invert_Selection.png)
+
+  * Now you should have all the records that have latitude and longitude selected and we can proceed to export them as a shapefile.
+  * Close the attribute table, right-click on the 311 layer and select `Save As...`
   * In the menu choose the following:
     * Format: `ESRI Shapefile` - (this is the same format of our other layers)
     * Save as: choose the right location and name your file '311_Data'
     * CRS: `EPSG:102718 - NAD_1983_StatePlane_New_York_Long_Island_FIPS_3104_Feet` - (this is the coordinate system we are working with and we want this layer to have the same one)
+    * Make sure you are checking the option that says `Save only selected features`, otherwise you will get an error.
     * Uncheck `Skip attribute creation` - (you still want to retain the attributes associated with each point)
     * Check `Add saved file to map` - (so that once you export the layer, the layer is added to your map)
   * Once you export your layer (and it's automatically added to your map) you can remove the original one by right-clicking and choosing `Remove`.
