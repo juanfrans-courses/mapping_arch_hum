@@ -88,18 +88,24 @@ February 5 & 12
   * *[Goodchild, M., Toward critical spatial thinking in the social sciences and humanities](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2010_goodchild_toward-critical-spatial-thinking.pdf)* (Required)
   * *[Pavlovskaya, M., Non-quantitative GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2009_pavlovskaya_non-quantitative-GIS.pdf)* (Required)
 
-### Weeks 5 & 6: Working with census data
-February 19 & 26
+### Week 5: Working with census data 1
+February 19
 * Understanding census data (decennial, ACS, samples, margins of error, etc)
 * Downloading census data and joining it to shapefiles
 * Making new fields and calculating new values
-* Estimation methods
-* Geoprocessing tools: buffers, clips, unions, update, dissolve, etc
-* Advanced selection methods: select by location, select by attribute, etc
 * Datasets:
 	* Census tracts and census block groups shapefiles
 	* PLUTO dataset
+* Readings:
+  * *[Caquard, S., Narrative Cartography: From Mapping Stories to the Narrative of Maps and Mapping](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2014_caquard_narrative-cartography.pdf)
+
+### Week 6: Working with census data 2
+February 26
+* Estimation methods
+* Geoprocessing tools: buffers, clips, unions, update, dissolve, etc
+* Advanced selection methods: select by location, select by attribute, etc
 * ***Assignment: Create map of census data showing new fields***
+
 
 ### Week 6: Projections
 March 4

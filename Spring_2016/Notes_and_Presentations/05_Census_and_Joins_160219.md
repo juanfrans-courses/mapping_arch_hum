@@ -9,6 +9,7 @@
 * Refining your own dataset (adding attributes and symbolizing)
 * Null values when point in polygon
 * Syntax of python script (calculating field)
+* Sit down with each group and talk about final project
 
 ### 1. Assignments & Final Project
 * Creation of new dataset: not personal data, something else (due on the 17th); different than the quantified self map
