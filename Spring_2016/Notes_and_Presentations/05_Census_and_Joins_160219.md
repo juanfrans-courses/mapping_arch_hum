@@ -49,7 +49,7 @@
   * Background
 * Export as raster w/ lower resolution if file is too big
 
-### 2. 
+### 2. Census tutorial
 
 ### Various
 * Refining your own dataset (adding attributes and symbolizing)
