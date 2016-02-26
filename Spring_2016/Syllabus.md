@@ -97,15 +97,14 @@ February 19
 	* Census tracts and census block groups shapefiles
 	* PLUTO dataset
 * Readings:
-  * *[Caquard, S., Narrative Cartography: From Mapping Stories to the Narrative of Maps and Mapping](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2014_caquard_narrative-cartography.pdf)
+  * *[Caquard, S., Narrative Cartography: From Mapping Stories to the Narrative of Maps and Mapping](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2014_caquard_narrative-cartography.pdf)*
 
 ### Week 6: Working with census data 2
 February 26
 * Estimation methods
 * Geoprocessing tools: buffers, clips, unions, update, dissolve, etc
 * Advanced selection methods: select by location, select by attribute, etc
-* ***Assignment: Create map of census data showing new fields***
-
+* ***Assignment: [Tutorial 03](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/03_Joining_Tables_and_Census_Data.md) - Create map of census data showing new fields***
 
 ### Week 6: Projections
 March 4
@@ -120,7 +119,7 @@ March 11
 
 ### Week 8: Spring break - no class
 March 18
-* ***Assignment: Written critique of a map***
+* ***Assignment: Written critique of a map*** (Due March 23rd)
 
 ### Week 9: Geocoding, georeferencing and editing
 March 25
