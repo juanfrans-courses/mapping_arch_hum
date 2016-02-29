@@ -31,6 +31,8 @@ A projection, or Coordinate Reference System (CRS), is used to describe geograph
 
 ![Select U.S. States](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/03_Selected_US.png)
 
+* Now, we want to re-project the United States to the Albers equal-area conic projection. The Albers projection is a popular choice for thematic maps of the U.S.
+
 #### Joining
 #### Hawaii and Alaska
 
