@@ -9,11 +9,13 @@ This tutorial will incorporate vector datasets provided by Natural Earth.
 #### Datum
 A datum defines the surface to which a given set of lat/lon coordinates is referenced, as well as the position of that surface in relation to the center of the earth. Examples include NAD83 (which we encountered in previous tutorials that used the NAD_1983_StatePlane_New_York_Long_Island_FIPS_3104_Feet projection), WGS84, and NAD27. If you open up the QGIS `Project Properties | CRS` menu, for example, and search for `NAD83`, QGIS will generate a long list of different projections referenced to the NAD83 datum. 
 
-Two datasets that were originally referenced to different datums, but which are then rendered in the same projection, will therefore not line up.
-#### Projection / CRS
+![Layer Projection Metadata](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/00_NAD83_Projections.png)
+
+Two datasets that were originally referenced to different datums, but which are then rendered in the same projection, will not line up.
+#### Projection
 A projection, or Coordinate Reference System (CRS), is used to describe geographic data. A projection is the set of transformations that converts a series of geographic coordinates, which are locations on a curved surface (the datum), into locations on a flat surface.
 #### A note re: QGIS 'on the fly' CRS Transformation
-*_The layer you currently have selected when you check, or uncheck this option, determines its effects._*
+*_The layer you currently have selected when you check or uncheck this option impacts its effect._*
 * If you _uncheck_ `Enable 'on the fly' CRS Transformation`, whether or not you currently have a layer selected does not matter: any layers that started off in a different projection but were transformed to correspond to the first layer you added to the project will be un-transformed, and rendered in the projection associated with the data file.
 * If you _check_ `Enable 'on the fly' CRS Transformation`, you must have the first layer, which determined the projection of the project, selected in the left panel.  
 
@@ -31,7 +33,7 @@ A projection, or Coordinate Reference System (CRS), is used to describe geograph
 
 ![Select U.S. States](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/03_Selected_US.png)
 
-* Now, we want to re-project the United States to the Albers equal-area conic projection. The Albers projection is a popular choice for thematic maps of the U.S. Right-click the states and provinces layer, choose `Save As...`, and select `North_America_Albers_Equal_Area_Conic` (ESPG:102008) as the CRS. 
+* Now, we want to re-project the United States to the Albers equal-area conic projection. The Albers projection is a popular choice for thematic maps of the U.S. Right-click the states and provinces layer, choose `Save As...`, and select `North_America_Albers_Equal_Area_Conic (ESPG:102008)` as the CRS. 
 
 ![Select U.S. States](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/04_CRS_Albers.png)
 
@@ -44,10 +46,10 @@ A projection, or Coordinate Reference System (CRS), is used to describe geograph
 
 ![Select U.S. States](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/06_Check_US_Albers.png)
 
-#### Joining
-#### Hawaii and Alaska
-
-Read [this](https://medium.com/@joshuatauberer/how-that-map-you-saw-on-538-under-represents-minorities-by-half-and-other-reasons-to-consider-a-4a98f89cbbb1#.ih16rv26m) excellent piece on why this method of visualization can be misleading.
+#### _Joining_
+#### _Hawaii and Alaska_
+#### Additional notes
+[Here](https://medium.com/@joshuatauberer/how-that-map-you-saw-on-538-under-represents-minorities-by-half-and-other-reasons-to-consider-a-4a98f89cbbb1#.ih16rv26m) is an excellent piece on why this method of visualization can be misleading.
 
 
 
