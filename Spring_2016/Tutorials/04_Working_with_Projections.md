@@ -55,6 +55,7 @@ As always, there are many possible ways to transform data to fit the needs of yo
 We will be using [FIPS region codes](https://en.wikipedia.org/wiki/List_of_FIPS_region_codes_(S%E2%80%93U)#US:_United_States) to join the Natural Earth vector boundaries with the Census population data. 
 
 #### Re-projecting selected features from the Natural Earth dataset
+Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. Once we isolate those areas, we will re-project them to a projection more suitable for a U.S.-specific thematic map. In addition, because our final map will take into account the size of each state, we will create a column to store area values for each state, which will later on be used to normalize the population count values from the Census data. 
 * Open up a new project in QGIS and add the Natural Earth states and provinces data. The data is referenced to the WGS84 datum, which we can see by navigating to the `Metadata` section under `Layer Properties`. The definition for the layer's projection is under `Layer Spatial Reference System`.
 
 ![Layer Projection Metadata](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/01_Layer_Projection_Metadata.png)
@@ -89,9 +90,9 @@ We will be using [FIPS region codes](https://en.wikipedia.org/wiki/List_of_FIPS_
 
 ![U.S. States Albers Projection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/06_Check_US_Albers.png)
 
-Go ahead and hide the full Natural Earth base layer in the left panel.
+* Go ahead and hide the full Natural Earth base layer in the left panel.
 
-#### Joining
+#### Joining Census data to Natural Earth boundaries
 Earlier in the tutorial, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. 
 
 #### Additional notes
