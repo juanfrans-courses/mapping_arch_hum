@@ -23,9 +23,9 @@ A projection, or Coordinate Reference System (CRS), is used to describe geograph
 
 ### Creating a thematic population map of the U.S.
 #### Downloading Census state population data
-The Natural Earth state boundaries will serve as the 'empty' geography files for this project. As in Tutorial 03, we need to decide on the units of measurement we plan to use before opening a new QGIS project. For this tutorial, we will be visualizing population count normalized by area for each state.
+The Natural Earth state boundaries will serve as the 'empty' geography files for this project. As in Tutorial 03, we need to decide on the units of measurement we plan to use before opening a new QGIS project. For this tutorial, we will be visualizing the population count for each U.S. state normalized by the area of each state.
 
-To download the data for this project, we will be returning again to the [American Fact Finder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) data portal. Click the `Advanced Search` option. Here we will select the following parameters within the `Topics` and `Geographies` levels:
+To download the data for this project, we will be returning again to the [American Fact Finder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) data portal. Navigate to the portal and click the `Advanced Search` option. Here we will select the following parameters within the `Topics` and `Geographies` levels:
 
 * Geography: All States within United States and Puerto Rico
 * Dataset: 2015 Population Estimates
@@ -50,7 +50,7 @@ Click the link to navigate to the table. This view should include a column listi
 Click `OK` when prompted to download the data, and then click the `Download` button once the popup window says the file is complete. The downloaded file will be named `PEP_2015_PEPANNRES`.
 
 #### Transforming Census state population data
-As always, there are many possible ways to transform data to fit the needs of your project. In this case, we will be working in Excel. Unzip the `PEP_2015_PEPANNRES` file, and open up the CSV called `PEP_2015_PEPANNRES_with_ann.csv` in Excel.
+As always, there are many possible ways to transform data to fit the needs of your project. For this tutorial we will be working in Excel. Unzip the `PEP_2015_PEPANNRES` file, and open up the CSV called `PEP_2015_PEPANNRES_with_ann.csv`.
 
 We will be using [FIPS region codes](https://en.wikipedia.org/wiki/List_of_FIPS_region_codes_(S%E2%80%93U)#US:_United_States) to join the Natural Earth vector boundaries with the Census population data. 
 
@@ -63,6 +63,10 @@ We will be using [FIPS region codes](https://en.wikipedia.org/wiki/List_of_FIPS_
 * Open up the attribute table for the Natural Earth layer. Open the `Field Calculator` window by clicking the abacus icon in the top bar. Enter `Area` as the new field name, select `Decimal number (real)` as the `Output field type`, and set the `Precision` to `10`. Open up the `Geometry` menu in the middle panel, and double-click the `$area` variable to add it to the expression panel. Click `OK`.
 
 ![Create Area Field](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/Create_Area_Field.png)
+
+* Confirm that a new `Area` column has appeared on the far right end of the attribute table. Click the pencil icon to toggle out of editing mode, and save changes to the layer.
+
+![Confirm Creation of Area Field](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/Confirm_Creation_of_Area_Field.png)
 
 * Now that the table contains an `Area` calculation for each region, we are ready to manipulate the shapefile. Since we are creating a map of the United States, the next step is to select all states and provinces that fall within U.S. administrative boundaries. Open up the attribute table for the states and provinces layer, click the `Select features using an expression` option, and build a query to select all features for which the `admin` value is equal to `United States of America`.
 
