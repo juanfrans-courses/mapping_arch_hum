@@ -50,12 +50,34 @@ Click the link to navigate to the table. This view should include a column listi
 Click `OK` when prompted to download the data, and then click the `Download` button once the popup window says the file is complete. The downloaded file will be named `PEP_2015_PEPANNRES`.
 
 #### Transforming Census state population data
-As always, there are many possible ways to transform data to fit the needs of your project. For this tutorial we will be working in Excel. Unzip the `PEP_2015_PEPANNRES` file, and open up the CSV called `PEP_2015_PEPANNRES_with_ann.csv`.
+As always, there are many possible ways to transform data to fit the needs of your project. For this tutorial we will be working in Excel. We will reduce the dataset down to only the values we need, and then create a new column that will enable us to join the data to the Natural Earth shapefile.
+* Unzip the `PEP_2015_PEPANNRES` file, and open up the CSV called `PEP_2015_PEPANNRES_with_ann.csv`. The file should look like this:
 
-We will be using [FIPS region codes](https://en.wikipedia.org/wiki/List_of_FIPS_region_codes_(S%E2%80%93U)#US:_United_States) to join the Natural Earth vector boundaries with the Census population data. 
+![U.S. Census Data Population Estimates Excel](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/Population_Data_Excel.png)
+
+* In order to create our map, the only data we need is state name, state ID, and population count. 
+	* To narrow the dataset down to only these values, delete every column *except* for `GEO.id`, `GEO.display-label`, and the last column on the right, `respop72015`. 
+	* Next, delete the second row of the spreadsheet, which contains descriptions for the columns. 
+
+![Editing Population Estimates](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/Population_Data_Editing.png)
+
+	* Rename the columns to `ID`, `Name`, and `Population`.
+* We will be using [FIPS region codes](https://en.wikipedia.org/wiki/List_of_FIPS_region_codes_(S%E2%80%93U)#US:_United_States) to join the Natural Earth vector boundaries with the Census population data. The value in the `ID` column is a concatenated string that combines the Census table ID with individual state FIPS codes. We need to separate out the FIPS code portion of this ID so that this dataset can match up with the Natural Earth dataset, which already uses FIPS codes to identify each state. To do that, we need to create a new column that pulls *only the last four characters* in the `ID` column. We will use the `Right` function in Excel to do this.
+	* Create a new column in Excel, and name it `FIPS_ID`.
+	* In the first cell of the column, type the formula `=RIGHT(A2,4)`. This will pull the last four characters in the `ID` column, `A4`, into the new `FIPS_ID` column.
+
+![Excel FIPS Formula](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/Excel_FIPS_Formula.png)
+
+	* After typing the formula, hit `Enter`. Double-click on the bottom right corner of the cell to populate the entire column with the new formula.
+
+![Excel Populated FIPS Column](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/Excel_Populated_FIPS_Column.png)
+	
+	* Name the file `StatePopulations.csv`, and save it to the a `Windows Comma Separated` format.
+
+![Excel Save New CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/Excel_Save_New_CSV.png)
 
 #### Re-projecting selected features from the Natural Earth dataset
-Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. Once we isolate those areas, we will re-project them to a projection more suitable for a U.S.-specific thematic map. In addition, because our final map will take into account the size of each state, we will create a column to store area values for each state, which will later on be used to normalize the population count values from the Census data. 
+Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. We will first isolate these areas, then re-project them to a projection more suitable for a U.S.-specific thematic map. In addition, because our final map will take into account the size of each state, we need to create a column to store area values for each state, which will later on be used to normalize the population count values from the Census data. 
 * Open up a new project in QGIS and add the Natural Earth states and provinces data. The data is referenced to the WGS84 datum, which we can see by navigating to the `Metadata` section under `Layer Properties`. The definition for the layer's projection is under `Layer Spatial Reference System`.
 
 ![Layer Projection Metadata](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/01_Layer_Projection_Metadata.png)
