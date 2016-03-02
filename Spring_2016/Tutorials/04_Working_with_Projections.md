@@ -17,9 +17,9 @@ Two datasets that were originally referenced to different datums, but which are 
 A projection, or Coordinate Reference System (CRS), is used to describe geographic data. A projection is the set of transformations that converts a series of geographic coordinates, which are locations on a curved surface (the datum), into locations on a flat surface.
 
 #### A note re: QGIS 'on the fly' CRS Transformation
-The behavior for this option can be unpredictable. The layer you currently have selected when you check or un-check this option impacts its effect.
-* Typically, when you _un-check_ `Enable 'on the fly' CRS Transformation` with the intention of undoing any unexpected transformations, you must have the _transformed_ layer highlighted in the left layer panel to undo its automatic re-projection. If this doesn't work, select the layer _to which_ the transformed layer was transformed, and check/un-check the option again.
-* Likewise, if you _check_ `Enable 'on the fly' CRS Transformation`, you must typically have the layer with the projection you want to _match_ highlighted in the left panel.  
+The behavior for this option can be unpredictable, and QGIS has the annoying habit of resetting this option after certain types of data manipulation. The layer you currently have selected when you check or un-check this option impacts its effect.
+* Typically, when you **un-check** `Enable 'on the fly' CRS Transformation` with the intention of undoing any unexpected transformations, you must have the **transformed** layer highlighted in the left layer panel to undo its automatic re-projection. If this doesn't work, select the layer **to which** the transformed layer was transformed, and check/un-check the option again.
+* Likewise, if you **check** `Enable 'on the fly' CRS Transformation`, you must typically have the layer with the projection you want to **match** highlighted in the left panel.  
 
 ### Creating a thematic population map of the U.S.
 #### Downloading Census state population data
