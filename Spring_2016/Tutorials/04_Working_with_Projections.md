@@ -23,9 +23,9 @@ The behavior for this option can be unpredictable, and QGIS has the annoying hab
 
 ### Creating a thematic population map of the U.S.
 #### Downloading Census state population data
-The Natural Earth state boundaries will serve as the 'empty' geography files for this project. As in Tutorial 03, we need to decide on the units of measurement we plan to use before opening a new QGIS project. For this tutorial, we will be visualizing the population count for each U.S. state normalized by the QGIS-calculated area of each state.
+The Natural Earth state boundaries will serve as the 'empty' geography files for this project. As in Tutorial 03, we need to decide on the units of measurement we plan to use before opening a new QGIS project. For this tutorial, we will be visualizing the population count for each U.S. state.
 
-_**Note:** This tutorial will rely on the native area-claculating functionality in QGIS, which is represented in the default units associated with the project projection. If you would like to work with official state area measurements, download state area boundaries from the [TIGER](https://www.census.gov/cgi-bin/geo/shapefiles/index.php) database, create a new column in the attribute table to concatenate a FIPS value for each state using the `STATEFP` column, and join the layer to the `US_States_Albers` layer we create below. Access the `ALAND` column for true state area measurements._
+_**Note:** This tutorial will visualize only raw population count for each state, not population density. If you would like to visualize population density, download state area boundaries from the [TIGER](https://www.census.gov/cgi-bin/geo/shapefiles/index.php) database, which contain official state area measurements. Create a new column in the attribute table to concatenate a FIPS value for each state using the `STATEFP` column, and join the layer to the `US_States_Albers` layer we create below. Access the `ALAND` column for true state area values, which you can use to calculate population per square kilometer._
 
 To download the data for this project, we will be returning again to the [American Fact Finder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) data portal. Navigate to the portal and click the `Advanced Search` option. Here we will select the following parameters within the `Topics` and `Geographies` levels:
 
@@ -89,51 +89,42 @@ As always, there are many possible ways to transform data to fit the needs of yo
 * Now we are ready to bring all of the data together in QGIS.
 
 #### Re-projecting selected features from the Natural Earth dataset
-We will begin by importing the Natural Earth boundary data into a new QGIS project. Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. We will isolate these areas, then re-project them to a projection more suitable for a U.S.-specific thematic map. In addition, because our final map will take into account the size of each state, we need to create a column to store area values for each state, which will later on be used to normalize the population count values from the Census data. 
+We will begin by importing the Natural Earth boundary data into a new QGIS project. Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. We will isolate these areas, then re-project them to a projection more suitable for a U.S.-specific thematic map. 
 * Open up a new project in QGIS and add the Natural Earth states and provinces data. The data is referenced to the WGS84 datum, which we can see by navigating to the `Metadata` section under `Layer Properties`. The definition for the layer's projection is under `Layer Spatial Reference System`.
 
 ![Layer Projection Metadata](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/12_Layer_Projection_Metadata.png)
 
-* In order to create a map that takes into account the area of each state, we need to add an additional `Area` column to the attribute table of the Natural Earth layer. Currently, the table does not contain any information about the size of each represented region. However, QGIS has a built-in `$area` variable that we can use. It is important to do this _before_ we re-project the layer. Attempting to calculate areas _after_ re-projecting the layer will cause errors.
-* Open up the attribute table for the Natural Earth layer. Open the `Field Calculator` window by clicking the abacus icon in the top bar. Enter `Area` as the new field name, select `Decimal number (real)` as the `Output field type`, and set the `Precision` to `10`. Open up the `Geometry` menu in the middle panel, and double-click the `$area` variable to add it to the expression panel. Click `OK`.
+* Since we are creating a map of the United States, the next step is to select all states and provinces that fall within U.S. administrative boundaries. Open up the attribute table for the states and provinces layer, click the `Select features using an expression` option, and build a query to select all features for which the `admin` value is equal to `United States of America`.
 
-![Create Area Field](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/13_Create_Area_Field.png)
-
-* Confirm that a new `Area` column has appeared on the far right end of the attribute table. Click the pencil icon to toggle out of editing mode, and save changes to the layer.
-
-![Confirm Creation of Area Field](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/14_Confirm_Creation_of_Area_Field.png)
-
-* Now that the table contains an `Area` calculation for each region, we are ready to manipulate the shapefile. Since we are creating a map of the United States, the next step is to select all states and provinces that fall within U.S. administrative boundaries. Open up the attribute table for the states and provinces layer, click the `Select features using an expression` option, and build a query to select all features for which the `admin` value is equal to `United States of America`.
-
-![Select U.S. States](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/15_Select_US.png)
+![Select U.S. States](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/13_Select_US.png)
 
 * Hit `Select` and close the query builder. Navigating back to the map, only the U.S. should be selected.
 
-![Selected U.S. States](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/16_Selected_US.png)
+![Selected U.S. States](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/14_Selected_US.png)
 
 * Now, we want to re-project the United States to the Albers equal-area conic projection. The Albers projection is a popular choice for thematic maps of the U.S. Right-click the states and provinces layer, choose `Save As...`, choose `ESRI Shapefile`, and select `North_America_Albers_Equal_Area_Conic (ESPG:102008)` as the CRS. You may have to search for the specific projection by clicking on the small square icon next to the `CRS` dropdown menu.
 
-![Set CRS to Albers Projection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/17_CRS_Albers.png)
+![Set CRS to Albers Projection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/15_CRS_Albers.png)
 
 * Name the file `US_States_Albers`. Make sure to check the `Save only selected features` option, and hit `OK`.
 * When added to your current project, the new layer will be automatically re-projected to the default WGS84 projection. Opening up the properties of `US_States_Albers` and navigating again to the `Metadata` panel, we can see that the `Layer Spatial Reference System` is _not_ WGS84, but the projection we selected in the previous step. It has been re-projected by QGIS to match the projection of the base layer.
 
-![Check U.S. States Metadata](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/18_Check_US_Metadata.png)
+![Check U.S. States Metadata](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/16_Check_US_Metadata.png)
 
 * To prevent QGIS from automatically re-projecting the new layer to the current project CRS, select the `Project` dropdown in the top menu, select `Project Properties`, and _un-check_ `Enable 'on-the-fly' CRS transformation`. Now, select the `US_States_Albers` layer, right-click, and select `Zoom to Layer`. The features that fall within the administrative boundaries of the U.S. will have been re-projected to the Albers projection.
 
-![U.S. States Albers Projection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/19_Check_US_Albers.png)
+![U.S. States Albers Projection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/17_Check_US_Albers.png)
 
 * Go ahead and hide the full Natural Earth base layer in the left panel.
 
-#### Preparing U.S. Albers layer for join
+#### Preparing U.S. Albers layer to be joined to the Census layer
 Earlier in the tutorial, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. Now, we are almost ready to import the state population CSV into QGIS, and join it to the re-projected `US_States_Albers` layer using the FIPS ID for each state. Before we join the data, however, we have to make one more quick adjustment to the `US_States_Albers` layer, which contains an ambiguous FIPS reference for Minnesota.
 
-![FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/20_MN_FIPS_Alt.png)
+![FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/18_MN_FIPS_Alt.png)
 
 In order for this shapefile to correspond to our CSV file, the FIPS code for Minnesota needs to be `US27`, the value in Minnesota's `fips_alt` column. We are going to edit this manually. 
 
-(**Note:** this is only required for Minnesota, despite the fact that other states also have a `fips_alt` value.)
+_**Note:** this is only required for Minnesota, despite the fact that other states also have a `fips_alt` value._
 
 * Open up the attribute table for the `US_States_Albers` layer.
 * Select the row that corresponds to Minnesota. Its value in the first `adm1_code` column is `USA-3514`.
@@ -143,12 +134,12 @@ In order for this shapefile to correspond to our CSV file, the FIPS code for Min
 * Open up the `Fields and Values` row in the middle panel, and select the `fips_alt` field.
 * Double-click the field to add it to the field calculation panel. 
 
-![Edit FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/21_Editing_MN_FIPS.png)
+![Edit FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/19_Editing_MN_FIPS.png)
 
 * Click `OK`.
 * The `fips` value for Minnesota should now be `US27`, the same as its `fips_alt` value.
 
-**Note:** This change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the U.S. Albers layer and select `Zoom to Layer` in order to return to your previous view.
+_**Note:** This change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the U.S. Albers layer and select `Zoom to Layer` in order to return to your previous view._
 
 #### Joining Census data to Natural Earth boundaries
 Now that the `US_States_Albers` layer is ready, we can import the CSV file and join population values to each state. 
@@ -157,7 +148,7 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 * Click the `No geometry (attribute only table)` option.
 * Ensure the data looks correctly formatted, and click `OK`.
 
-![Import Populations CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/22_Import_CSV.png)
+![Import Populations CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/20_Import_CSV.png)
 
 * Now, double-click on the `US_States_Albers` layer to bring up the `Layer Properties` panel.
 * Navigate to the `Joins` section. 
@@ -166,14 +157,14 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 * Select `fips` as the `Target field`, which is the column name for the FIPS ID in the `US_States_Albers` layer.
 * If you like, create a short `Custom field name prefix` to differentiate your joined columns from the original ones.
 
-![Join CSV to the U.S. Albers Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/23_Join_CSV_and_Albers.png)
+![Join CSV to the U.S. Albers Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/21_Join_CSV_and_Albers.png)
 
 * Click `OK`.
 * Exit the `Layer Properties` panel, and open up the attribute table for the `US_States_Albers` layer. Confirm that three additional fields were added to the end.
 * We now need to save the `US_States_Albers` layer as a new shapefile in order to retain the join. Right-click on the layer, choose `Save as...`, and name it `US_States_Albers_JOINED`. Make sure the selected CRS is still `North_America_Albers_Equal_Area_Conic (ESPG:102008)`, and keep `Add saved file to map` checked. Click `OK`. 
 
-#### Visualizing population per unit area
-
+#### Visualizing population
+For our final visualization, we will be creating a choropleth map that visualizes raw population counts for each state. 
 
 #### Additional notes
 [Here](https://medium.com/@joshuatauberer/how-that-map-you-saw-on-538-under-represents-minorities-by-half-and-other-reasons-to-consider-a-4a98f89cbbb1#.ih16rv26m) is an excellent piece on why this method of visualization can be misleading.
