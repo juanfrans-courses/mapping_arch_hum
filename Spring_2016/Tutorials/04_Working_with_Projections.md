@@ -124,8 +124,51 @@ We will begin by importing the Natural Earth boundary data into a new QGIS proje
 
 * Go ahead and hide the full Natural Earth base layer in the left panel.
 
+#### Preparing U.S. Albers layer for join
+Earlier in the tutorial, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. Now, we are almost ready to import the state population CSV into QGIS, and join it to the re-projected `US_States_Albers` layer using the FIPS ID for each state. Before we join the data, however, we have to make one more quick adjustment to the `US_States_Albers` layer, which contains an ambiguous FIPS reference for Minnesota.
+
+![FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/20_MN_FIPS_Alt.png)
+
+In order for this shapefile to correspond to our CSV file, the FIPS code for Minnesota needs to be `US27`, the value in Minnesota's `fips_alt` column. We are going to edit this manually. *_Important: this is only required for Minnesota, despite the fact that other states also have a `fips_alt` value._*
+
+* Open up the attribute table for the `US_States_Albers` layer.
+* Select the row that corresponds to Minnesota. Its value in the first `adm1_code` column is `USA-3514`.
+* Click the abacus icon to open up the field calculator window. Make sure that `Only update 1 selected features` is checked.
+* Check `Update existing field`.
+* Select `fips` as the field to update.
+* Open up the `Fields and Values` row in the middle panel, and select the `fips_alt` field.
+* Double-click the field to add it to the field calculation panel. 
+
+![Edit FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/21_Editing_MN_FIPS.png)
+
+* Click `OK`.
+* The `fips` value for Minnesota should now be `US27`, the same as its `fips_alt` value.
+
+_Note: this change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the U.S. Albers layer and select `Zoom to Layer` in order to return to your previous view._ 
+
 #### Joining Census data to Natural Earth boundaries
-Earlier in the tutorial, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. Now, we are almost ready to import the state population CSV into QGIS, and join it to the Natural Earth vector layer using the FIPS ID for each state. Before we join the data, however, we have to make one more quick adjustment to the U.S. Albers vector layer, which contains an ambiguous FIPS reference for Minnesota.
+Now that the `US_States_Albers` layer is ready, we can import the CSV file and join population values to each state. 
+* Click the top `Layer` menu, navigate to `Add Layer`, and select `Add Delimited Text Layer...`.
+* Select the previously-saved `StatePopulations.csv` file.
+* Click the `No geometry (attribute only table)` option.
+* Ensure the data looks correctly formatted, and click `OK`.
+
+![Import Populations CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/22_Import_CSV.png)
+
+* Now, double-click on the `US_States_Albers` layer to bring up the `Layer Properties` panel.
+* Navigate to the `Joins` section. 
+* Click the `+` button at the bottom of the window to add a new join, and select `StatePopulations`, your imported CSV file, as the join layer.
+* Select `FIPS_ID` as the `Join field`, which is the column name for the FIPS ID in the CSV file.
+* Select `fips` as the `Target field`, which is the column name for the FIPS ID in the `US_States_Albers` layer.
+* If you like, create a short `Custom field name prefix` to differentiate your joined columns from the original ones.
+
+![Join CSV to the U.S. Albers Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/23_Join_CSV_and_Albers.png)
+
+* Click `OK`.
+* Exit the `Layer Properties` panel, and open up the attribute table for the `US_States_Albers` layer. Confirm that three additional fields were added to the end.
+* We now need to save the `US_States_Albers` layer as a new shapefile in order to retain the join. Right-click on the layer, choose `Save as...`, and name it `US_States_Albers_JOINED`. Make sure the selected CRS is still `North_America_Albers_Equal_Area_Conic (ESPG:102008)`, and keep `Add saved file to map` checked. Click `OK`. 
+
+#### Visualizing population density
 
 #### Additional notes
 [Here](https://medium.com/@joshuatauberer/how-that-map-you-saw-on-538-under-represents-minorities-by-half-and-other-reasons-to-consider-a-4a98f89cbbb1#.ih16rv26m) is an excellent piece on why this method of visualization can be misleading.
