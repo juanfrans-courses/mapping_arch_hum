@@ -56,8 +56,8 @@ As always, there are many possible ways to transform data to fit the needs of yo
 ![U.S. Census Data Population Estimates Excel](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/06_Population_Data_Excel.png)
 
 * In order to create our map, the only data we need is state name, state ID, and population count. 
-  * To narrow the dataset down to only these values, delete every column *except* for `GEO.id`, `GEO.display-label`, and the last column on the right, `respop72015`. 
-  * Next, delete the second row of the spreadsheet, which contains descriptions for the columns. 
+	* To narrow the dataset down to only these values, delete every column *except* for `GEO.id`, `GEO.display-label`, and the last column on the right, `respop72015`.
+	* Next, delete the second row of the spreadsheet, which contains descriptions for the columns. 
 
 	![Editing Population Estimates](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/07_Population_Data_Editing.png)
 
