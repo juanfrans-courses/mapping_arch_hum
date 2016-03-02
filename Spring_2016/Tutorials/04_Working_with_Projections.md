@@ -18,12 +18,14 @@ A projection, or Coordinate Reference System (CRS), is used to describe geograph
 
 #### A note re: QGIS 'on the fly' CRS Transformation
 The behavior for this option can be unpredictable, and QGIS has the annoying habit of resetting this option after certain types of data manipulation. The layer you currently have selected when you check or un-check this option impacts its effect.
-* Typically, when you **un-check** `Enable 'on the fly' CRS Transformation` with the intention of undoing any unexpected transformations, you must have the **transformed** layer highlighted in the left layer panel to undo its automatic re-projection. If this doesn't work, select the layer **to which** the transformed layer was transformed, and check/un-check the option again.
-* Likewise, if you **check** `Enable 'on the fly' CRS Transformation`, you must typically have the layer with the projection you want to **match** highlighted in the left panel.  
+* Typically, when you **un-check** `Enable 'on the fly' CRS Transformation` with the intention of undoing any unexpected transformations, you must have the _transformed_ layer highlighted in the left layer panel to undo its automatic re-projection. If this doesn't work, select the layer _to which_ the transformed layer was transformed, and check/un-check the option again.
+* Likewise, if you **check** `Enable 'on the fly' CRS Transformation`, you must typically have the layer with the projection you want to _match_ highlighted in the left panel.  
 
 ### Creating a thematic population map of the U.S.
 #### Downloading Census state population data
-The Natural Earth state boundaries will serve as the 'empty' geography files for this project. As in Tutorial 03, we need to decide on the units of measurement we plan to use before opening a new QGIS project. For this tutorial, we will be visualizing the population count for each U.S. state normalized by the area of each state.
+The Natural Earth state boundaries will serve as the 'empty' geography files for this project. As in Tutorial 03, we need to decide on the units of measurement we plan to use before opening a new QGIS project. For this tutorial, we will be visualizing the population count for each U.S. state normalized by the QGIS-calculated area of each state.
+
+_**Note:** This tutorial will rely on the native area-claculating functionality in QGIS, which is represented in the default units associated with the project projection. If you would like to work with official state area measurements, download state area boundaries from the [TIGER](https://www.census.gov/cgi-bin/geo/shapefiles/index.php) database, create a new column in the attribute table to concatenate a FIPS value for each state using the `STATEFP` column, and join the layer to the `US_States_Albers` layer we create below. Access the `ALAND` column for true state area measurements. _
 
 To download the data for this project, we will be returning again to the [American Fact Finder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) data portal. Navigate to the portal and click the `Advanced Search` option. Here we will select the following parameters within the `Topics` and `Geographies` levels:
 
