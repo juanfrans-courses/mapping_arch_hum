@@ -18,7 +18,7 @@ A projection, or Coordinate Reference System (CRS), is used to describe geograph
 #### A note re: QGIS 'on the fly' CRS Transformation
 *_The layer you currently have selected when you check or un-check this option impacts its effect._*
 * Typically, when you _un-check_ `Enable 'on the fly' CRS Transformation`, you must have the _transformed_ layer highlighted in the left layer panel to undo its automatic re-projection.
-* Likewise, if you _check_ `Enable 'on the fly' CRS Transformation`, you must typically have the layer with the projection you _want to match_ highlighted in the left panel.  
+* Likewise, if you _check_ `Enable 'on the fly' CRS Transformation`, you must typically have the layer with the projection you want to _match_ highlighted in the left panel.  
 
 ### Creating a thematic population map of the U.S.
 #### Downloading Census state population data
