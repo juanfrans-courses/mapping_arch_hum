@@ -4,7 +4,7 @@ The WGS84 Geographic Coordinate System is the default projection in QGIS.
 ### Datasets
 This tutorial will incorporate two datasets, one provided by Natural Earth and one provided by the U.S. Census. First, download the current administrative boundaries of the U.S., listed below:
 
-* ne_10m_admin_1_states_provinces (Admin 1 – States, Provinces) - Internal administrative boundaries. Originally downloaded [here](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/).
+* ne_10m_admin_1_states_provinces (Admin 1 – States, Provinces) - Internal administrative boundaries. Originally downloaded [here](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/). 
 
 ### Datum, Projection, CRS
 #### Datum
@@ -17,8 +17,8 @@ Two datasets that were originally referenced to different datums, but which are 
 A projection, or Coordinate Reference System (CRS), is used to describe geographic data. A projection is the set of transformations that converts a series of geographic coordinates, which are locations on a curved surface (the datum), into locations on a flat surface.
 
 #### A note re: QGIS 'on the fly' CRS Transformation
-*_The layer you currently have selected when you check or un-check this option impacts its effect._*
-* Typically, when you _un-check_ `Enable 'on the fly' CRS Transformation`, you must have the _transformed_ layer highlighted in the left layer panel to undo its automatic re-projection.
+The behavior for this option can be unpredictable. The layer you currently have selected when you check or un-check this option impacts its effect.
+* Typically, when you _un-check_ `Enable 'on the fly' CRS Transformation` with the intention of undoing any unexpected transformations, you must have the _transformed_ layer highlighted in the left layer panel to undo its automatic re-projection. If this doesn't work, select the layer _to which_ the transformed layer was transformed, and check/un-check the option again.
 * Likewise, if you _check_ `Enable 'on the fly' CRS Transformation`, you must typically have the layer with the projection you want to _match_ highlighted in the left panel.  
 
 ### Creating a thematic population map of the U.S.
@@ -87,7 +87,7 @@ As always, there are many possible ways to transform data to fit the needs of yo
 * Now we are ready to bring all of the data together in QGIS.
 
 #### Re-projecting selected features from the Natural Earth dataset
-We will begin by importing the Natural Earth boundary data. Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. We will isolate these areas, then re-project them to a projection more suitable for a U.S.-specific thematic map. In addition, because our final map will take into account the size of each state, we need to create a column to store area values for each state, which will later on be used to normalize the population count values from the Census data. 
+We will begin by importing the Natural Earth boundary data into a new QGIS project. Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. We will isolate these areas, then re-project them to a projection more suitable for a U.S.-specific thematic map. In addition, because our final map will take into account the size of each state, we need to create a column to store area values for each state, which will later on be used to normalize the population count values from the Census data. 
 * Open up a new project in QGIS and add the Natural Earth states and provinces data. The data is referenced to the WGS84 datum, which we can see by navigating to the `Metadata` section under `Layer Properties`. The definition for the layer's projection is under `Layer Spatial Reference System`.
 
 ![Layer Projection Metadata](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/12_Layer_Projection_Metadata.png)
@@ -125,7 +125,7 @@ We will begin by importing the Natural Earth boundary data. Because we are creat
 * Go ahead and hide the full Natural Earth base layer in the left panel.
 
 #### Joining Census data to Natural Earth boundaries
-Earlier in the tutorial, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. 
+Earlier in the tutorial, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. Now, we are almost ready to import the state population CSV into QGIS, and join it to the Natural Earth vector layer using the FIPS ID for each state. Before we join the data, however, we have to make one more quick adjustment to the U.S. Albers vector layer, which contains an ambiguous FIPS reference for Minnesota.
 
 #### Additional notes
 [Here](https://medium.com/@joshuatauberer/how-that-map-you-saw-on-538-under-represents-minorities-by-half-and-other-reasons-to-consider-a-4a98f89cbbb1#.ih16rv26m) is an excellent piece on why this method of visualization can be misleading.
