@@ -24,7 +24,7 @@ A projection, or Coordinate Reference System (CRS), is used to describe geograph
 #### Downloading Census state population data
 The Natural Earth state boundaries will serve as the 'empty' geography files for this project. As in Tutorial 03, we need to decide on the units of measurement we plan to use before opening a new QGIS project. For this tutorial, we will be visualizing population count normalized by area for each state.
 
-To download the data for this project, we will be returning again to the [American Fact Finder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) data portal. Click the `Advanced Search` option. Here we will select the following parameters for the `Topics` and `Geographies` levels:
+To download the data for this project, we will be returning again to the [American Fact Finder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) data portal. Click the `Advanced Search` option. Here we will select the following parameters within the `Topics` and `Geographies` levels:
 
 * Geography: All States within United States and Puerto Rico
 * Dataset: 2015 Population Estimates
@@ -38,7 +38,7 @@ Next, open up the `Geographies` tab, and select `State - 040` from the dropdown 
 
 ![U.S. Census Data state geography](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/03_Geography_US_States.png)
 
-Finally, open up the `Topics` tab again. Click on the `People` section, open `Basic Count/Estimate`, and select `Population Total`. One dataset should remain in the search results window, entitled "Annual Estimates of the Resident Population: April 1, 2010 to July 1, 2015."
+Finally, open up the `Topics` tab again. Click on the `People` section, open `Basic Count/Estimate`, and select `Population Total`. One dataset should remain in the search results window, entitled `Annual Estimates of the Resident Population: April 1, 2010 to July 1, 2015.`
 
 ![U.S. Census Data state geography](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/04_Population_Estimates_Table.png)
 
