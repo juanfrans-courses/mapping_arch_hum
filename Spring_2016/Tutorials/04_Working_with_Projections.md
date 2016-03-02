@@ -117,8 +117,8 @@ We will begin by importing the Natural Earth boundary data into a new QGIS proje
 
 * Go ahead and hide the full Natural Earth base layer in the left panel.
 
-#### Preparing U.S. Albers layer to be joined to the Census layer
-Earlier in the tutorial, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. Now, we are almost ready to import the state population CSV into QGIS, and join it to the re-projected `US_States_Albers` layer using the FIPS ID for each state. Before we join the data, however, we have to make one more quick adjustment to the `US_States_Albers` layer, which contains an ambiguous FIPS reference for Minnesota.
+#### Preparing the U.S. Albers layer to be joined to the Census layer
+Earlier, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. Now, we are almost ready to import the state population CSV into QGIS, and join it to the re-projected `US_States_Albers` layer using the FIPS ID for each state. Before we join the data, however, we have to make one more quick adjustment to the `US_States_Albers` layer, which contains an ambiguous FIPS reference for Minnesota.
 
 ![FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/18_MN_FIPS_Alt.png)
 
@@ -136,8 +136,7 @@ _**Note:** this is only required for Minnesota, despite the fact that other stat
 
 ![Edit FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/19_Editing_MN_FIPS.png)
 
-* Click `OK`.
-* The `fips` value for Minnesota should now be `US27`, the same as its `fips_alt` value.
+* Click `OK`. The `fips` value for Minnesota should now be `US27`, the same as its `fips_alt` value.
 
 _**Note:** This change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the U.S. Albers layer and select `Zoom to Layer` in order to return to your previous view._
 
@@ -152,7 +151,8 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 
 * Now, double-click on the `US_States_Albers` layer to bring up the `Layer Properties` panel.
 * Navigate to the `Joins` section. 
-* Click the `+` button at the bottom of the window to add a new join, and select `StatePopulations`, your imported CSV file, as the join layer.
+* Click the `+` button at the bottom of the window to add a new join.
+* Select `StatePopulations`, your imported CSV file, as the join layer.
 * Select `FIPS_ID` as the `Join field`, which is the column name for the FIPS ID in the CSV file.
 * Select `fips` as the `Target field`, which is the column name for the FIPS ID in the `US_States_Albers` layer.
 * If you like, create a short `Custom field name prefix` to differentiate your joined columns from the original ones.
@@ -164,7 +164,9 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 * We now need to save the `US_States_Albers` layer as a new shapefile in order to retain the join. Right-click on the layer, choose `Save as...`, and name it `US_States_Albers_JOINED`. Make sure the selected CRS is still `North_America_Albers_Equal_Area_Conic (ESPG:102008)`, and keep `Add saved file to map` checked. Click `OK`. 
 
 #### Visualizing population
-For our final visualization, we will be creating a choropleth map that visualizes raw population counts for each state. 
+For our final visualization, we will be creating a choropleth map that visualizes raw population counts for each state. Now that the U.S. Albers shapefile has been joined to the Census data, this simply requires navigating to the `US_States_Albers_JOINED` `Layer Properties` panel, and selecting a graduated color scale for the population count column. Your map should look something like this:
+
+![Population Choropleth](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/22_Population_Choropleth.png)
 
 #### Additional notes
 [Here](https://medium.com/@joshuatauberer/how-that-map-you-saw-on-538-under-represents-minorities-by-half-and-other-reasons-to-consider-a-4a98f89cbbb1#.ih16rv26m) is an excellent piece on why this method of visualization can be misleading.
