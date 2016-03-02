@@ -129,7 +129,9 @@ Earlier in the tutorial, we transformed the Census population data in Excel to p
 
 ![FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/20_MN_FIPS_Alt.png)
 
-In order for this shapefile to correspond to our CSV file, the FIPS code for Minnesota needs to be `US27`, the value in Minnesota's `fips_alt` column. We are going to edit this manually. *_Important: this is only required for Minnesota, despite the fact that other states also have a `fips_alt` value._*
+In order for this shapefile to correspond to our CSV file, the FIPS code for Minnesota needs to be `US27`, the value in Minnesota's `fips_alt` column. We are going to edit this manually. 
+
+(*Note:* this is only required for Minnesota, despite the fact that other states also have a `fips_alt` value.)
 
 * Open up the attribute table for the `US_States_Albers` layer.
 * Select the row that corresponds to Minnesota. Its value in the first `adm1_code` column is `USA-3514`.
@@ -144,7 +146,7 @@ In order for this shapefile to correspond to our CSV file, the FIPS code for Min
 * Click `OK`.
 * The `fips` value for Minnesota should now be `US27`, the same as its `fips_alt` value.
 
-_Note: this change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the U.S. Albers layer and select `Zoom to Layer` in order to return to your previous view._ 
+*Note:* This change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the U.S. Albers layer and select `Zoom to Layer` in order to return to your previous view.
 
 #### Joining Census data to Natural Earth boundaries
 Now that the `US_States_Albers` layer is ready, we can import the CSV file and join population values to each state. 
@@ -172,7 +174,3 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 
 #### Additional notes
 [Here](https://medium.com/@joshuatauberer/how-that-map-you-saw-on-538-under-represents-minorities-by-half-and-other-reasons-to-consider-a-4a98f89cbbb1#.ih16rv26m) is an excellent piece on why this method of visualization can be misleading.
-
-
-
-
