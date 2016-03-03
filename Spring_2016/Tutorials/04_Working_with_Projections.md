@@ -1,5 +1,5 @@
 ## Tutorial 04 - Working with Projections
-The WGS84 Geographic Coordinate System is the default projection in QGIS. 
+Projections enable us to represent the earth on a flat surface in different ways. The WGS84 Geographic Coordinate System is the default projection in QGIS. 
 
 ### Datasets
 This tutorial will incorporate two datasets, one provided by Natural Earth and one provided by the U.S. Census. First, download the current administrative boundaries of the U.S., listed below:
