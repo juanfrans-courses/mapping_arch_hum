@@ -166,7 +166,7 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 * We now need to save the `US_States_Albers` layer as a new shapefile in order to retain the join. Right-click on the layer, choose `Save as...`, and name it `US_States_Albers_JOINED`. Make sure the selected CRS is still `North_America_Albers_Equal_Area_Conic (ESPG:102008)`, and keep `Add saved file to map` checked. Click `OK`. 
 
 #### Representing population data
-For our final map, we will be creating a choropleth-_style_ map that represents raw population counts for each state. Now that the U.S. Albers shapefile has been joined to the Census data, this simply requires navigating to the `US_States_Albers_JOINED` `Layer Properties` panel, and selecting a graduated color scale for the population count column. Your map should look something like this:
+For our final print export, we will be creating a choropleth-_style_ map that represents raw population counts for each state. Now that the U.S. Albers shapefile has been joined to the Census data, this simply requires navigating to the `US_States_Albers_JOINED` `Layer Properties` panel, and selecting a graduated color scale for the population count column. Your map should look something like this:
 
 ![Population Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/22_Population_Map.png)
 
