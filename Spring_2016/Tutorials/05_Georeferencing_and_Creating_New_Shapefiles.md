@@ -3,12 +3,12 @@ This tutorial will show you two things: one, how to georeference an image that h
 
 Often enough you will encounter raster files of maps or satellite images that don't have a geographic reference. And although you can add them to your map in qGIS, they will come in in the wrong location and at the wrong scale. In these cases, if you want to use these images you will want to georeference them, which means, based on other files with appropriate geographic data, move and scale these images until the fit the right location, the right orientation and the right size.
 
-In addition, once you have georeferenced these images you will probably want to digitize some part of them, creating new vector shapefiles with the appropriate data.
+In addition, once you have georeferenced these images you will probably want to digitize some part of them, creating new vector shapefiles based on these images with associated data.
 
 For more information about georeferencing take a look at this Wikipedia [article](https://en.wikipedia.org/wiki/Georeference).
 
 ### Datasets:
-For this tutorial we will be georeferencing a map of New York City's bike lane system. You should download the map from [here](http://www.nyc.gov/html/dot/html/bicyclists/bikemaps.shtml).
+For this tutorial we will be georeferencing a map of New York City's bike lane system. You should download the map from [here](https://github.com/juanfrans-courses/mapping_arch_hum/tree/master/Spring_2016/Class_Data/05_Georeferencing).
 In addition, we will also be using the following datasets:
 * nybb - New York City boroughs. Originally downloaded from [here](http://www.nyc.gov/html/dcp/html/bytes/districts_download_metadata.shtml).
 * HYDRO - New York hydrography. Originally downloaded [here](https://data.cityofnewyork.us/Environment/Hydrography/drh3-e2fd).
@@ -16,12 +16,12 @@ In addition, we will also be using the following datasets:
 * geo_export_03e863aa-c6a6-4ba9-b669-1955cfb51885 - New York City street centerline. Originally downloaded from [here](https://data.cityofnewyork.us/City-Government/NYC-Street-Centerline-CSCL-/exjm-f27b).
 
 ### Georeferencing A Map
-The first thing we need to do before we can start the georeferencing process is to convert our NYC Bike Map from PDF to a format that we can use in qGIS (.tiff or .jpg). To do this, open the map, either in Adobe Acrobat or in Preview. Once the map is open do the following:
-* In Preview, got to `File/Export` and select .TIFF as the format and 150 pixels/inch as the resolution. Export with the same name.
-* In Adobe Acrobat 
 After you've downloaded the Bike map open up a new qGIS map and add the boroughs file. Remember, the reason why we are adding this file first is to give the map the right projection.
 
-Next, click on the `Add Raster Layer` button and 
+Next, just to see how an un-georeferenced file comes in, click on the `Add Raster Layer` button and add the bike map you downloaded. qGIS will ask you to choose a Coordinate Reference System, but since our image doesn't have one, you should just select the "Generated" one and click `OK`. Now, if you right-click on the image in the Layer Panel and select `Zoom to Layer` you will zoom into the image and be able to see it. However, the image will not match the boroughs in neither its location, nor in its scale.
+
+![Wrong Location](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/01_Wrong_Location.png)
+
 
 ### Creating Place of Birth Maps with Census Data
 #### Downloading Census Data
