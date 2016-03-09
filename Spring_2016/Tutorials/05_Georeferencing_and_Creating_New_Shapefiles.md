@@ -42,12 +42,19 @@ Now we need to start matching locations on our bike map to locations on the main
 * Once you click there a new window will come up ('Enter map coordinates'). If we knew the coordinates for this point we could enter them here, but since we don't we will choose a point in the main map.
 * To do this click on `From map canvas` and, in the main map, zoom into the same area. Once there, click on exactly the same point but on the main map.
 * Once you click on the main map the right coordinates will populate the previous window. Click `OK`.
-* You should now see one red point in each map, and the location of the points should be the same. In addition, in the bottom panel of the georeferencing window ('GCP table) you should see a line with the new point and it source and destination coordinates.
+* You should now see one red point in each map, and the location of the points should be the same. In addition, in the bottom panel of the georeferencing window ('GCP table') you should see a line with the new point and it source and destination coordinates.
 
   ![Matching Points](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/04_Matching_Points.png)
 
 
 * Repeat the same process for 4 more points, making sure you choose points that are as far apart as possible from each other.
+
+* Once you have 4 or 5 points matched, click on the `Start Georeferencing` button (Play sign). This will ask you to set an output raster name and bring up the 'Transformation settings' window.
+* There, choose a name and a location for your new raster (the geoferenced map we will export) and choose a coordinate reference system. In our case, choose the NAD_1983_StatePlane...
+* Also, make sure `Load in QGIS when done` is checked.
+* Click `OK` and then click on the `Start Georeferencing` button again to start the process.
+* Once the process is done, you can close the Georeferencer window and you should have your georeferenced map as a layer in the main map window (you don't need to save your 'GCP' points).
+* To test the location and scale of your map you can place your new bike map layer underneath the streets layer and you should see how, depending on how good of a job you did with your points, your streets align with the streets on the bike map image.
 
 ### Creating Place of Birth Maps with Census Data
 #### Downloading Census Data
