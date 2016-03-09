@@ -32,6 +32,22 @@ The process now is to choose specific points on the bike map and match them with
 
 ![Layers](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/02_Layers.png)
 
+Now we need to start matching locations on our bike map to locations on the main map based on the boroughs and the streets. The idea is to choose around 5 comparison points, as far apart as possible from each other, that qGIS can then use to warp, scale and position the bike map:
+
+* To do this click on the `Add Point` button on the georeferencing panel.
+
+  ![Add Point](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/03_Add_Point.png)
+
+* Now zoom in to the northern tip of Battery Park city (on the bike map) and place a point right at the north-west corner.
+* Once you click there a new window will come up ('Enter map coordinates'). If we knew the coordinates for this point we could enter them here, but since we don't we will choose a point in the main map.
+* To do this click on `From map canvas` and, in the main map, zoom into the same area. Once there, click on exactly the same point but on the main map.
+* Once you click on the main map the right coordinates will populate the previous window. Click `OK`.
+* You should now see one red point in each map, and the location of the points should be the same. In addition, in the bottom panel of the georeferencing window ('GCP table) you should see a line with the new point and it source and destination coordinates.
+
+  ![Matching Points](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/04_Matching_Points.png)
+
+
+* Repeat the same process for 4 more points, making sure you choose points that are as far apart as possible from each other.
 
 ### Creating Place of Birth Maps with Census Data
 #### Downloading Census Data
