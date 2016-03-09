@@ -22,6 +22,16 @@ Next, just to see how an un-georeferenced file comes in, click on the `Add Raste
 
 ![Wrong Location](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/01_Wrong_Location.png)
 
+Now, remove that image from your map by right-clicking on the layer and choosing `Remove`. We will add the image through the Georeferencing panel.
+
+To do this, go to `Raster` / `Georeferencer` / `Georeferencer`. This will bring up the Geoferencing window where we will add the image and choose the right anchor points.
+
+In this window, choose `Open Raster` and add your NYC Bike map. Since the map doesn't have any geographic references, choose the 'Generated' coordinate reference system. You will see your map load on the screen.
+
+The process now is to choose specific points on the bike map and match them with specific points on the other layers in our map, so that qGIS knows exactly where to place our bike map and its correct size. Right now we only have the boroughs layer but to be more precise in choosing the points we should bring in the street centerline file. Go ahead and add that layer to your map (not to the georeferencing window). Now you should have your main map with the boroughs and the streets and the georeferencing window with your bike map. It should look something like this:
+
+![Layers](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/02_Layers.png)
+
 
 ### Creating Place of Birth Maps with Census Data
 #### Downloading Census Data
