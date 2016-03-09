@@ -1,13 +1,27 @@
-## Tutorial 03 - Joining Tables and Census Data
-Census data is often one of the most mapped datasets, and there are good reasons for this: not only does it provide insights about our current living conditions, like income, race, age, employment or commuting patterns, but it also serves as the backdrop for many other kinds of data. Without population data, for example, we wouldn't be able to 'normalize' cellphone usage or crimes, and without median household income or race patterns we wouldn't be able to identify social justice problems, like concentrations of environmental hazards in poor and or minority neighborhoods.
+## Tutorial 05 - Georeferencing and Creating New Shapefiles
+This tutorial will show you two things: one, how to georeference an image that has no geographic reference, and two, how to, from that image, create a new shapefile with associated data.
 
-However, if not handled properly, mapping census data can be difficult and even problematic. Not only do you need to be able to correctly choose the right geographical level of analysis and download the right datasets, but you also need to be able to join these tables to existing shapefiles and symbolize them correctly. This tutorial will guide you through the process of downloading both the geographical boundaries and the census data, bringing them both into qGIS and joining them, and properly symbolizing it.
+Often enough you will encounter raster files of maps or satellite images that don't have a geographic reference. And although you can add them to your map in qGIS, they will come in in the wrong location and at the wrong scale. In these cases, if you want to use these images you will want to georeference them, which means, based on other files with appropriate geographic data, move and scale these images until the fit the right location, the right orientation and the right size.
+
+In addition, once you have georeferenced these images you will probably want to digitize some part of them, creating new vector shapefiles with the appropriate data.
+
+For more information about georeferencing take a look at this Wikipedia [article](https://en.wikipedia.org/wiki/Georeference).
 
 ### Datasets:
-This tutorial will be dealing with two main datasets, both provided by the U.S. Census Bureau. The first one will be the geographic boundaries of the census tracts and the second one will be census data itself in table form. As with our previous tutorials we will also use some of the other shapefiles we have downloaded for previous tutorials:
+For this tutorial we will be georeferencing a map of New York City's bike lane system. You should download the map from [here](http://www.nyc.gov/html/dot/html/bicyclists/bikemaps.shtml).
+In addition, we will also be using the following datasets:
 * nybb - New York City boroughs. Originally downloaded from [here](http://www.nyc.gov/html/dcp/html/bytes/districts_download_metadata.shtml).
 * HYDRO - New York hydrography. Originally downloaded [here](https://data.cityofnewyork.us/Environment/Hydrography/drh3-e2fd).
 * hydropol - U.S. Hydrographic features. Originally downloaded from [here](http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/polygon).
+* geo_export_03e863aa-c6a6-4ba9-b669-1955cfb51885 - New York City street centerline. Originally downloaded from [here](https://data.cityofnewyork.us/City-Government/NYC-Street-Centerline-CSCL-/exjm-f27b).
+
+### Georeferencing A Map
+The first thing we need to do before we can start the georeferencing process is to convert our NYC Bike Map from PDF to a format that we can use in qGIS (.tiff or .jpg). To do this, open the map, either in Adobe Acrobat or in Preview. Once the map is open do the following:
+* In Preview, got to `File/Export` and select .TIFF as the format and 150 pixels/inch as the resolution. Export with the same name.
+* In Adobe Acrobat 
+After you've downloaded the Bike map open up a new qGIS map and add the boroughs file. Remember, the reason why we are adding this file first is to give the map the right projection.
+
+Next, click on the `Add Raster Layer` button and 
 
 ### Creating Place of Birth Maps with Census Data
 #### Downloading Census Data
