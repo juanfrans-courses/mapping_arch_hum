@@ -39,5 +39,10 @@
   * The High-Line is completely absent from your presentation. It's is a crucial element in the change of this neighborhood. It should not be missing.
 
 ### 5. Mapping the Baburnama (Manpreet Kaur, Phillip Robert Polefrone, Yousef Khalifa Al-Ghufli)
-* This project is very interesting. It has two very compelling directions: one, the methods
+* This project is very interesting. It has two very compelling directions: one, the methods and two, what to do with the information that is produced, how to display it and how to make it useful and interesting. I think you should really tackle both aspects: really document your process and talk about how to do this kind of analysis, what the advantages and disadvantages are, what the difficulties and limits are, and also really create something that is visually compelling and useful for the audience; convey your information in a manner that it enriches the reading of the text and its analysis.
+* Some other comments:
   * You need to give a better introduction to the text. What it is about and why it is important.
+  * Try not to use screen-shots. All your maps should be complete.
+  * Maybe it would be good to create a diagram of your process, showing the different steps, programs, languages, etc.
+  * For the final, think about your graphical style. Do you want to continue using the historical maps as a base or do you want to use something different. If you do want to use the historical maps, try to make them more your own, not just place them underneath your new data.
+  * Use legends, titles and labels in a more clear and precise way.
