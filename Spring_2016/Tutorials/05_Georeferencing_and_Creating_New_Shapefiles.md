@@ -1,7 +1,7 @@
 ## Tutorial 05 - Georeferencing and Creating New Shapefiles
 This tutorial will show you two things: one, how to georeference an image that has no geographic reference, and two, how to, from that image, create a new shapefile with associated data.
 
-Often enough you will encounter raster files of maps or satellite images that don't have a geographic reference. And although you can add them to your map in qGIS, they will come in in the wrong location and at the wrong scale. In these cases, if you want to use these images you will want to georeference them, which means, based on other files with appropriate geographic data, move and scale these images until the fit the right location, the right orientation and the right size.
+Often enough you will encounter raster files of maps or satellite images that don't have a geographic reference. And although you can add them to your map in qGIS, they will come in in the wrong location and at the wrong scale. In these cases, if you want to use these images you will have to georeference them, which means, based on other files with appropriate geographic data, move and scale these images until the fit the right location, the right orientation and the right size.
 
 In addition, once you have georeferenced these images you will probably want to digitize some part of them, creating new vector shapefiles based on these images with associated data.
 
@@ -14,6 +14,9 @@ In addition, we will also be using the following datasets:
 * HYDRO - New York hydrography. Originally downloaded [here](https://data.cityofnewyork.us/Environment/Hydrography/drh3-e2fd).
 * hydropol - U.S. Hydrographic features. Originally downloaded from [here](http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/polygon).
 * geo_export_03e863aa-c6a6-4ba9-b669-1955cfb51885 - New York City street centerline. Originally downloaded from [here](https://data.cityofnewyork.us/City-Government/NYC-Street-Centerline-CSCL-/exjm-f27b).
+
+**Note:**
+The bike lane system map for New York was originally downloaded from [here](http://www.nyc.gov/html/dot/html/bicyclists/bikemaps.shtml). However, the map comes in PDF format, which cannot be added to qGIS. I converted the map into .jpg format, which can be added to qGIS. For your reference, if you have a PDF file that you need to convert to .jpg or .tiff (formats that can be added to qGIS), you can use Preview (Mac), Adobe Acrobat or Photoshop to do this. Just make sure that the file you are producing is high enough resolution that it will be clear enough when you zoom in to digitize it.
 
 ### Georeferencing A Map
 After you've downloaded the Bike map open up a new qGIS map and add the boroughs file. Remember, the reason why we are adding this file first is to give the map the right projection.
