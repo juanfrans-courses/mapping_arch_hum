@@ -113,6 +113,7 @@ March 4
 * Link: [Comparing sizes across the globe](http://bl.ocks.org/zanarmstrong/raw/caa2da1ea1558cdc3357/#scale=471.85&center0=6.52865,20.3586336&center1=48.2392291,-98.9443219)
 * Link: [North Korea's missile threat](https://www.google.com/search?biw=1440&bih=801&tbm=isch&sa=1&q=the+economist+north+korea+missile+range&oq=the+economist+north+korea+missile+range&gs_l=img.3...6324.13284.0.14152.43.20.0.0.0.0.0.0..0.0....0...1c.1.64.img..43.0.0.Ob_31RRRygY&bav=on.2,or.r_cp.&bvm=bv.112064104,d.eWE&dpr=2&ech=1&psi=JOeaVvH7CoXsmAHstqi4DA.1452992295091.3&ei=JOeaVvH7CoXsmAHstqi4DA&emsg=NCSR&noj=1)
 * Link: [Gnomonic Projection](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=gnomonic%20projection)
+* ***Assignment: [Tutorial 04](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/04_Working_with_Projections.md)
 
 ### Week 7: Midterm presentations
 March 11
