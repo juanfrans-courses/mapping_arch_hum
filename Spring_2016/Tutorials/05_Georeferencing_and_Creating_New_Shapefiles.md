@@ -95,19 +95,25 @@ Now we are ready to start digitizing. We will begin with the 'Protected Bicycle 
 * These settings are not fixed and depending on what you are doing or how you prefer to edit you can change them. The key though is to get them right for how you want to edit and the types of layers you want to use as reference.
 * Once you've set your 'Snapping options' click `OK`.
 
-* Finally, click on the `Add Feature` button, to the right of the `Toggle Editing` one, and you will see your cursor change to a cross-hair icon. Also, as you approach a vertex from the street centerline file you will see a purple '+' appear.
-* Now choose a 'green' bike lane and start drawing it by clicking on the vertices of the street centerline file. You will see a red line being drawn.
+![Snapping Options](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/09_Snapping_Options.png)
+
+* Finally, click on the `Add Feature` button, to the right of the `Toggle Editing` one, and you will see your cursor change to a cross-hair icon. Also, as you approach a vertex from the street centerline file you will see a purple '+' appear, that means that your line will snap to that vertex.
+* Now choose a 'green' bike lane and start tracing it by clicking on the vertices of the street centerline file. You will see a red line being drawn.
 * Once you finish with one bike lane, right-click anywhere on the map and you will get a menu with the option to type in the attributes for that line you just created.
 * In this menu leave the 'id' field 'NULL' (we won't be needing that field) but fill in the 'Type' field with 'Protected Bicycle Path', which is the type of bike lane we are currently digitizing.
 * Click `OK` and your new bike lane will be digitized.
+
 * Remember to save your edits often. To do this click on the `Save Layer Edits` button, right next to the `Toggle Edits` (pencil icon).
 * If you make a mistake while creating a new feature, you can push the `Delete` (or `Backspace`) button to undo your last click.
-* Also, if you want to move any 'nodes' you can click on the `Node Tool` at the right of the `Add Feature` tool and click on the polyline you wish to edit. This will allow you to move the vertices. Or, if you double click on the line with the `Node Tool` you will add a new vertex.
+* Also, if you want to move or delete any 'nodes' after you've digitized a segment you can click on the `Node Tool` at the right of the `Add Feature` tool and click on the polyline you wish to edit. This will allow you to move or delete the vertices. Or, if you double click on the line with the `Node Tool` you will add a new vertex.
+* Editing a polyline with the `Node Tool` will look like this:
+
+![Editing Nodes](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/05_Georeferencing/10_Editing_Nodes.png)
 
 * Using these tools go ahead and digitize multiple bike lanes. Make sure you digitize more than one type, and that in the panel where you input the attributes you give them their corresponding types.
 * Remember to save your edits often.
 * Also, while editing you can always open the attribute table to see your data and / or to change any attributes.
-* Finally, once you are done digitizing multiple bike lanes (of multiple types), click on the `Toggle Edit` (pencil icon) button again to stop editing.
+* Finally, once you are done digitizing multiple bike lanes (of multiple types), click on the `Toggle Edit` (pencil icon) button again to stop editing. While you are editing, your lines will have little red 'x' marks on their vertices. Once you stop editing these marks will disappear.
 * Then you can change the symbology to match the different types of bike lanes in the city.
 
 Once you are finished with this go ahead and adjust colors, strokes and layer order. And finally, create a print composer, add a legend, title, explanation, source and a scale bar, and export your map as a PDF file. Your final map should look something like this:
