@@ -74,7 +74,54 @@ A couple of things here before we move further:
 
 ![Manual Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/07_Manual_Symbology.png)
 
+#### Sampling Raster Data
+We can 'absorb' the raster data into a vector file by 'sampling' the raster data. This can be done at specific locations, with points, or over specific areas, with polygons. We will do both here.
 
+First, let's talk about sampling with points. If we had a points file for different locations around the world we could use that, and this could, for example, be a point file with world cities. However, because we are dealing with a raster file, our sampling with those points wouldn't necessarily be accurate. The sampling **only** takes the value at the specific location of the point and not over the whole area of a city. For example, in the case of New York, if our point was located over Central Park, we would only 'absorb' the value of the raster at Central Park, and not over the whole city. In the case of our population dataset, we would only get a value of around 9,000 people, which is the value of the population in the square kilometer in which Central Park is located. For this reason, sampling raster data with points works much better with continuous data, like temperature or pollution, smoother data, data that doesn't change that much from one location to the next.
+
+Nevertheless, having said that, we will do some point sampling with this raster, and instead of using a point file of world cities we will create a grid of points and use that to sample the raster:
+* To create a grid of points go to `Vector` / `Research Tools` / `Regular Points` (you could also use `Random Points` if your intention was to sample at random locations).
+* As the 'Input Boundary Layer' select the original raster file (gpw-v4...).
+* And instead of using a specific spacing, select 'Use this number of points' and choose 200000 (two hundred thousand).
+
+![Regular Points](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/08_Regular_Points.png)
+
+* Now, before we can proceed with the sampling we need to load the plugin that has the tool (the sampling tool doesn't come pre-installed in the default version of qGIS). To do this go to `Plugins` / `Manage and Install Plugins...` This will take a little bit to load but you should end up in the 'Plugins' repository.
+* In the 'Search' bar, type 'Point sampling' and you should see in the panel right below this the tool.
+* Select the tool and click on the `Install plugin` button.
+
+![Point Sampling Plugin](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/09_Point_Sampling_Plugin.png)
+
+* Once the tool is installed, close your plugins manager and go to `Plugins` / `Analyses` / `Point Sampling Tool`.
+* Select your the layer containing your points first and then highlight the original raster containing the values that we want to sample.
+* Select your output file and make sure 'Add created layer to the TOC' is checked.
+* Click `OK`. This process might take a little while.
+
+![Point Sampling Tool](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/10_Point_Sampling_Tool.png)
+
+* Once you have your new points, open the attribute table to make sure they have 'absorbed' some data. A lot of them are going to be 'NULL' (the ones over the water) but some of them are going to have values.
+* Open the properties of this file and go to the 'General' tab.
+* There, write a filter to exclude all the points that have 'NULL' as a value. The query should be something like this: `"gpw-v4-pop" IS NOT NULL`
+
+![Query Builder](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/11_Query_Builder.png)
+
+* Once you've done this, go to the style tab and change the symbology to visualize the points based on their values. You should get something like this:
+
+![Population Points](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/12_Population_Points.png)
+
+* Finally, just a word of warning: you can see here how the sampling, even though we used 200,000 points at regular intervals, missed a lot of the data in the raster. For example, in my case, it didn't really capture New York City. This is the problem with having a very detailed raster and sampling it with a layer that is not as dense.
+
+Now, to sample with polygons we will use the countries file we downloaded at the beginning of this tutorial. We will 'absorb' the values of the raster that fall within each polygon of this file and calculate statistics for each one of them. This one is very simple:
+* First, go to `Raster` / `Zonal Statistics` / `Zonal Statistics`.
+* There, choose the original raster (gpw...) as the 'Raster layer' and the countries file as the 'Polygon layer'
+* In the 'Output column prefix' write 'Pop'.
+* And make sure 'Count', 'Sum', 'Mean', 'Median', 'Minimum' and 'Maximum' are checked.
+* Click `OK` (this one will take a while).
+
+![Zonal Statistics](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/13_Zonal_Statistics.png)
+
+
+To do this, we first need to create a grid of points, 
 
 We will actually re-project this dataset to display it in a projection that's more suitable for a world map.
 * 
