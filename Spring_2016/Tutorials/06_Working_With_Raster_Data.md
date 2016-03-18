@@ -116,9 +116,21 @@ Now, to sample with polygons we will use the countries file we downloaded at the
 * There, choose the original raster (gpw...) as the 'Raster layer' and the countries file as the 'Polygon layer'
 * In the 'Output column prefix' write 'Pop'.
 * And make sure 'Count', 'Sum', 'Mean', 'Median', 'Minimum' and 'Maximum' are checked.
-* Click `OK` (this one will take a while).
+* Click `OK` (**Warning: this one will take a long time to compute (20 - 30 minutes in my case)**).
 
 ![Zonal Statistics](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/13_Zonal_Statistics.png)
+
+##### Deliverable
+The deliverable for this part of the tutorial is a map of the world showing population **change** from 2000 to 2010 (based on the 'Gridded Population of the World' datasets). You can build either a dot map or a polygon map. Very important, however, your map needs to be in a projection that is not the default one. Choose a world projection that represents area well ('equal area projection'), for example, the Mollweide projection. As always, choose your colors, fonts, layouts carefully and be sure to add a legend and a scale.
+
+Here's an example of a final map, although this only shows population and not population **change** as yours should:
+
+************** Image here**************
+
+
+
+
+
 
 
 To do this, we first need to create a grid of points, 
