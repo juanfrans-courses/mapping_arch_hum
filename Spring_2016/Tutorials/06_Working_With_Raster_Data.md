@@ -12,7 +12,8 @@ We will use this dataset to extract population data of the world and create a ma
 
 #### Loading the Datasets:
 * First, of course, open a new qGIS map and add your countries shapefile.
-* Next, add the GPW raster file. The one you need to choose is the one with the .tif extension. Remember that to add a raster you need to click on the `Add Raster Layer` button. * You will see that the raster appears in black and white, with the population centers in white.
+* Next, add the GPW raster file. The one you need to choose is the one with the .tif extension. Remember that to add a raster you need to click on the `Add Raster Layer` button.
+* You will see that the raster appears in black and white, with the population centers in white.
 
   ![Raster Population](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/01_Raster_Population.png)
 
