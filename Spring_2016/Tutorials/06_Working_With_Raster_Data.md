@@ -34,7 +34,6 @@ We will use this dataset to extract population data of the world and create a ma
 * Now, that's not actually the maximum value of the raster dataset. If you look at the right-hand panel ('Load min/max' values), which is where the min and max values come from, you will notice that the min/max values are being calculated based on a 'Cumulative count cut', which is used to get rid of the outliers. The 'Cumulative count cut' means that qGIS is only taking into account the values between 2% and 98%, in the default cases.
 * You could change that and use the option 'Min / max' to use the actual minimum and maximum values. If you choose this one, you have to click on the `Load` button, to load the values. Do this and click on `Apply` to see how the image changes. Now the minimum is still '0' but the maximum is '140853'. Because of this new maximum value, most of the image appears black.
 * Another way to get the value is to use the 'Mean +/- standard deviation x' option, which will calculate the minimum and maximum values based on the mean and the standard deviation. Try that one, changing the factor too. Remember to press the `Load` button every time you change this.
-
 * Now change the 'Render type' to 'Singleband pseudocolor' to get something similar to a symbology we would do for a vector file.
 * On the right-hand panel you will see the 'Mode' of classification ('Continuous' or 'Equal Interval') and below, again, the 'Load min/max values' panel.
 * Click on the `Classify` button to load the values and then hit `OK` to see it on the map.
