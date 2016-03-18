@@ -21,12 +21,12 @@ We will use this dataset to extract population data of the world and create a ma
 * The symbology for a raster dataset works differently than the symbology for a vector file. The raster doesn't have multiple fields; only one value is associated with each pixel in the raster dataset.
 * If you click on the `Identify Features` button (the one with the 'i' icon) and you click anywhere on the raster you will see the value associated with that specific pixel. The value will appear as the value for 'Band 1'.
 
-  ![Identify Results](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/02_Identify_Results.png)
+![Identify Results](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/02_Identify_Results.png)
 
 * In this case, the value for that pixel I clicked (in the middle of the US) is 9.2, and since we are looking at a population dataset we can say that in that pixel representing 1km x 1km there are 9.2 people.
 * Now, go to the properties of the raster and go to the `Style` tab. You will see that it is different than the symbology for a normal vector dataset.
 
-  ![Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/03_Symbology.png)
+![Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/03_Symbology.png)
 
 * Here you will see that the default style is of a 'Singleband gray', which means that it's only symbolizing in grayscale based on one band (rasters can be made up of multiple bands, as we will see in the second part of this tutorial).
 * The color gradient is 'Black to white' but that can be switched to 'White to black'.
@@ -40,7 +40,7 @@ We will use this dataset to extract population data of the world and create a ma
 * Click on the `Classify` button to load the values and then hit `OK` to see it on the map.
 * Now you can see clearly the regions of the world with the highest population density.
 
-  ![GPW Symbolized](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/04_GPW_Symbolized.png)
+![GPW Symbolized](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/04_GPW_Symbolized.png)
 
 #### Extracting Information from Raster
 Finally, if we want to extract information from the raster file we can do it in two ways: one, by creating a new raster with the selected data; or two, by sampling the raster with points or polygons. In this case, sampling means using points or polygons to extract information from the raster file based on their location. In this tutorial we will do both.
@@ -57,7 +57,7 @@ Finally, if we want to extract information from the raster file we can do it in 
 * Make sure the 'Add results to project' option is checked.
 * Click `OK`.
 
-  ![Raster Calculator](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/05_Raster_Calculator.png)
+![Raster Calculator](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/05_Raster_Calculator.png)
 
 * After the calculation you should get a new raster that has the densely populated places in white and the rest in black.
 * However, to better symbolize this let's go to the properties of the new raster.
@@ -67,13 +67,13 @@ Finally, if we want to extract information from the raster file we can do it in 
 * Now you should see the areas with more than 100 people as black pixels and the rest should be transparent.
 * If turn off the other layer your map should look something like this:
 
-  ![Selected Areas](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/06_Selected_Areas.png)
+![Selected Areas](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/06_Selected_Areas.png)
 
 A couple of things here before we move further:
 * One, if you compare the new raster with the original one you will notice that in the new one the pixels are much larger than in the old one. This is because when we exported the new raster we changed the number of rows and columns. The problem with this is that it makes the new raster less detailed than the old one. However, it also makes the file size smaller.
 * Two, we could have just changed the symbology of the original layer to create the same effect. In this case we would have just manually created two symbols (with the '+' and '-' buttons), one going up to 99.99999, in white, and the other starting at 100 in black. Here is how that symbology option would look like:
 
-  ![Manual Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/07_Manual_Symbology.png)
+![Manual Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/07_Manual_Symbology.png)
 
 
 
