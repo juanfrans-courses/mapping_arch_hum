@@ -59,8 +59,8 @@ Finally, if we want to extract information from the raster file we can do it in 
 
 * After the calculation you should get a new raster that has the densely populated places in white and the rest in black.
 * However, to better symbolize this let's go to the properties of the new raster.
-* First, in the 'Style' tab, change the color gradient to 'White to black' instead of 'Black to white'
-* And second, in the 'Transparency' tab, in the 'No data value' panel, in the 'Additional no data value' add the number '0' so that qGIS treats '0' as no values and makes it transparent.
+* First, in the `Style` tab, change the color gradient to `White to black` instead of `Black to white`
+* And second, in the `Transparency` tab, in the `No data value` panel, in the `Additional no data value` add the number '0' so that qGIS treats '0' as no values and makes it transparent.
 * Click `OK`.
 * Now you should see the areas with more than 100 people as black pixels and the rest should be transparent.
 * If turn off the other layer your map should look something like this:
@@ -69,37 +69,38 @@ Finally, if we want to extract information from the raster file we can do it in 
 
 A couple of things here before we move further:
 * One, if you compare the new raster with the original one you will notice that in the new one the pixels are much larger than in the old one. This is because when we exported the new raster we changed the number of rows and columns. The problem with this is that it makes the new raster less detailed than the old one. However, it also makes the file size smaller.
-* Two, we could have just changed the symbology of the original layer to create the same effect. In this case we would have just manually created two symbols (with the '+' and '-' buttons), one going up to 99.99999, in white, and the other starting at 100 in black. Here is how that symbology option would look like:
+* Two, we could have just changed the symbology of the original layer to create the same effect. In this case we would have just manually created two symbols (with the `+` and `-` buttons), one going up to 99.99999, in white, and the other starting at 100 in black. Here is how that symbology option would look like:
 
 ![Manual Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/07_Manual_Symbology.png)
 
 #### Sampling Raster Data
-We can 'absorb' the raster data into a vector file by 'sampling' the raster data. This can be done at specific locations, with points, or over specific areas, with polygons. We will do both here.
+We can 'absorb' the raster data into a vector file by 'sampling' the raster data. This can be done at specific locations, with points, or over specific areas, with polygons.
 
-First, let's talk about sampling with points. If we had a points file for different locations around the world we could use that, and this could, for example, be a point file with world cities. However, because we are dealing with a raster file, our sampling with those points wouldn't necessarily be accurate. The sampling **only** takes the value at the specific location of the point and not over the whole area of a city. For example, in the case of New York, if our point was located over Central Park, we would only 'absorb' the value of the raster at Central Park, and not over the whole city. In the case of our population dataset, we would only get a value of around 9,000 people, which is the value of the population in the square kilometer in which Central Park is located. For this reason, sampling raster data with points works much better with continuous data, like temperature or pollution, smoother data, data that doesn't change that much from one location to the next.
+First, let's talk about sampling with points. If we had a points file for different locations around the world we could use that, and this could, for example, be a point file with world cities. However, because we are dealing with a raster file, our sampling with those points wouldn't necessarily be that precise. The sampling **only** takes the value at the specific location of the point and not over the whole area of a city. For example, in the case of New York, if our point was located over Central Park, we would only 'absorb' the value of the pizel at Central Park, and not over the whole city. In the case of our population dataset, we would only get a value of around 9,000 people, which is the value of the population in the square kilometer in which Central Park is located. For this reason, sampling raster data with points works much better with continuous data, like temperature or pollution, smoother data, data that doesn't change that much from one location to the next.
 
 Nevertheless, having said that, we will do some point sampling with this raster, and instead of using a point file of world cities we will create a grid of points and use that to sample the raster:
 * To create a grid of points go to `Vector` / `Research Tools` / `Regular Points` (you could also use `Random Points` if your intention was to sample at random locations).
-* As the 'Input Boundary Layer' select the original raster file (gpw-v4...).
-* And instead of using a specific spacing, select 'Use this number of points' and choose 200000 (two hundred thousand).
+* As the `Input Boundary Layer` select the original raster file (gpw-v4...).
+* And instead of using a specific spacing, select `Use this number of points` and choose 200000 (two hundred thousand).
 
 ![Regular Points](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/08_Regular_Points.png)
 
+* Press `OK` and you should get a layer with a grid of points over your raster.
 * Now, before we can proceed with the sampling we need to load the plugin that has the tool (the sampling tool doesn't come pre-installed in the default version of qGIS). To do this go to `Plugins` / `Manage and Install Plugins...` This will take a little bit to load but you should end up in the 'Plugins' repository.
-* In the 'Search' bar, type 'Point sampling' and you should see in the panel right below this the tool.
+* In the `Search` bar, type 'Point sampling' and you should see in the panel right below this the tool.
 * Select the tool and click on the `Install plugin` button.
 
 ![Point Sampling Plugin](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/09_Point_Sampling_Plugin.png)
 
 * Once the tool is installed, close your plugins manager and go to `Plugins` / `Analyses` / `Point Sampling Tool`.
 * Select your the layer containing your points first and then highlight the original raster containing the values that we want to sample.
-* Select your output file and make sure 'Add created layer to the TOC' is checked.
+* Select your output file and make sure `Add created layer to the TOC` is checked.
 * Click `OK`. This process might take a little while.
 
 ![Point Sampling Tool](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/10_Point_Sampling_Tool.png)
 
 * Once you have your new points, open the attribute table to make sure they have 'absorbed' some data. A lot of them are going to be 'NULL' (the ones over the water) but some of them are going to have values.
-* Open the properties of this file and go to the 'General' tab.
+* Open the properties of this file and go to the `General` tab.
 * There, write a filter to exclude all the points that have 'NULL' as a value. The query should be something like this: `"gpw-v4-pop" IS NOT NULL`
 
 ![Query Builder](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/11_Query_Builder.png)
@@ -110,9 +111,9 @@ Nevertheless, having said that, we will do some point sampling with this raster,
 
 * Finally, just a word of warning: you can see here how the sampling, even though we used 200,000 points at regular intervals, missed a lot of the data in the raster. For example, in my case, it didn't really capture New York City. This is the problem with having a very detailed raster and sampling it with a layer that is not as dense.
 
-********** This does not work!!!!!!!*********** Takes forever **************
+Now, you can also sample using polygons. For example, in our case, we could use the country vector file to 'absorb' the values from the raster. This process takes in the values from all the pixels that fall within each polygon and can perfomr mathematical operations on those values, like calculating the sum, the mean, median, standard deviation, maximum and minimum. **However, when you have a very dense raster, like the one we have here, this process takes a very long time. For this reason I will go throught the steps but unless you have a lot of time, don't try to do it.**
 
-Now, to sample with polygons we will use the countries file we downloaded at the beginning of this tutorial. We will 'absorb' the values of the raster that fall within each polygon of this file and calculate statistics for each one of them. This one is very simple:
+The process is actually very simple:
 * First, go to `Raster` / `Zonal Statistics` / `Zonal Statistics`.
 * There, choose the original raster (gpw...) as the 'Raster layer' and the countries file as the 'Polygon layer'
 * In the 'Output column prefix' write 'Pop'.
