@@ -46,13 +46,13 @@ Finally, if we want to extract information from the raster file we can do it in 
 ##### Raster Calculator Tool
 * Let's say we want to extract those areas of the dataset that have more than 100 inhabitants. To do this we will use the raster calculator and 'reclassify' the raster so that the pixels with more than 100 people get a value of '1' and the rest get a value of '0'.
 * On your map go to `Raster` / `Raster Calculator`.
-* Here, you will see the raster we are using in the 'Raster bands' panel and below, where it says 'Raster calculator expression' we will write the expression to select the data. Let's do this first.
-* Double-click on the raster. It should automatically go to the 'Raster calculator expression'.
-* After the raster, write '> 100'. The full expression should look like this: `"gpw-v4-population-count_2010@1" > 100`
-* Next, select the 'Output layer', the new file where you will save this new data.
+* Here, you will see the raster we are using in the `Raster bands` panel and below, where it says `Raster calculator expression` we will write the expression to select the data. Let's do this first.
+* Double-click on the raster. It should automatically go to the `Raster calculator expression`.
+* After the raster, write `> 100`. The full expression should look like this: `"gpw-v4-population-count_2010@1" > 100`
+* Next, select the `Output layer`, the new file where you will save this new data.
 * The format should stay as a GeoTiff.
 * And finally, let's change the resolution. If you leave it as it is you might have problems with the raster and it will create a huge file (more than 3GBs). So change it to half of the current size: 21,600 x 8,700.
-* Make sure the 'Add results to project' option is checked.
+* Make sure the `Add results to project` option is checked.
 * Click `OK`.
 
 ![Raster Calculator](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/05_Raster_Calculator.png)
