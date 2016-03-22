@@ -1,7 +1,7 @@
 ## Tutorial 06 - Working With Raster Data
-This tutorial will show you how to work with raster data in qGIS. We will do two things: first, we will download a raster dataset with the population of the world and we will extract information from it; second, we will download satellite images from Landsat, combine them to form true and false color composites, and analyze them to also extract information from them.
+This tutorial will show you how to work with raster data in qGIS. We will do two things: first, we will download a raster dataset with the population of the world and we will extract information from it; and second, we will download satellite images from Landsat, combine them to form true and false color composites, and analyze them to also extract information from them.
 
-### Gridded Population of the World
+### Part 01 - Gridded Population of the World
 The 'Gridded Population of the World' dataset is a project by the Columbia University Center for International Earth Science Information Network (CIESIN) in collaboration with the Centro Internacional de Agricultura Tropical (CIAT). It aggregates data from census surveys all over the world into a single raster file, which has been divided into grids of 1km x 1km. This makes it probably the most comprehensive population dataset in the world. However, this dataset is only produced every ten years. You can find more information about it [here](http://sedac.ciesin.columbia.edu/data/collection/gpw-v3).
 
 We will use this dataset to extract population data of the world and create a map displaying the most densely populated areas of the world.
@@ -18,24 +18,23 @@ We will use this dataset to extract population data of the world and create a ma
 ![Raster Population](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/01_Raster_Population.png)
 
 #### Symbolizing a Raster Dataset:
-* The symbology for a raster dataset works differently than the symbology for a vector file. The raster doesn't have multiple fields; only one value is associated with each pixel in the raster dataset.
-* If you click on the `Identify Features` button (the one with the 'i' icon) and you click anywhere on the raster you will see the value associated with that specific pixel. The value will appear as the value for 'Band 1'.
+* The symbology for a raster dataset works differently than the symbology for a vector file. The raster doesn't have multiple fields; only one value is associated with each pixel in the raster dataset. This value corresponds to the 'brightness' value of the pixel, or if you are working with color raster, to the 'rgb' value of the pixel.
+* If you click on the `Identify Features` button (the one with the 'i' icon) and you click anywhere on the raster you will see the value associated with that specific pixel. The value will appear as the value for `Band 1`. In our case, this value represents people in this 1km x 1km cell.
 
 ![Identify Results](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/02_Identify_Results.png)
 
-* In this case, the value for that pixel I clicked (in the middle of the US) is 9.2, and since we are looking at a population dataset we can say that in that pixel representing 1km x 1km there are 9.2 people.
 * Now, go to the properties of the raster and go to the `Style` tab. You will see that it is different than the symbology for a normal vector dataset.
 
 ![Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/03_Symbology.png)
 
-* Here you will see that the default style is of a 'Singleband gray', which means that it's only symbolizing in grayscale based on one band (rasters can be made up of multiple bands, as we will see in the second part of this tutorial).
+* Here you will see that the default style is of a `Singleband gray`, which means that it's only symbolizing in grayscale based on one band (rasters can be made up of multiple bands, as we will see in the second part of this tutorial).
 * The color gradient is 'Black to white' but that can be switched to 'White to black'.
 * And it is symbolizing based on the minimum value, in this case '0' and on the maximum value, '281.706'.
-* Now, that's not actually the maximum value of the raster dataset. If you look at the right-hand panel ('Load min/max' values), which is where the min and max values come from, you will notice that the min/max values are being calculated based on a 'Cumulative count cut', which is used to get rid of the outliers. The 'Cumulative count cut' means that qGIS is only taking into account the values between 2% and 98%, in the default cases.
-* You could change that and use the option 'Min / max' to use the actual minimum and maximum values. If you choose this one, you have to click on the `Load` button, to load the values. Do this and click on `Apply` to see how the image changes. Now the minimum is still '0' but the maximum is '140853'. Because of this new maximum value, most of the image appears black.
-* Another way to get the value is to use the 'Mean +/- standard deviation x' option, which will calculate the minimum and maximum values based on the mean and the standard deviation. Try that one, changing the factor too. Remember to press the `Load` button every time you change this.
-* Now change the 'Render type' to 'Singleband pseudocolor' to get something similar to a symbology we would do for a vector file.
-* On the right-hand panel you will see the 'Mode' of classification ('Continuous' or 'Equal Interval') and below, again, the 'Load min/max values' panel.
+* Now, that's not actually the maximum value of the raster dataset. If you look at the right-hand panel (`Load min/max` values), which is where the min and max values come from, you will notice that the min/max values are being calculated based on a `Cumulative count cut`, which is used to get rid of the outliers. The `Cumulative count cut` means that qGIS is only taking into account the values between 2% and 98%, in the default cases.
+* You could change that and use the option `Min / max` to use the actual minimum and maximum values. If you choose this one, you have to click on the `Load` button to load the new values. Do this and click on `Apply` to see how the image changes. Now the minimum is still '0' but the maximum is '140853'. Because of this new maximum value, most of the image appears black.
+* Another way to get the value is to use the `Mean +/- standard deviation x` option, which will calculate the minimum and maximum values based on the mean and the standard deviation. Try that one, changing the factor too. Remember to press the `Load` button every time you change this.
+* Now change the `Render type` to `Singleband pseudocolor` to get something similar to a symbology we would do for a vector file.
+* On the right-hand panel you will see the `Mode` of classification (`Continuous` or `Equal Interval`) and below, again, the `Load min/max values` panel.
 * Click on the `Classify` button to load the values and then hit `OK` to see it on the map.
 * Now you can see clearly the regions of the world with the highest population density.
 
@@ -110,6 +109,8 @@ Nevertheless, having said that, we will do some point sampling with this raster,
 ![Population Points](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/12_Population_Points.png)
 
 * Finally, just a word of warning: you can see here how the sampling, even though we used 200,000 points at regular intervals, missed a lot of the data in the raster. For example, in my case, it didn't really capture New York City. This is the problem with having a very detailed raster and sampling it with a layer that is not as dense.
+
+********** This does not work!!!!!!!*********** Takes forever **************
 
 Now, to sample with polygons we will use the countries file we downloaded at the beginning of this tutorial. We will 'absorb' the values of the raster that fall within each polygon of this file and calculate statistics for each one of them. This one is very simple:
 * First, go to `Raster` / `Zonal Statistics` / `Zonal Statistics`.
