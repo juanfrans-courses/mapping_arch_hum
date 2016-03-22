@@ -127,7 +127,8 @@ The deliverable for this part of the tutorial is a map of the world showing popu
 
 Here's an example of a final map, although this only shows population and not population **change** as yours should:
 
-************** Image here**************
+![Dot Population](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/14_Final_Map_DotMatrix.png)
+
 
 
 
