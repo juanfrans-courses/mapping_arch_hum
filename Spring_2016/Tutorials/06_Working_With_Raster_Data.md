@@ -129,7 +129,8 @@ Here's an example of a final map, although this only shows population and not po
 
 ![Dot Population](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/14_Final_Map_DotMatrix.png)
 
-
+### Part 02 - Landsat Satellite Images
+Another great thing about working with raster data is the ability to take satellite images of the earth and extract information from them. One of the most useful datasets for this are the images taken by the Landsat satellites. The Landsat program is operated by the U.S Geological Survey and NASA. 
 
 
 
