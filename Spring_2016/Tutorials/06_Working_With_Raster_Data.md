@@ -1,5 +1,5 @@
 ## Tutorial 06 - Working With Raster Data
-This tutorial will show you how to work with raster data in qGIS. We will do two things: first, we will download a raster dataset with the population of the world and we will extract information from it; and second, we will download satellite images from Landsat, combine them to form true and false color composites, and analyze them to also extract information from them.
+This tutorial will show you how to work with raster data in qGIS. We will do two things: first, we will download a raster dataset with the population of the world and we will extract information from it; and second, we will download satellite images from Landsat and combine them to form true and false color composites.
 
 ### Part 01 - Gridded Population of the World
 The 'Gridded Population of the World' dataset is a project by the Columbia University Center for International Earth Science Information Network (CIESIN) in collaboration with the Centro Internacional de Agricultura Tropical (CIAT). It aggregates data from census surveys all over the world into a single raster file, which has been divided into grids of 1km x 1km. This makes it probably the most comprehensive population dataset in the world. However, this dataset is only produced every ten years. You can find more information about it [here](http://sedac.ciesin.columbia.edu/data/collection/gpw-v3).
@@ -133,7 +133,7 @@ Here's an example of a final map, although this only shows population and not po
 Another great thing about working with raster data is the ability to take satellite images of the Earth and extract information from them. One of the most useful datasets for this are the images taken by the Landsat satellites. The Landsat program is operated by the U.S Geological Survey and NASA and has been in activity since the 1970s. The Landsat 8 (the current version of the Landsat satellites) is constantly circling the Earth, taking images of most areas every 2 weeks and these images are available for download for free. To find out more about the Landsat program go [here](http://landsat.usgs.gov//about_project_descriptions.php) and [here](https://en.wikipedia.org/wiki/Landsat_program).
 
 #### Downloading Landsat Images
-There are multiple ways of downloading Landsat images. The most common one is through the USGS (U.S. Geological Survey). However, to download images from their site you will need to sign up for a free account [here](https://ers.cr.usgs.gov/login/?RET_ADDR=http%3A%2F%2Fearthexplorer.usgs.gov%2Ffilelist). Another easy way of downloading Landsat images is through [Libra](http://libra.developmentseed.org/), a project by Development Seed. Downloading images through Libra is much easier than through the Earth Explorer (USGS), but Earth Explorer gives you access to much more data, including old Landsat images. In this tutorial we will download images through the Earth Explorer, but know that Libra is also a good option.
+There are multiple ways of downloading Landsat images. The most common one is through the USGS (U.S. Geological Survey). However, to download images from their site you will need to sign up for a free account [here](https://ers.cr.usgs.gov/login/?RET_ADDR=http%3A%2F%2Fearthexplorer.usgs.gov%2Ffilelist). Another easy way of downloading Landsat images is through [Libra](http://libra.developmentseed.org/), a project by Development Seed. Downloading images through Libra is much easier than through the Earth Explorer (USGS), but Earth Explorer gives you access to much more data, including old Landsat images. In this tutorial we will download images through the Earth Explorer, but know that Libra is also a very good and easy option.
 
 * First you need to sign up for a free account with the USGS. Once you've signed up for an account and you've logged in you can go to the main download [page](http://earthexplorer.usgs.gov/).
 * Next, click on the `Data Sets` tab at the top left-hand part of the page.
@@ -201,8 +201,9 @@ Now that you have the images you can load them into qGIS and combine the differe
 
 ![True Color](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/19_True_Color.png)
 
-##### False Color Composite
 Now let's create 'False Color Composites'. These are images that portray colors in different ways in order to highlight specific aspects of the natural environment, be it urban agglomerations, water or vegetation. The process to create these images is basically the same as creating a 'True Color Composite', the difference is just the bands that are used and the order in which they are displayed.
+
+##### False Color Composite
 * First, let's create a traditional 'False Color Composite'.
 * Merge bands 3, 4 and 5. In this composite we are using the green and red bands plus the near infrared. This will highlight water as well as vegetation.
 * In the properties, use Band 3 as the `Red band`, Band 2 as the `Green band` and Band 1 as the `Blue band` and, again, symbolize them using the `Min / max` option.
@@ -225,12 +226,13 @@ Now let's create 'False Color Composites'. These are images that portray colors 
 
 ![False Urban](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/21_False_Urban.png)
 
-* True Color: 4,3,2
-* NDVI: 5,4
-* Urban False Color: 7,5,2
-* False Color: 3, 4, 5
-* [Mapbox](https://www.mapbox.com/blog/putting-landsat-8-bands-to-work/)
-* [ESRI](https://blogs.esri.com/esri/arcgis/2013/07/24/band-combinations-for-landsat-8/)
+* In these two links you will also find useful information about Landsat bands and more types of 'False Color Composites':
+  * [Mapbox](https://www.mapbox.com/blog/putting-landsat-8-bands-to-work/)
+  * [ESRI](https://blogs.esri.com/esri/arcgis/2013/07/24/band-combinations-for-landsat-8/)
 
+##### Deliverable
+The deliverable for this part of the tutorial is 3 different 'False Color Composite' images of a different part of the world (not Leticia in Colombia). You should label each one of them properly and make sure to add a scale bar. As always, choose your colors, fonts, layouts carefully. Each of the three maps should be in its own page.
 
+Here's an example of one of the final maps for this section:
 
+![Final Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/22_False_Composite.png)
