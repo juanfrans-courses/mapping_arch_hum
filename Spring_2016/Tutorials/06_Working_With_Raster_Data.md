@@ -140,7 +140,7 @@ There are multiple ways of downloading Landsat images. The most common one is th
 * There, expand the `Landsat Archive` option and check the first option, `L8 OLI/TIRS`. This gives you access to the latest Landsat satellite images from the Landsat 8 satellite.
 * Now, in the map part of the page, navigate to the southern-most tip of Colombia, and click on Leticia, the only major city there.
 
-********* Image here ***********
+![Earth Explorer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/15_Earth_Explorer.png)
 
 * Then, click on `Results` at the bottom of the page. On the left-hand panel you should see a list of images from that specific area and satellite.
 * If you click on the little foot icon next to one of the images, the map should show you the footprint of the image. It should match your selection and cover Leticia.
@@ -164,15 +164,73 @@ There are multiple ways of downloading Landsat images. The most common one is th
   * Band 11: Thermal Infrared 2
   * Band QA: Quality Assessment
 
+#### Creating True and False Composites in qGIS
+Now that you have the images you can load them into qGIS and combine the different bands to create images that underline different aspects of the Earth. For example, you can combine bands 4, 3 and 2 to create a 'True Color' composite, showing the true colors; or you can combine bands 7, 5 and 2 to create a 'Urban False Color' composite that highlights urban areas; you can also create an [NDVI](https://en.wikipedia.org/wiki/Normalized_Difference_Vegetation_Index) image with bands 5 and 4, highlighting vegetation; or you can combine bands 3, 4 and 5 to create a standard 'False Color Composite' that will highlight water and vegetation.
 
+* First, open a new qGIS map and add your satellite images.
+* Next, rename them so that it's easier to identify each band. Instead of 'LC80040632015184LGN00_B1' it should be 'Band_1'. To rename, right-click on the layer and choose `Rename`.
+* Sort the layers so that the top one is 1 and the last one is QA.
+* Explore the different bands and see what features come up better in each of them.
+* Notice that Band_8 (Panchromatic) actually has a better resolution than the other ones. This band is often used to 'Pansharpen' (increase the resolution of) the other bands.
+* For example, Band_5 (Near Infrared) is very good at highlighting water:
 
+![Band 5](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/17_Band_5.png)
 
+##### True Color Composite
+* First we will create a 'True Color Composite', which will give us an image with 'standard' colors.
+* Go to `Raster` / `Miscellaneous` / `Merge`.
+* In the `Input files` select bands 2, 3 and 4.
+* As the `Output file` name your new image 'True_Color_234' and make sure the format is `GeoTIFF`.
+* Make sure the `Layer stack` option is checked and make sure the `Load into canvas when finished` option is also checked.
+* Click `OK`.
+
+![Merge Raster](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/16_Merge_Raster.png)
+
+* Once the process is done, close the windows.
+* You should see your new raster on your map. Initially, it will not look like 'true colors'.
+* Go to the properties of this new raster and go to the `Style` tab.
+* There, change the `Red band` to `Band 3` and change the `Blue band` to `Band 1`. Remember, we loaded Band_2 (Blue), Band_3 (Green) and Band_4 (Red); because of the order, Band_2 became Band 1, Band_3 became Band 2 and Band_4 became Band 3. So now we are matching the `Red band` with Band 3 (which was Band_4 and the red), and so on and so forth.
+* Also, change the `Load min/max values` to `Min / max` and click on the `Load` button.
+* Once you've made this changes click `OK`.
+
+![True Color Properties](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/18_True_Color_Properties.png)
+
+* Your new image should get more 'realistic' colors.
+* You can also symbolize it with the `Mean +/- standard deviation x` values. This can make the colors brighter.
+* And if you play around with the settings in the `Color Rendering` panel below (brightness, saturation and contrast) you will achieve better results.
+
+![True Color](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/19_True_Color.png)
+
+##### False Color Composite
+Now let's create 'False Color Composites'. These are images that portray colors in different ways in order to highlight specific aspects of the natural environment, be it urban agglomerations, water or vegetation. The process to create these images is basically the same as creating a 'True Color Composite', the difference is just the bands that are used and the order in which they are displayed.
+* First, let's create a traditional 'False Color Composite'.
+* Merge bands 3, 4 and 5. In this composite we are using the green and red bands plus the near infrared. This will highlight water as well as vegetation.
+* In the properties, use Band 3 as the `Red band`, Band 2 as the `Green band` and Band 1 as the `Blue band` and, again, symbolize them using the `Min / max` option.
+* You can also adjust the `Color Rendering` options.
+* You will see all the vegetation turn red and the water turn dark.
+
+![False Color](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/20_False_Color.png)
+
+* In this image, red represents vegetation, but the darker reds represent tree coverage while the brighter reds represent grass or crops.
+* Here we can see how around the city we have a lot of de-forestation but further in the jungle is still present.
+
+##### Urban False Color
+* Now, to create the 'Urban False Color Composite' use bands 2, 5 and 7.
+* In the properties of this new image your bands should be:
+  * Red - Band 3
+  * Green - Band 2
+  * Blue - Band 1
+* You can also adjust the `Color Rendering` options.
+* This image highlights urban land use as pink/red.
+
+![False Urban](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/21_False_Urban.png)
 
 * True Color: 4,3,2
 * NDVI: 5,4
 * Urban False Color: 7,5,2
-
-
+* False Color: 3, 4, 5
+* [Mapbox](https://www.mapbox.com/blog/putting-landsat-8-bands-to-work/)
+* [ESRI](https://blogs.esri.com/esri/arcgis/2013/07/24/band-combinations-for-landsat-8/)
 
 
 
