@@ -127,8 +127,8 @@ March 25
 * Working with address data (APIs), address locator, other methods
 * Georeferencing existing maps
 * How to create and edit spatial data
-* ***Assignment: Georeference an existing map (old or new) and create new dataset from it***
-* ***Assignment: Create a map with personal data (sound and location)***
+* ***Assignment: [Tutorial 05](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/05_Georeferencing_and_Creating_New_Shapefiles.md) - Georeference an existing map (old or new) and create new dataset from it***
+* ***Assignment: Create a map with personal data (sound and location)*** (Due March 30)
 
 ### Week 10: Working with raster data
 April 1
