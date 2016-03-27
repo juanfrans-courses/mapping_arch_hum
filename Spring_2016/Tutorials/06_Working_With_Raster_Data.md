@@ -186,6 +186,8 @@ Now that you have the images you can load them into qGIS and combine the differe
 
 ![Merge Raster](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/16_Merge_Raster.png)
 
+**Warning, the order in which the files are listed matters. And this influences the symbology process!!!!**
+
 * Once the process is done, close the windows.
 * You should see your new raster on your map. Initially, it will not look like 'true colors'.
 * Go to the properties of this new raster and go to the `Style` tab.
