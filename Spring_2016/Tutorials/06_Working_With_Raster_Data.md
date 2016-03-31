@@ -209,8 +209,9 @@ Now let's create 'False Color Composites'. These are images that portray colors 
 
 ##### False Color Composite
 * First, let's create a traditional 'False Color Composite'.
-* Merge bands 3, 4 and 5. In this composite we are using the green and red bands plus the near infrared. This will highlight water as well as vegetation.
-* In the properties, use Band 3 as the `Red band`, Band 2 as the `Green band` and Band 1 as the `Blue band` and, again, symbolize them using the `Min / max` option.
+* Merge bands 5, 4 and 3. In this composite we are using the green and red bands plus the near infrared. This will highlight water as well as vegetation.
+* Remember, the order is very important.
+* In the properties, symbolize them using the `Min / max` option.
 * You can also adjust the `Color Rendering` options.
 * You will see all the vegetation turn red and the water turn dark.
 
@@ -220,11 +221,9 @@ Now let's create 'False Color Composites'. These are images that portray colors 
 * Here we can see how around the city we have a lot of de-forestation but further in the jungle is still present.
 
 ##### Urban False Color
-* Now, to create the 'Urban False Color Composite' use bands 2, 5 and 7.
-* In the properties of this new image your bands should be:
-  * Red - Band 3
-  * Green - Band 2
-  * Blue - Band 1
+* Now, to create the 'Urban False Color Composite' use bands 7, 5 and 2.
+* Remember, the order is very important.
+* In the properties, symbolize them using the `Min / max` option.
 * You can also adjust the `Color Rendering` options.
 * This image highlights urban land use as pink/red.
 
