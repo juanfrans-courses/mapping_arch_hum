@@ -178,20 +178,22 @@ Now that you have the images you can load them into qGIS and combine the differe
 
 ##### True Color Composite
 * First we will create a 'True Color Composite', which will give us an image with 'standard' colors.
+* The 'True Color Composite' will be made up of the bands 4, 3, and 2. **However, note that it is not 2, 3, 4; the order is important:** when you choose your bands in the next few steps, you should sort your files so that the first band (in this case, band 4) is at the top, and the last one (band 2) at the bottom. You can always change this inside qGIS but if you get it right from the beginnig it is easier.
 * Go to `Raster` / `Miscellaneous` / `Merge`.
-* In the `Input files` select bands 2, 3 and 4.
-* As the `Output file` name your new image 'True_Color_234' and make sure the format is `GeoTIFF`.
+* In the `Input files` select bands 4, 3 and 2.
+* As the `Output file` name your new image 'True_Color_432' and make sure the format is `GeoTIFF`.
 * Make sure the `Layer stack` option is checked and make sure the `Load into canvas when finished` option is also checked.
+* Also, in the script below (which describes the GDAL script that is being used to merge the rasters) you can also check that the bands are in the right order. In this case, band 4 should be first, band 3 second and band 2 last.
 * Click `OK`.
 
 ![Merge Raster](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/16_Merge_Raster.png)
 
-**Warning, the order in which the files are listed matters. And this influences the symbology process!!!!**
-
 * Once the process is done, close the windows.
-* You should see your new raster on your map. Initially, it will not look like 'true colors'.
+* You should see your new raster on your map.
+* If by any chance you didn't order your files correctly and your image doesn't look like it should you can go to the properties of the new raster and in the `Style` tab change the order of the bands:
+  * Here you will need to play around with the `Red`, `Green` and `Blue` bands until you get the order correct. In theory, band 4 should be `Band 1 (Gray)`, band 3 should be `Band 2 (Green)` and band 2 should be `Band 3 (Blue).
+  * Once you get these right, hit `Apply` and you should see your image change to the right colors.
 * Go to the properties of this new raster and go to the `Style` tab.
-* There, change the `Red band` to `Band 3` and change the `Blue band` to `Band 1`. Remember, we loaded Band_2 (Blue), Band_3 (Green) and Band_4 (Red); because of the order, Band_2 became Band 1, Band_3 became Band 2 and Band_4 became Band 3. So now we are matching the `Red band` with Band 3 (which was Band_4 and the red), and so on and so forth.
 * Also, change the `Load min/max values` to `Min / max` and click on the `Load` button.
 * Once you've made this changes click `OK`.
 
