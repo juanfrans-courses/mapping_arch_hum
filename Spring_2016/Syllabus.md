@@ -138,7 +138,9 @@ April 1
 * Downloading Landsat images
 * Creating 'true color' and 'false color composite' images
 * Extracting data from raster files
-* ***Assignment: Create a 'false color composite' map based on Landsat images***
+* ***Assignment: [Tutorial 06](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/06_Working_With_Raster_Data.md) - Create the following maps:
+  * Change in population (based on the Gridded Population of the World datasets)
+  * 3 different 'False Color Composite' maps based on Landsat imagery*** (Due April 13)
 
 ### Week 11 & 12: Webmapping and crowdsourced data
 April 8 & 15
