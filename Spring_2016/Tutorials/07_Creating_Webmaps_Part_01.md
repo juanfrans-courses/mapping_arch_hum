@@ -1,4 +1,51 @@
 ## Tutorial 07 - Creating Webmaps - Part 01
+This is part 1 of a 2 part tutorial. In this first part you will create multiple web maps using CartoDB. In the second part, you will create different *base maps* using Mapbox and then use those *base maps* with your CartoDB maps.
+
+In this tutorial we will create maps using two different types of datasets. We will upload a shapefile and two csv files. The idea here is that you learn how these different types of datasets are imported into and visualized in CartoDB.
+
+### Datasets
+We will be using three different datasets:
+* PLUTO for Manhattan - Originally downloaded from [here](http://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page)
+* Trees for Manhattan - Originally downloaded from [here](https://data.cityofnewyork.us/Environment/Street-Tree-Census-Manhattan-/e6n3-m3vc)
+* Green taxi trips - You can find the dataset [here](https://github.com/juanfrans-courses/mapping_arch_hum/tree/master/Spring_2016/Class_Data/07_Web_Mapping) *Note: this file is a random sample of a much larger dataset that can be downloaded [here](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml). However, for this tutorial, please use this random sample. The whole dataset is too large for the purposes of this tutorial.*
+
+### Creating a building age map of Manhattan
+#### Importing and loading your data into CartoDB
+* Once you've downloaded the data and created your CartoDB account, longin into CartoDB. You will land on your 'dashboard'.
+* Here, click on `NEW MAP`, which will take you to your datasets.
+* In there, you need to upload the PLUTO dataset, so click on `Connect dataset`.
+* Here, you can browse for your files or you can just drag and drop them. The important thing to keep in mind when uploading shapefiles is that they need to be zipped. Fortunately, when you downloaded the PLUTO dataset from Bytes of the Big Apple it came in zipped, so you already have it in the right format. However, if for some reason you don't have your shapefiles zipped, you need to compress them into a single archive. Remember that shapefiles are actually made up of multiple files (4, 5 or 6 usually), so you need to make sure these are all included in your zip file.
+* Interestingly enough, if you uploaded the zip file that was directly downloaded from Bytes of the Big Apple, you actually uploaded two shapefiles: 'mnmappluto' which is the actual PLUTO file for Manhattan, and 'mn_dcp_mappinglot' which is a secondary file that comes with the PLUTO file.
+* Once your file is uploaded and processed you will see it in the list of datasets.
+* Click on the 'mnmappluto' file to see it's content:
+
+![Table View](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/01_Table_View.png)
+
+* You will see here all your data:
+  * First of all, know that CartoDB rearranges your columns alphabetically (except for the first two), so don't worry if they appear in a different order to what you saw in qGIS or in another program.
+  * Second, notice that the second column, the one called 'the_geom' has a little orange 'geo' tag next to it. This is very important: this means that CartoDB has identified this field as the one that contains the actual geometry and geographic reference for this file. This is what is going to be plotted as the base geometry. When we upload other datasets we will see how to modify this.
+  * Third, notice that below the header of each column CartoDB notes the type of data for that column, be it 'string', 'number', 'geometry', etc. If by some reason CartoDB has misclassified any columns you can click on that label and change the type to something else.
+  * Finally, scroll all the way to the right of the table until you see a field called 'yearbuilt'. This is the field we will use to symbolize our data based on the year the building was built for every lot. Make sure this field is of the type 'number'. If it isn't, change it to 'number'.
+* Once you've checked your data, click on the `MAP VIEW` button at the top of the page. You will be taken to a map view and you will be able to see your data:
+
+![Map View](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/01_Map_View.png)
+
+
+
+
+
+
+3 different maps:
+  * Age of buildings
+  * Trees
+  * Taxi trips and specific land use types (ie. hotels)
+
+
+
+* PLUTO shapefile
+* Trees csv
+* Taxi trips
+
 This tutorial will show you how to work with raster data in qGIS. We will do two things: first, we will download a raster dataset with the population of the world and we will extract information from it; and second, we will download satellite images from Landsat and combine them to form true and false color composites.
 
 ### Part 01 - Gridded Population of the World
@@ -15,7 +62,7 @@ We will use this dataset to extract population data of the world and create a ma
 * Next, add the GPW raster file. The one you need to choose is the one with the .tif extension. Remember that to add a raster you need to click on the `Add Raster Layer` button.
 * You will see that the raster appears in black and white, with the population centers in white:
 
-![Raster Population](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/06_Raster_Data/01_Raster_Population.png)
+
 
 #### Symbolizing a Raster Dataset:
 * The symbology for a raster dataset works differently than the symbology for a vector file. The raster doesn't have multiple fields; only one value is associated with each pixel in the raster dataset. This value corresponds to the 'brightness' value of the pixel, or if you are working with color raster, to the 'rgb' value of the pixel.
