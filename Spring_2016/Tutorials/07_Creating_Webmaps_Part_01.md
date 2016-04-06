@@ -28,10 +28,31 @@ We will be using three different datasets:
   * Finally, scroll all the way to the right of the table until you see a field called 'yearbuilt'. This is the field we will use to symbolize our data based on the year the building was built for every lot. Make sure this field is of the type 'number'. If it isn't, change it to 'number'.
 * Once you've checked your data, click on the `MAP VIEW` button at the top of the page. You will be taken to a map view and you will be able to see your data:
 
-![Map View](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/01_Map_View.png)
+![Map View](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/02_Map_View.png)
 
+* You can pan around and zoom in and out of your map. And if you click on a lot you will get a popup window but it won't have any information because we haven't set that yet.
 
+#### Symbolizing your map
+* On the right hand side of your map you will see a series of tabs:
+  * The first one, with a '+' sign, allows you to add another dataset to the same map.
+  * The second one, the one that has the '1', allows you to choose one dataset when you have multiple in your map. Since we only have one, that's the only one you can choose. If we had multiple you would see a '2', a '3', etc.
+  * The third one, the one that says 'SQL', allows you to filter your data using 'SQL' language. For example, you could write something like this `SELECT * FROM mnmappluto WHERE yearbuilt > 1990` to show only the lots where buildings where built after 1990. Try a couple of commands here. SQL is a fairly easy language but it's also very powerful. There are many tutorials out there, [here](https://www.codecademy.com/learn/learn-sql) is one from Codecademy.
+  * Clear your query by clicking `Clear view` from the bottom of the SQL panel.
+  * The next tab, the one that has a little paint brush, is where you will find all the basic symbolization options. We will return to this one in soon.
+  * The following one, the one that has a little popup, is the 'Infowindow' tab, where you will choose what fields will appear in the popup that comes up when you click on a feature.
+  * The tab that says 'CSS' is the one where you can manually symbolize your data using a variation of CSS called 'CartoCSS'.
+  * Then there's the legends tab where, clearly, you can customize your map's legend.
+  * And finally, there's the filters layer where you can filter your data in an interactive way based on histograms, although it's not as precise as working in SQL. If you create any filters, make sure you clear them.
+* So, to symbolize your dataset based on the 'yearbuilt' field, go to the 'wizards' tab (the one with the paint brush).
+* Here, select cloropleth. I encourage you to explore the other symbology methods. Some of them could be interesting for this dataset but others will not work that well.
+* In the column option select 'yearbuilt'.
+* 7 buckets is fine.
+* And change the 'Quantification' to 'Jenks'.
+* You should change your color ramp. If you want to use divergent color ramps that's fine, but know that those types of color ramps are usually used for values that diverge and building age is not really that kind of value.
+* You can also change the transparency of your colors, the stroke, the stroke weight and the transparency of the stroke.
+* Finally, you could choose a 'Composite operation', which is basically how your layer's color or brightness would interact with the color or brightness of the layer below; and you could also add some 'Label Text' but that will not be necessary for this map.
 
+![Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/03_Symbology.png)
 
 
 
