@@ -90,6 +90,16 @@ We will be using three different datasets:
    polygon-fill: #005824;
 }
 ```
+* The colors are actually in HEX form. If you want different HEX codes you can always go to [Adobe Kuler](https://color.adobe.com/) or to [ColorBrewer](http://colorbrewer2.org/) and pick colors from there.
+* Remember once you've changed the CartoCSS to click on `Apply style`.
+* Finally, click on the 'Legend' tab to customize the legend of your map.
+* Add a title to your legend and, if necessary, change the labels and the colors.
+* Once all of this is done, click on the `Basemap` dropdown menu at the top left-hand corner of the map and choose a basemap that you like. However, note that certain basemaps work only at specific zoom levels, so choose one that allows you to zoom to a good level without loosing resolution.
+* Also note that there's an option to add your own basemaps (the '+' sign at the bottom of the menu). This is where we will add the basemaps that we will design with Mapbox.
+* Now, for the final stage click on the `Visualize` button at the top right-hand corner of the page, and then click on `OK, CREATE MAP` to create your map.
+
+#### Final customization of your map
+
 
 3 different maps:
   * Age of buildings
