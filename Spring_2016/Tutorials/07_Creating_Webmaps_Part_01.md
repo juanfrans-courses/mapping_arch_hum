@@ -113,6 +113,74 @@ We will be using three different datasets:
 
 ![Final Map 01](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/05_Final_Map_01.png)
 
+### Creating a map of healthy street trees in Manhattan
+Now we are going to use a different dataset to create a street tree map of Manhattan. This map should be pretty straight forward now that you know the basic workings of CartoDB.
+#### Importing and exploring the data
+* First, import your tree dataset.
+* As opposed to the PLUTO dataset we used in the previous map, this dataset is a csv file, not a shapefile. However, CartoDB automatically identifies the field containing geographic coordinates and uses that to create the map.
+* If after uploading the file CartoDB takes you directly to the map, go back to the dataset view, using the `DATA VIEW` button at the top of the page, just to take a look at the fields in your dataset.
+* First will symbolize the trees by their condition. If you move to the right of the table you will see a field called 'treecondit', this is the one we will use.
+* Later, for our final tree map, we will sybolize them by density of healthy trees.
+* Return to the `MAP VIEW`.
+
+#### Symbolizing
+* First, go to the 'Wizards' tab and choose the 'CATEGORY' symbology.
+* Choose 'treecondit' as the column to symbolize.
+* Notice how most of the street trees are in the '1', '2' or '3' categories. Most of them are in good health. However, just to check this go to the 'Filters' tab.
+* Here, you will see a small histogram of the data. Choose 'treecondit' as the column to analyze.
+* Notice how the histogram confirms what we were seeing in the map: the categories with the most trees are '1', '2' and '3'; after that the other categories don't have that many trees.
+
+![Histogram](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/06_Histogram.png)
+
+* Now, since we are building a density map of healthy trees in Manhattan, we should get rid of the trees that are not that healthy. To do this clear any filters in the 'filters' tab and go to the 'SQL' tab.
+* We need to write a SQL query saying something like "From all the trees, select only the ones that have a tree condition of '1' '2' or '3'". In SQL this looks like this: `SELECT * FROM manhattantree_1 WHERE treecondit = '1' or treecondit = '2' or treecondit = '3'`.
+* Write that query, hit `Apply query` and you should see your map filter the 'unhealthy' trees out.
+* Now we can create a density map just using the healthy trees.
+* In the 'wizards' tab, select the 'DENSITY' option (the last one on the right).
+* You will see your layer change to hexagons colored by how many trees are in each cell.
+* This is a neat visualization, however, there is no way to choose different classification methods (such as 'Jenks', 'Quantiles', etc). So we will need to go into the actual CSS to modify the cutoff values.
+* First, change your 'Buckets' to 7 and, if you want, reduce your polygon size to 10.
+* Also, choose your color ramp.
+* Now, go to the 'CSS' tab.
+* Here, you can change the cutoff values in a much more precise way.
+* After a couple of tries I settled on this classification
+```
+/** density visualization */
+
+#manhattantree_1{
+  polygon-fill: #005824;
+  polygon-opacity: 0.7;
+  line-color: #FFFFFF;
+  line-width: 0.25;
+  line-opacity: 1;
+}
+#manhattantree_1{
+  [points_density <= 0.0507169782056104] { polygon-fill: #005824;  }
+  [points_density <= 0.02] { polygon-fill: #238B45;  }
+  [points_density <= 0.015] { polygon-fill: #41AE76;  }
+  [points_density <= 0.01] { polygon-fill: #66C2A4;  }
+  [points_density <= 0.0075] { polygon-fill: #CCECE6;  }
+  [points_density <= 0.005] { polygon-fill: #D7FAF4;  }
+  [points_density <= 0.0025] { polygon-fill: #EDF8FB;  }
+
+}
+```
+* Feel free to experiment with different classifications but note that if you go back to the 'wizards' tab and change the number of buckets or the color ramp, or anything else for that matter, your classification modifications will be lost.
+* Also, note that in the 'CSS' tab you can also modify your polygon fill, it's opacity, the line color, the line width and the line opacity, so once you've chosen your symbology you can actually do all of the other changes in the 'CSS' tab.
+
+![CSS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/07_CSS.png)
+
+* Finish this part by making sure your legend has the right information.
+
+#### Final touches
+* Just as in the previous map, choose your basemap, your options, add a title and an explanation and `PUBLISH` your map once it's done.
+* Your final map should look something like this.
+
+![Final Map 02](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/08_Final_Map_02.png)
+
+* One last thing to take into account when using the density symbology: you will notice that if you zoom in or out your symbology changes. One of the things that happens is that when you change the zoom level your cell size increases or decreases, so the cutoff values that you selected do not fit anymore to the shape of the data. This is a problem for these types of maps. You could eventually code the specific cutoff values for every zoom level, but that's a more advanced feature.
+
+
 
 3 different maps:
   * Age of buildings
