@@ -96,12 +96,22 @@ We will be using three different datasets:
 * Add a title to your legend and, if necessary, change the labels and the colors.
 * Once all of this is done, click on the `Basemap` dropdown menu at the top left-hand corner of the map and choose a basemap that you like. However, note that certain basemaps work only at specific zoom levels, so choose one that allows you to zoom to a good level without loosing resolution.
 * Also note that there's an option to add your own basemaps (the '+' sign at the bottom of the menu). This is where we will add the basemaps that we will design with Mapbox.
+* Now, for the final stage click on the `Visualize` button at the top right-hand corner of the page, and then click on `OK, CREATE MAP` to create your map.
 
 ![After Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/04_After_Symbology.png)
 
-* Now, for the final stage click on the `Visualize` button at the top right-hand corner of the page, and then click on `OK, CREATE MAP` to create your map.
-
 #### Final customization of your map
+* Once you've 'Visualized' your map you can do the final customization.
+* With the `Add Element` drop down menu, add a title, explanation and source to your map.
+* And with the `Options` button at the bottom of the page customize the elements that you want to show in your map, such as 'Search box', 'Share options', etc.
+* Once you are done with this, click on `PUBLISH` at the top right-hand corner of the page to get the different sharing options:
+  * 'Get the link' will give you the link to the map in CartoDB.
+  * 'Embed it' will give you the code to create an 'iframe' and embed your map in a website.
+  * 'CartoDB.js' will give you the link to the 'json' files that you can use in your applications or website.
+* For this tutorial you will only need the basic CartoDB link.
+* Here's how my final map looks using the link:
+
+![Final Map 01](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/05_Final_Map_01.png)
 
 
 3 different maps:
