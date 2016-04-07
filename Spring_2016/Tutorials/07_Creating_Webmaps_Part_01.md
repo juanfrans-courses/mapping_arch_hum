@@ -54,7 +54,42 @@ We will be using three different datasets:
 
 ![Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/03_Symbology.png)
 
+* Now click on the 'Infowindow' tab.
+* Here, turn on the 'yearbuilt'. You will see now that when you click on a lot the popup window will contain the 'yearbuilt' data.
+* Now click on the 'CartoCSS' tab. Here, we will fine tune our symbology to make our breaks cleaner.
+* This is my CartoCSS code (note that your colors might be different and feel free to choose your own breaks):
+```
+/** choropleth visualization */
 
+#mnmappluto{
+  polygon-fill: #005824;
+  polygon-opacity: 1;
+  line-color: #000000;
+  line-width: 0.1;
+  line-opacity: 0.5;
+}
+#mnmappluto [ yearbuilt <= 2040] {
+   polygon-fill: #EDF8FB;
+}
+#mnmappluto [ yearbuilt <= 1990] {
+   polygon-fill: #D7FAF4;
+}
+#mnmappluto [ yearbuilt <= 1960] {
+   polygon-fill: #CCECE6;
+}
+#mnmappluto [ yearbuilt <= 1935] {
+   polygon-fill: #66C2A4;
+}
+#mnmappluto [ yearbuilt <= 1910] {
+   polygon-fill: #41AE76;
+}
+#mnmappluto [ yearbuilt <= 1900] {
+   polygon-fill: #238B45;
+}
+#mnmappluto [ yearbuilt <= 1800] {
+   polygon-fill: #005824;
+}
+```
 
 3 different maps:
   * Age of buildings
