@@ -176,7 +176,7 @@ Now we are going to use a different dataset to create a street tree map of Manha
 * Just as in the previous map, choose your basemap, your options, add a title and an explanation and `PUBLISH` your map once it's done.
 * Your final map should look something like this.
 
-![Final Map 02](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/08_Final_Map_02.png)
+![Final Map 02](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/08_Final_Map_02.png)
 
 * One last thing to take into account when using the density symbology: you will notice that if you zoom in or out your symbology changes. One of the things that happens is that when you change the zoom level your cell size increases or decreases, so the cutoff values that you selected do not fit anymore to the shape of the data. This is a problem for these types of maps. You could eventually code the specific cutoff values for every zoom level, but that's a more advanced feature.
 
