@@ -96,6 +96,9 @@ We will be using three different datasets:
 * Add a title to your legend and, if necessary, change the labels and the colors.
 * Once all of this is done, click on the `Basemap` dropdown menu at the top left-hand corner of the map and choose a basemap that you like. However, note that certain basemaps work only at specific zoom levels, so choose one that allows you to zoom to a good level without loosing resolution.
 * Also note that there's an option to add your own basemaps (the '+' sign at the bottom of the menu). This is where we will add the basemaps that we will design with Mapbox.
+
+![After Symbology](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/04_After_Symbology.png)
+
 * Now, for the final stage click on the `Visualize` button at the top right-hand corner of the page, and then click on `OK, CREATE MAP` to create your map.
 
 #### Final customization of your map
