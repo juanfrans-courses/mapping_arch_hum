@@ -1,4 +1,6 @@
 ## Tutorial 06 - Working With Raster Data
+*Tutorial created by Juan Francisco Saldarriaga (jfs2118@columbia.edu) for the [Mapping for Architecture, Urbanism and the Humanities](https://github.com/juanfrans-courses/mapping_arch_hum) class at Columbia University*
+
 This tutorial will show you how to work with raster data in qGIS. We will do two things: first, we will download a raster dataset with the population of the world and we will extract information from it; and second, we will download satellite images from Landsat and combine them to form true and false color composites.
 
 ### Part 01 - Gridded Population of the World

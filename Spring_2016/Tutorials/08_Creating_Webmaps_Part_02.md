@@ -1,4 +1,6 @@
 ## Tutorial 08 - Creating Webmaps - Part 02
+*Tutorial created by Juan Francisco Saldarriaga (jfs2118@columbia.edu) for the [Mapping for Architecture, Urbanism and the Humanities](https://github.com/juanfrans-courses/mapping_arch_hum) class at Columbia University*
+
 This is part 2 of a 2 part tutorial. In this second part you will create web maps (basemaps and standalone maps) using Mapbox and integrate them with other CartoDB maps.
 
 #### Other Tutorials

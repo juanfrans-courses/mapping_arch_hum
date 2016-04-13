@@ -1,5 +1,5 @@
 ## Tutorial 01 - Creating a Basic Land Use Map
-*Tutorial created by Juan Francisco Saldarriaga (jfs2118@columbia.edu) for the Mapping for Architecture, Urbanism and the Humanities class at Columbia University*
+*Tutorial created by Juan Francisco Saldarriaga (jfs2118@columbia.edu) for the [Mapping for Architecture, Urbanism and the Humanities](https://github.com/juanfrans-courses/mapping_arch_hum) class at Columbia University*
 
 This tutorial will describe the necessary steps to create a basic land use map of Manhattan and export it as a PDF file in qGIS. If you haven't downloaded the program, you can find it [here](https://www.qgis.org/en/site/forusers/download.html). You can also find it's documentation [here](https://www.qgis.org/en/docs/index.html).
 
