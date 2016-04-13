@@ -34,8 +34,6 @@ Course files, tutorials and presentations will be located on Courseworks, on the
 The readings for the class will be duly uploaded to Courseworks. Similarly, students will be required to submit their assignments by uploading them to Courseworks. Finally, the class will also rely heavily on submissions
 to the blog. Students will be required to upload some of their own work as well as inspirational material, encouraging and developing a critical stance and visual skills.
 
-**These two next things need to be updated**
-
 [Link to the blog](http://mapping2016.tumblr.com/).
 
 [Link to number of posts](https://docs.google.com/spreadsheets/d/1no2V9fNUFap1bPdV1ztd_ppZWb5xp6CJWbbmEgNMnoA/edit?usp=sharing).
