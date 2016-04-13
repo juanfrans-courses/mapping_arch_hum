@@ -147,6 +147,7 @@ April 8 & 15
 * Working with webmapping platforms (CartoDB, MapBox, Mapbox Studio, etc)
 * Exporting files ready for webmapping
 * [Tutorial 07](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/07_Creating_Webmaps_Part_01.md)
+* [Tutorial 08](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/08_Creating_Webmaps_Part_02.md)
 * ***Assignment: Create a webmap using both CartoDB and Mapbox Studio***
 
 ### Weeks 13 & 14: Lab work on final projects

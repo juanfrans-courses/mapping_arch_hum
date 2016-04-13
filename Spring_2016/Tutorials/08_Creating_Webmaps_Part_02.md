@@ -1,7 +1,27 @@
 ## Tutorial 08 - Creating Webmaps - Part 02
 This is part 2 of a 2 part tutorial. In this second part you will create web maps (basemaps and standalone maps) using Mapbox and integrate them with other CartoDB maps.
 
-*Other tutorials*: You will find other webmapping tutorials [here](https://github.com/mym2107/CSR-Conflict-Urbanism-Aleppo/tree/master/Tutorials). These were prepared for the [Conflict Urbanism: Aleppo class](http://www.c4sr.columbia.edu/conflict-urbanism-aleppo/) and they deal mostly with building webmaps through Mapbox, but they also have some HTML and CSS components. Make sure you check them out.
+#### Other Tutorials
+You will find other webmapping tutorials [here](https://github.com/mym2107/CSR-Conflict-Urbanism-Aleppo/tree/master/Tutorials). These were prepared for the [Conflict Urbanism: Aleppo class](http://www.c4sr.columbia.edu/conflict-urbanism-aleppo/) and they deal mostly with building webmaps through Mapbox, but they also have some HTML and CSS components. Make sure you check them out.
+
+### Creating a webmap using an existing basemap
+This first exercise guides you through the steps for creating a webmap of Green Cab destinations using an existing basemap provided by Mapbox.
+
+#### Datasets
+The only dataset we will use in this tutorial is a smaller version of the Green Cab destinations file for June 10th, 2015. The original file contains around 48,000 records but it's too big to upload to Mapbox (Mapbox has a limit of 5MB for any upload). This smaller file includes the first 25,000 records only:
+* Green_Trips_150610_Small.csv - You can find this dataset [here](https://github.com/juanfrans-courses/mapping_arch_hum/tree/master/Spring_2016/Class_Data/07_Web_Mapping).
+
+#### Creating a new "Style" in Mapbox
+
+#### Importing your data
+
+#### Filter and style your data
+
+#### Add labels to your data
+
+#### Export your map
+
+
 
 1. Create new style using taxi data:
   * Explore the interface
