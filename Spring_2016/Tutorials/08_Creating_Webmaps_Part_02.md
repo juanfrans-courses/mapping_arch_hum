@@ -12,6 +12,21 @@ The only dataset we will use in this tutorial is a smaller version of the Green 
 * Green_Trips_150610_Small.csv - You can find this dataset [here](https://github.com/juanfrans-courses/mapping_arch_hum/tree/master/Spring_2016/Class_Data/07_Web_Mapping).
 
 #### Creating a new "Style" in Mapbox
+First, we will create a new "Style" in Mapbox and explore the interface a little bit, just to get an idea of how things work here.
+* Once you log into your Mapbox account, use the tab on the left-hand side of the page to go to your "Home".
+* In your "Home" you will see the different components of your Mapbox account:
+  * "Styles": here you will see the maps that you've created. By "styles" Mapbox means both datasets and the styling that has been applied to those datasets.
+  * "Tilesets": tilesets are your datasets, which can be either raster or vector datasets. These datasets can also be made up from other types of files (csv, shapefiles, geojson, etc) that have been converted to vector tiles.
+  * "Develop": here you will find the developer tools, for when you are building your maps for applications (mobile or web). And you will also find other services like the routing or geocoding APIs.
+* To create a new "Style" simply go to the "Style" section and click on `New style`:
+  * Here you will see a set of premade "styles" as well as an option for creating an empty one.
+
+![Table View](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/11_Styles_Selection.png)
+
+  * Select one of the basic ones and give your new "style" a title.
+  * I will select the "Light" one and will name my "style" "Green_Cabs_Destinations".
+  * Click `Create`.
+
 
 #### Importing your data
 
