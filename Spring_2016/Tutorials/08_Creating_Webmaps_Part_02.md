@@ -19,13 +19,19 @@ First, we will create a new "Style" in Mapbox and explore the interface a little
   * "Tilesets": tilesets are your datasets, which can be either raster or vector datasets. These datasets can also be made up from other types of files (csv, shapefiles, geojson, etc) that have been converted to vector tiles.
   * "Develop": here you will find the developer tools, for when you are building your maps for applications (mobile or web). And you will also find other services like the routing or geocoding APIs.
 * To create a new "Style" simply go to the "Style" section and click on `New style`:
-  * Here you will see a set of premade "styles" as well as an option for creating an empty one.
+  * Here you will see a set of pre-made "styles" as well as an option for creating an empty one.
 
-![Table View](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/11_Styles_Selection.png)
+![Styles Selection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/11_Styles_Selection.png)
 
   * Select one of the basic ones and give your new "style" a title.
   * I will select the "Light" one and will name my "style" "Green_Cabs_Destinations".
   * Click `Create`.
+* The first thing you will see once your new "style" is created is a map of the world in the center, in the left-hand panel you will get all the layers that make up this "style" and in the upper right-hand corner you will get a menu with your zoom level, your position, an option to see the history of your changes and a debugger.
+* Notice how many layers make up this simple map.
+* Notice also how many of the layers are repeated, there's one that ends with "labels" and another one without that. This is because in order to create labels in Mapbox you need to add the layer you want to label again, and symbolize it only with the labels. In other words, you add your layer once and style it to get the vectors (points, lines or polygons) and then you add it again and get the labels.
+* Also, if you click anywhere on the map you will get a popup window showing the different layers shown in that location:
+
+![Layer Difference](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/12_Layer_Difference.png)
 
 
 #### Importing your data
