@@ -20,8 +20,10 @@
   * Is a desktop application for designing world maps. It allows you to design maps by using vector tiles and CartoCSS. Mapbox Studio Classic allows you to upload your map directly to your Mapbox account and then use your map style with our Developer tools.
   * Desktop application.
   * Seems like it's being replaced by Mapbox Studio (web application).
-* Styles:
-  * 
+* Terminology:
+  * Tilesets: data sources, like vector tile datasets or raster images.
+  * Layers: layers are representations of data, like symbols or polygon fills (they contain references to tilesets).
+  * Styles: the combination of data sources and layers.
 
 
 

@@ -35,8 +35,23 @@ First, we will create a new "Style" in Mapbox and explore the interface a little
 
 ![Layer Difference](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/12_Layer_Difference.png)
 
+* Now, zoom into New York and you will see other layers appear in the map (streets and labels for example). One of the main things you can do in Mapbox is have some layers only show up at specific zoom levels. That way you will only have the information you really need visible at each moment. If you zoom even more you will see every street label and even building footprints.
+
+![Zoom Levels](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/13_Zoom_Levels.png)
 
 #### Importing your data
+In this part of the tutorial we will not modify any of the pre-set layers but we will import our own layer and style it.
+* Click on the `+ New layer` button at the top left-hand corner of the page. Once you click here a new sub-panel will open and your map will change. You will now be able to see all your layers without styling. You don't have to do anything with these layers.
+* Click where it says `No tileset` next to `Source` and you will be able to select the file that you want to upload. A new sub-panel will open with a list of layers that are already available to you, some of them from Mapbox, others owned by you if you have already uploaded anything.
+* Since we are uploading something totally new, click on `New tileset` at the top of that panel and choose `Select a file`. Notice all the formats you can upload files in: MBTiles (Mapbox tiles built with Tilemil), KML (files used by Google Earth), GPX (files produced by some GPS devices), Shapefiles (zipped), CSV or even GeoTIFF (rasters).
+* Navigate to the location of your Green_Trips_150610_Small.csv file and select it.
+* A word of warning here: CSV files should be under 5MB and should have a column named "latitude" and another one named "longitude" with the geographic information. I have slightly modified the file we used in the previous tutorial to fit the size requirements and the headers. I used the "dropoff_latitude" and the "dropoff_longitude" as the columns for the lat/lon information.
+* Click `Upload`. This might take a little time. You will see another small panel opening on the bottom right-hand corner that will show the upload progress and then the analyzing progress (you will see a little bar rotating while it's still analyzing your data).
+* Once it's done (you will get a little green light) you will see your new data in the "Pick a tileset" panel, below the Mapbox provided layers. Click on your new dataset to add it to your map. You should see a lot of points appear on your map.
+* If for some reason you go to another screen you can go to your "Tilesets", select your Green_Trips which if the uploading was successful should be there and click on `Add to style`. Select the "Style" you want to add this layer too. In this case it should be the "Green_Cabs_Destinations" one.
+
+![New Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/14_New_Layer.png)
+
 
 #### Filter and style your data
 
