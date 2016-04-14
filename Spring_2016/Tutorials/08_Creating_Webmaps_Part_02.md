@@ -52,8 +52,40 @@ In this part of the tutorial we will not modify any of the pre-set layers but we
 
 ![New Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/14_New_Layer.png)
 
+* In the "New layer" panel you will see your file as the source and the "Type" should be circles.
+* Next you should choose at what zoom levels your dataset will be visible:
+  * To do this correctly zoom out in your map until a point where you think your dataset should no longer be visible(you can see what zoom level you are at in the small panel at the top right-hand corner of your page).
+  * In this case I think the dataset should only appear once you pass zoom level 7.
+  * Now zoom in as much as you think you should in your map and determine the maximum zoom level. I think it should be 18.
+  * In the panel set your zoom levels to 7 for "min" and 18 for "max" or whatever numbers you think should be there.
+  * Now when you zoom in and out past your maximum and minimum settings you will see your points turn gray.
+* Finally, if you wanted to only use a subset of your data you could create a filter where it says `+ Add filter`.
+* Once you are done with this click on `Create layer`. You will return to normal view and your layer will appear at the top in the left-hand side panel.
+* Remember that the order in which the layers are listed determines the order in which they will be drawn. The top layer will be drawn last, so if you want your layer to be on top of everything except the labels you should move your new layer below the one called "Waterway labels":
+  * To do this grab your layer from the little "hamburger" icon that appears to its right when you hover over it and drag it to where you want it to be.
 
-#### Filter and style your data
+![Layer Position](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/15_Layer_Position.png)
+
+#### Style your data
+Finally, we can begin really styling our data. You should be in the sub-panel called "Style" with your green-trips-15610-small layer selected.
+* First we need to adjust the size (radius) of our points:
+  * You could just change the overall size here, for example to 3. However, if you do this and zoom out you will notice that at zoom level 10 your points overlap a lot and everything becomes a mess. Similarly, when you zoom past level 16 your points become too small.
+  * So, what you need here is different sizes at different zoom levels. And this is what Mapbox is great at. Instead of just changing the value there, click on the slider to the right of the "Radius" value and a new panel will appear. Click on `Enable editing by zoom level`.
+  * Here you can choose a starting value at a specific zoom level and an ending value at another level, and you can choose the rate of change.
+  * First of all, zoom out to zoom level 7 to determine the starting value.
+  * Adjust the first slider to 7 and then the size to 0.3 px (which seems like a good value for this zoom level).
+  * Now zoom in to level 18 to see what seems like a good radius for that level.
+  * Adjust the bottom slider to 18 and then the value to 7 px.
+  * Now when you zoom in and out you will see the radius changing.
+  * However, zoom levels like 9, 10 or 11 it's still a bit too much. So, to change that without changing the start and end values we will adjust the rate of change. Right now it's '1', which means it's linear. Change it to 1.4 and zoom in and out and see how the radius changes.
+  * Adjust everything again if you think it's necessary.
+
+![Raidus Values](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/16_Radius_Values.png)
+
+
+
+
+
 
 #### Add labels to your data
 
