@@ -82,12 +82,35 @@ Finally, we can begin really styling our data. You should be in the sub-panel ca
 
 ![Raidus Values](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/16_Radius.png)
 
+* Now let's change the color. We could also change it depending on the zoom level but that would be a little too much. In this one, just click on the hex number and pick a color for your points.
+* If you wanted you could also blur your data or change it's opacity. You could even translate it, that is, offset it by a specific distance. I'm not going to change any of this.
 
-
-
-
+![Styling](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/17_Styling.png)
 
 #### Add labels to your data
+The last step is to add labels to your data. In this case, I want to show what was the final fare for each of the taxi trips. To do this, however, we need to duplicate our layer; we need to have one for the points and another one for the labels.
+* On your left hand panel, click on `+ New layer` and then click on the `Source` panel. Choose your "Green_Trips_150610_Small" dataset from the list that appears.
+* And before you click `Create layer` make sure you select "T Symbol" as the data type.
+* You should also choose your zoom levels. Note that these might not be the same as the ones for the points. We don't need to see the labels when we are all the way zoomed out at level 8 or 9. I will set the min zoom level to 15 and the max to 18.
+* Once you've set these parameters click `Create layer`.
+* In the new panel that opens up, click the "Text field" field and you will see a smaller panel with the different fields associated with the data.
+* Scroll down until you see {Total_amount} and select it. You should now see the total amount paid on your map. However, we need to style it to make it look good:
+  * First, let's put a $ sign. In the "Text field", before {Total_amount} insert a "$".
+  * Next, change the color of the text.
+  * Change the font, if you want.
+  * And adjust the size of the text. This one you can also do it with a ramp, like we adjusted the size of the radius.
+  * You can also change the letter spacing, the line height and the max width.
+  * Finally, if you wanted, you could add a "halo" around the text, to make it more easy to read. In this map, I don't think that's necessary.
+  * Zoom in and out testing your settings and adjust whatever you think is necessary.
+
+![Text Settings](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/18_Text_Settings.png)
+
+* Now you will notice that the text is actually placed on top of our points. We should change that:
+  * In the same panel, click on the `Position` option at the top of the panel.
+  * Set the "Text anchor" at the "Left".
+  * Finally, offset the text by 0.4 em in the x direction.
+
+![Text Placement](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/19_Text_Placement.png)
 
 #### Export your map
 
