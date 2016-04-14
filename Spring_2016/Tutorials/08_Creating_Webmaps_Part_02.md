@@ -112,8 +112,24 @@ The last step is to add labels to your data. In this case, I want to show what w
 
 ![Text Placement](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/19_Text_Placement.png)
 
-#### Export your map
+* There are other parameters you could change for your text, such as allowing for overlaps or not, or setting up some padding between different texts (both of those in the "Placement" tab) but this should be fine for now.
 
+#### Export your map
+Finally, we need to export our map.
+* The first thing you should do is click on the `Position` option in the little menu at the top right-hand corner of the page:
+  * Here we will set the default position and zoom level for the map, the starting point.
+  * Zoom to a good level and center the map on the screen. Then click on `Lock default position` to mark it.
+
+![Map Position](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/20_Map_Position.png)
+
+* Now click on the `Publish` button at the top left-hand corner of the page.
+* You can see the changes you've made to the "Style" with the slider. If you are satisfied with your changes click on `Publish` to make your "Style" public.
+* Finally, click on `Share and use style` to get the URL or codes to embed your style. Here you have multiple links:
+  * URL: This is a standalone URL that you can share. Test it to see how your map looks and reacts.
+  * Style URL and Access token: these codes are used when you are building an application or website that uses this style.
+  * Use style in other apps: here are the codes to use this style in Tableau, ArcGIS or CartoDB (this is the one we will use in the next part of the tutorial).
+
+![Final Map Mapbox](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/21_Final_Map_Part_01.png)
 
 
 1. Create new style using taxi data:
