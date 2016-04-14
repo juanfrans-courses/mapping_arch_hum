@@ -80,7 +80,7 @@ Finally, we can begin really styling our data. You should be in the sub-panel ca
   * However, zoom levels like 9, 10 or 11 it's still a bit too much. So, to change that without changing the start and end values we will adjust the rate of change. Right now it's '1', which means it's linear. Change it to 1.4 and zoom in and out and see how the radius changes.
   * Adjust everything again if you think it's necessary.
 
-![Raidus Values](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/16_Radius_Values.png)
+![Raidus Values](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/16_Radius.png)
 
 
 
