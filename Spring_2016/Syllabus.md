@@ -155,7 +155,7 @@ April 22 & 29
 
 ### Week 15: Final review
 May 6
-* ***Assignment: Final report (individually)***
+* ***Assignment: Final presentation (group)***
 
 ## References
 ### Books
