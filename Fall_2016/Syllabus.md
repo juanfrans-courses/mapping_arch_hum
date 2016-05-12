@@ -157,7 +157,7 @@ December 2
 * [Tutorial 08](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/08_Creating_Webmaps_Part_02.md)
 * ***Assignment: Create a webmap using both CartoDB and Mapbox Studio***
 
-### Weeks 14: Lab work on final projects
+### Week 14: Lab work on final projects
 December 9
 
 ### Week 15: Final review
