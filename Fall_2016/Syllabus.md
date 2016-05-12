@@ -35,17 +35,13 @@ Course files, tutorials and presentations will be located on Courseworks, on the
 The readings for the class will be duly uploaded to Courseworks. Similarly, students will be required to submit their assignments by uploading them to Courseworks. Finally, the class will also rely heavily on submissions
 to the blog. Students will be required to upload some of their own work as well as inspirational material, encouraging and developing a critical stance and visual skills.
 
-
-**From here on needs updating**
-
-
 [Link to the blog](http://mapping2016.tumblr.com/).
 
 [Link to number of posts](https://docs.google.com/spreadsheets/d/1no2V9fNUFap1bPdV1ztd_ppZWb5xp6CJWbbmEgNMnoA/edit?usp=sharing).
 
 ## Schedule
 ### Week 1: Introduction to course
-January 22
+September 9
 * Course administration and syllabus
 * What is GIS?
 * Working with geographic data (vectors and rasters)
@@ -56,7 +52,7 @@ January 22
 	* *[Harley, J., Deconstructing the Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/1989_harley_deconstructing-the-map.pdf)* (Required)
 
 ### Week 2: Introduction to mapping concepts and techniques
-January 29
+September 16
 * Emphasis on *metadata*
 * Elements of cartography (notations and conventions)
 * Creating and exporting basic maps
@@ -76,7 +72,7 @@ January 29
 	* *[Edney, M., Plus ça change: Defining Academic Cartography for the Twenty-First Century](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2012_edney_plus-ca-change.pdf)* (Optional)
 
 ### Weeks 3 & 4: Maps and data
-February 5 & 12
+September 23 & 30
 * Data types
 * Understanding different classification methods (qualitative and quantitative)
 * Common design pitfalls ("How to Lie with Maps")
@@ -92,7 +88,7 @@ February 5 & 12
   * *[Pavlovskaya, M., Non-quantitative GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2009_pavlovskaya_non-quantitative-GIS.pdf)* (Required)
 
 ### Week 5: Working with census data 1
-February 19
+October 7
 * Understanding census data (decennial, ACS, samples, margins of error, etc)
 * Downloading census data and joining it to shapefiles
 * Making new fields and calculating new values
@@ -103,14 +99,14 @@ February 19
   * *[Caquard, S., Narrative Cartography: From Mapping Stories to the Narrative of Maps and Mapping](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Readings/2014_caquard_narrative-cartography.pdf)*
 
 ### Week 6: Working with census data 2
-February 26
+October 14
 * Estimation methods
 * Geoprocessing tools: buffers, clips, unions, update, dissolve, etc
 * Advanced selection methods: select by location, select by attribute, etc
 * ***Assignment: [Tutorial 03](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/03_Joining_Tables_and_Census_Data.md) - Create map of census data showing new fields***
 
-### Week 6: Projections
-March 4
+### Week 7: Projections
+October 21
 * Understanding basic map projections concepts
 * How to project or re-project existing datasets
 * Link: [Comparing sizes across the globe](http://bl.ocks.org/zanarmstrong/raw/caa2da1ea1558cdc3357/#scale=471.85&center0=6.52865,20.3586336&center1=48.2392291,-98.9443219)
@@ -118,23 +114,20 @@ March 4
 * Link: [Gnomonic Projection](https://www.google.com/webhp?sourceid=chrome-instant&ion=1&espv=2&ie=UTF-8#q=gnomonic%20projection)
 * ***Assignment: [Tutorial 04](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/04_Working_with_Projections.md)***
 
-### Week 7: Midterm presentations
-March 11
-
-### Week 8: Spring break - no class
-March 18
-* ***Assignment: Written critique of a map*** (Due March 23rd)
+### Week 8: Midterm presentations
+October 28
 
 ### Week 9: Geocoding, georeferencing and editing
-March 25
+November 4
 * Working with address data (APIs), address locator, other methods
 * Georeferencing existing maps
 * How to create and edit spatial data
 * ***Assignment: [Tutorial 05](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/05_Georeferencing_and_Creating_New_Shapefiles.md) - Georeference an existing map (old or new) and create new dataset from it***
-* ***Assignment: Create a map with personal data (sound and location)*** (Due March 30)
+* ***Assignment: Create a map with personal data (sound and location)***
+* ***Assignment: Written critique of a map***
 
 ### Week 10: Working with raster data
-April 1
+November 11
 * Understanding the difference between vector and raster data
 * Understanding the different types of raster datasets
 * understanding raster bands
@@ -145,21 +138,30 @@ April 1
   * Change in population (based on the Gridded Population of the World datasets)
   * 3 different 'False Color Composite' maps based on Landsat imagery
 
-### Week 11 & 12: Webmapping and crowdsourced data
-April 8 & 15
+### Week 11: Webmapping and crowdsourced data (part 1)
+November 18
 * Concepts and tools of webmapping
 * Overview of webmapping platforms
 * Working with webmapping platforms (CartoDB, MapBox, Mapbox Studio, etc)
 * Exporting files ready for webmapping
 * [Tutorial 07](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/07_Creating_Webmaps_Part_01.md)
+
+### Week 12: Thanksgiving - No class
+
+### Week 13: Webmapping and crowdsourced data (part 2)
+December 2
+* Concepts and tools of webmapping
+* Overview of webmapping platforms
+* Working with webmapping platforms (CartoDB, MapBox, Mapbox Studio, etc)
+* Exporting files ready for webmapping
 * [Tutorial 08](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/08_Creating_Webmaps_Part_02.md)
 * ***Assignment: Create a webmap using both CartoDB and Mapbox Studio***
 
-### Weeks 13 & 14: Lab work on final projects
-April 22 & 29
+### Weeks 14: Lab work on final projects
+December 9
 
 ### Week 15: Final review
-May 6
+December 16
 * ***Assignment: Final presentation (group)***
 
 ## References
