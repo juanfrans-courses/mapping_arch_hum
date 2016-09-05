@@ -81,7 +81,7 @@ September 23 & 30
 	* 311 data
 	* Community districts or census block groups
 * ***Assignment: [Tutorial 02](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/02_Data_Types_and_311.md) - Create two different maps based on 311 data, one quantitative and one qualitative***
-* ***Assignment: Create your own dataset (including metadata) and map it***
+* ***Final project proposal due (September 30th)***
 * Readings:
   * *[Goodchild, M., Toward critical spatial thinking in the social sciences and humanities](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2010_goodchild_toward-critical-spatial-thinking.pdf)* (Required)
   * *[Pavlovskaya, M., Non-quantitative GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2009_pavlovskaya_non-quantitative-GIS.pdf)* (Required)
@@ -94,6 +94,7 @@ October 7
 * Datasets:
 	* Census tracts and census block groups shapefiles
 	* PLUTO dataset
+* ***Assignment: Create your own dataset based on a humanities text and map it*** 
 * Readings:
   * *[Caquard, S., Narrative Cartography: From Mapping Stories to the Narrative of Maps and Mapping](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2014_caquard_narrative-cartography.pdf)*
 
@@ -123,7 +124,6 @@ November 4
 * How to create and edit spatial data
 * ***Assignment: [Tutorial 05](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/05_Georeferencing_and_Creating_New_Shapefiles.md) - Georeference an existing map (old or new) and create new dataset from it***
 * ***Assignment: Create a sound map with data that you collect***
-* ***Assignment: Written critique of a map***
 
 ### Week 10: Working with raster data
 November 11
@@ -143,7 +143,8 @@ November 18
 * Overview of webmapping platforms
 * Working with webmapping platforms (CartoDB, MapBox, Mapbox Studio, etc)
 * Exporting files ready for webmapping
-* [Tutorial 07](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/07_Creating_Webmaps_Part_01.md)
+* ***Assignment: [Tutorial 07](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/07_Creating_Webmaps_Part_01.md)***
+* ***Assignment: Written critique of a map***
 
 ### Week 12: Thanksgiving - No class
 
@@ -161,9 +162,8 @@ December 9
 
 ### Week 15: Final review
 December 16
-* ***Assignment: Final presentation (group)***
 
-## Assignment Schedule (Due Dates)
+### Assignment Schedule (Due Dates)
 * **September 23:** Tutorial 1 - Create a land-use map
 * **September 30:** Final project proposal
 * **October 7:** Tutorial 2 - Create two different maps based on 311 data
