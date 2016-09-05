@@ -143,7 +143,7 @@ November 18
 * Overview of webmapping platforms
 * Working with webmapping platforms (CartoDB, MapBox, Mapbox Studio, etc)
 * Exporting files ready for webmapping
-* ***Assignment: [Tutorial 07](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/07_Creating_Webmaps_Part_01.md)***
+* [Tutorial 07](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/07_Creating_Webmaps_Part_01.md)
 * ***Assignment: Written critique of a map***
 
 ### Week 12: Thanksgiving - No class
