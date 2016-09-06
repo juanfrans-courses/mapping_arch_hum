@@ -96,7 +96,7 @@ October 7
 	* PLUTO dataset
 * ***Assignment: Create your own dataset based on a humanities text and map it*** 
 * Readings:
-  * *[Caquard, S., Narrative Cartography: From Mapping Stories to the Narrative of Maps and Mapping](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2014_caquard_narrative-cartography.pdf)*
+  * *[Tauberer, J., How that map you saw on FiveThirtyEight silences minorities, and other reasons to consider a cartogram.](https://medium.com/@joshuatauberer/how-that-map-you-saw-on-538-under-represents-minorities-by-half-and-other-reasons-to-consider-a-4a98f89cbbb1#.8xrw4bwxz)*
 
 ### Week 6: Working with census data 2
 October 14
