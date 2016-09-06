@@ -1,5 +1,5 @@
 # Mapping for Architecture, Urbanism and the Humanities
-* Columbia University | GSAPP and A&S | ARCHA6805 | Fall 2016
+* Columbia University | GSAPP and A&S | ARCHA4122 | Fall 2016
 * Fridays 11am - 1pm | Studio @ Butler
 * Office hours: Mondays 10am - 12pm (previous email required)
 * Professor: Juan Francisco Saldarriaga (jfs2118)
