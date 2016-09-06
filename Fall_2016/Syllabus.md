@@ -66,9 +66,7 @@ September 16
 * ***Assignment: [Tutorial 01](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/01_Creating_a_Basic_Map.md) - Create and export a basic map with proper notation, labels and symbology***
 * Readings:
 	* *[Crampton, J., Maps as social constructions: power, communication and visualization](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2001_crampton_maps-as-social-constructions.pdf)* (Required)
-	* *[Alves, D., Exploring Literary Landscapes: From Texts to Spatiotemporal Analysis Through Collaborative Work and GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2015_alves_exploring-literary-landscapes.pdf)* (Required)
-	* *[Harvey, F., Introduction: Critical GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2005_harvey_introduction-to-critical-GIS.pdf)* (Optional)
-	* *[Edney, M., Plus ça change: Defining Academic Cartography for the Twenty-First Century](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2012_edney_plus-ca-change.pdf)* (Optional)
+	* *[Alves, D., Exploring Literary Landscapes: From Texts to Spatiotemporal Analysis Through Collaborative Work and GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2015_alves_exploring-literary-landscapes.pdf)* (Optional)
 
 ### Weeks 3 & 4: Maps and data
 September 23 & 30
@@ -83,7 +81,7 @@ September 23 & 30
 * ***Assignment: [Tutorial 02](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/02_Data_Types_and_311.md) - Create two different maps based on 311 data, one quantitative and one qualitative***
 * ***Final project proposal due (September 30th)***
 * Readings:
-  * *[Goodchild, M., Toward critical spatial thinking in the social sciences and humanities](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2010_goodchild_toward-critical-spatial-thinking.pdf)* (Required)
+  * *[O'Beirne, J., Cartography Comparison: Google Maps & Apple Maps](http://www.justinobeirne.com/essay/cartography-comparison)* (Required)
   * *[Pavlovskaya, M., Non-quantitative GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2009_pavlovskaya_non-quantitative-GIS.pdf)* (Required)
 
 ### Week 5: Working with census data 1
