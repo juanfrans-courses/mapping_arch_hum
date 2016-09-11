@@ -1,4 +1,4 @@
-## Notes - Introduction (1/22/2016)
+## Notes - Introduction (09/16/2016)
 
 ### 1. Introduction
 * Welcome to the class:
@@ -12,19 +12,33 @@
   * Center for Spatial Research and its mission and projects
   * [Spatial Information Design Lab](http://spatialinformationdesignlab.org/projects)
   * Other projects:
-    * [juanfrans](http://cargocollective.com/juanfrans)
     * [The Haven Project](http://spatialinformationdesignlab.org/project_sites/the-haven-project/)
     * [Port to Port](http://spatialinformationdesignlab.org/project_sites/port_to_port/)
     * [Superstorm Sandy](http://spatialinformationdesignlab.org/project_sites/sandy/ny_coast.html)
     * [The Library Project](http://spatialinformationdesignlab.org/project_sites/library/)
     * [Jumping the Great Firewall](http://spatialinformationdesignlab.org/jumping-the-great-firewall/)
-  * Emily Fuhrman
+    * Citibike
+    * Unbanked
+    * Deadhead
+    * Colombia
 
-### 3. Introduction of the students
-* Name
-* Program & Year
-* Experience (design, coding, mapping)
-* Interest (possible projects)
+### 2. Introduction of the students
+* New students (?):
+  * Update list
+  * Download and install software
+* Show of hands for each major:
+  * UD
+  * UP
+  * MARCH
+  * AAD
+  * HP
+  * Humanities
+  * Other
+* Notes:
+  * Not an advanced class
+  * No prior experience needed
+  * No design experience needed
+  * Not being taught in the Spring (Data Visualization)
 
 ### 2. Description of the class
 * Overall objectives:
@@ -37,12 +51,14 @@
   * Github (location)
   * Grading
   * Blog (post 2 maps per week)
-  * Writing (midterm and final paper; map critique)
+  * Writing (map critique)
+  * Sound map
+  * Creation of data from humanities text
   * Tutorials and assignments
-  * Final project + midterm and final presentations
+  * Final project + midterm and final presentations. **Note about people who are auditing or registered for 'R' credit.**
   * Readings
 * Group work:
-  * Ideally 3 people (could be 2)
+  * Ideally 3 - 4 people
   * Combination of GSAPP and AS (or other)
   * There’s also individual work
 
@@ -52,10 +68,23 @@
 * Test the software
 * Create folder for GIS data
 
-### 4. Presentation
-* Basic mapping presentation
+### 4. Deadlines:
+* Post on the tumblr blog
+* **September 23:** Tutorial 1 - Create a land-use map
+* **September 30:** Final project proposal
 
-### 5. Tour of qGIS and types of data
+### 5. Presentation
+* Basic mapping presentation:
+  * Main GIS concepts
+  * Data types
+  * Spatial database
+  * Layers
+  * Scales of information
+  * Spatial relationships
+  * GIS process
+  * GIS data repository
+
+### 6. Tour of qGIS and types of data
 * Tour of qGIS
 * Types of data:
   * Definition of a Shapefile:
