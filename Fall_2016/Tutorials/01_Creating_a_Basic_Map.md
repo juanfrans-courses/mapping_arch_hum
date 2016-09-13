@@ -5,12 +5,12 @@ This tutorial will describe the necessary steps to create a basic land use map o
 
 ### Datasets:
 To create this map, we will be using the following datasets:
-* nybb - New York City boroughs. Originally downloaded from [here](http://www.nyc.gov/html/dcp/html/bytes/districts_download_metadata.shtml).
-* MNMapPLUTO - Manhattan PLUTO file (version 15v1), containing all the lots in Manhattan and their attributes. The original PLUTO files can be downloaded [here](http://www.nyc.gov/html/dcp/html/bytes/dwn_pluto_mappluto.shtml).
+* nybb - New York City boroughs. Originally downloaded from [here](http://www1.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page).
+* MNMapPLUTO - Manhattan PLUTO file (version 16v1), containing all the lots in Manhattan and their attributes. The original PLUTO files can be downloaded [here](http://www1.nyc.gov/site/planning/data-maps/open-data.page#pluto).
 * Roadbed - New York roadbed. Originally downloaded [here](https://data.cityofnewyork.us/City-Government/Roadbed/xgwd-7vhd).
 * DOITT_SUBWAY_STATION_01_13SEPT2010 - New York subway stations. Originally downloaded [here](https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49).
 * HYDRO - New York hydrography. Originally downloaded [here](https://data.cityofnewyork.us/Environment/Hydrography/drh3-e2fd).
-* hydropol - U.S. Hydrographic features. Originally downloaded from [here](http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2014/polygon).
+* hydropol - U.S. Hydrographic features. Originally downloaded from [here](http://www.rita.dot.gov/bts/sites/rita.dot.gov.bts/files/publications/national_transportation_atlas_database/2015/polygon).
 
 ### Creating a Basic Land Use Map of Manhattan
 First you need to open qGIS and add the layers you downloaded:
@@ -32,7 +32,7 @@ First you need to open qGIS and add the layers you downloaded:
   * MNMapPLUTO
   * nybb
   * hydropol
-* If when you zoom in to one of the layers some of its features disappear see the note at the end of the tutorial.
+* **If when you zoom in to one of the layers some of its features disappear see the note at the end of the tutorial.**
 
 As you may have seen, qGIS assigns random colors to each of the layers you add. To change the appearance of each layer do the following:
 * First, since we are interested in creating a land use of Manhattan, you should zoom in into this layer. To do this, right-click on the MNMapPLUTO layer and click `Zoom to Layer`.

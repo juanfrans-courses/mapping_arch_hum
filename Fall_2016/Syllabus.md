@@ -49,6 +49,11 @@ September 9
 * Readings:
 	* *[Meirelles, Isabel. Design For Information, Chapters 4 and 5](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2013_meirelles_design_for_information_chp_4_5.pdf)* (Required)
 	* *[Harley, J., Deconstructing the Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/1989_harley_deconstructing-the-map.pdf)* (Required)
+    * *[New York Times, "In the West, Map Makers Hail Shift in Soviet Stance" (1988)](http://www.nytimes.com/1988/09/03/world/in-the-west-map-makers-hail-shift-in-soviet-stance.html)*
+    * *GPS Offset in China:*
+      * *[StackExchange](https://gis.stackexchange.com/questions/141542/what-causes-the-gps-offset-shift-in-china)*
+      * *[Wikipedia](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China)*
+      * *[Google Earth Blog](http://www.gearthblog.com/blog/archives/2015/08/chinese-street-maps-alignment-google-earth-google-maps.html)*
 
 ### Week 2: Introduction to mapping concepts and techniques
 September 16
@@ -221,3 +226,12 @@ December 16
 * [Sensory Maps](http://sensorymaps.com/)
 * [Library of Congress - Maps](https://www.loc.gov/maps/collections/)
 * [The National Geologic Map Database](http://ngmdb.usgs.gov/ngmdb/ngmdb_home.html)
+* Color tools:
+  * [Color Brewer](http://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3)
+  * [Adobe Color CC](https://color.adobe.com)
+  * [ColorHexa](http://www.colorhexa.com/)
+  * [i want hue](http://tools.medialab.sciences-po.fr/iwanthue/)
+  * [Color Picker for Data](http://tristen.ca/hcl-picker/#/hlc/6/1/15534C/E2E062)
+  * [How to Avoid Equidistant HSV Colors](http://vis4.net/blog/posts/avoid-equidistant-hsv-colors/)
+  * [Your Friendly Guide to Colors in Data Visualization](https://lisacharlotterost.github.io/2016/04/22/Colors-for-DataVis/)
+  * [How We Created Color Scales](https://datavisualization.ch/inside/how-we-created-color-scales/)

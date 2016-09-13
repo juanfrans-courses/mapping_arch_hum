@@ -69,7 +69,7 @@
 * Create folder for GIS data
 
 ### 4. Deadlines:
-* Post on the tumblr blog
+* **Post on the tumblr blog**
 * **September 23:** Tutorial 1 - Create a land-use map
 * **September 30:** Final project proposal
 
