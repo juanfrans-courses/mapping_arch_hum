@@ -49,11 +49,12 @@ September 9
 * Readings:
 	* *[Meirelles, Isabel. Design For Information, Chapters 4 and 5](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2013_meirelles_design_for_information_chp_4_5.pdf)* (Required)
 	* *[Harley, J., Deconstructing the Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/1989_harley_deconstructing-the-map.pdf)* (Required)
-    * *[New York Times, "In the West, Map Makers Hail Shift in Soviet Stance" (1988)](http://www.nytimes.com/1988/09/03/world/in-the-west-map-makers-hail-shift-in-soviet-stance.html)*
-    * *GPS Offset in China:*
-      * *[StackExchange](https://gis.stackexchange.com/questions/141542/what-causes-the-gps-offset-shift-in-china)*
-      * *[Wikipedia](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China)*
-      * *[Google Earth Blog](http://www.gearthblog.com/blog/archives/2015/08/chinese-street-maps-alignment-google-earth-google-maps.html)*
+  * *[New York Times, "In the West, Map Makers Hail Shift in Soviet Stance" (1988)](http://www.nytimes.com/1988/09/03/world/in-the-west-map-makers-hail-shift-in-soviet-stance.html)*
+  * *GPS Offset in China:*
+    * *[StackExchange](https://gis.stackexchange.com/questions/141542/what-causes-the-gps-offset-shift-in-china)*
+    * *[Wikipedia](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China)*
+    * *[Google Earth Blog](http://www.gearthblog.com/blog/archives/2015/08/chinese-street-maps-alignment-google-earth-google-maps.html)*
+  * *[Walker, J., "The London Underground Diagram"](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/1979_walker_the_london_underground_diagram.pdf)* (Optional)
 
 ### Week 2: Introduction to mapping concepts and techniques
 September 16
