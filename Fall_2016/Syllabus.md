@@ -54,7 +54,6 @@ September 9
     * *[StackExchange](https://gis.stackexchange.com/questions/141542/what-causes-the-gps-offset-shift-in-china)*
     * *[Wikipedia](https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China)*
     * *[Google Earth Blog](http://www.gearthblog.com/blog/archives/2015/08/chinese-street-maps-alignment-google-earth-google-maps.html)*
-  * *[Walker, J., "The London Underground Diagram"](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/1979_walker_the_london_underground_diagram.pdf)* (Optional)
 
 ### Week 2: Introduction to mapping concepts and techniques
 September 16
@@ -73,6 +72,7 @@ September 16
 * Readings:
 	* *[Crampton, J., Maps as social constructions: power, communication and visualization](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2001_crampton_maps-as-social-constructions.pdf)* (Required)
 	* *[Alves, D., Exploring Literary Landscapes: From Texts to Spatiotemporal Analysis Through Collaborative Work and GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2015_alves_exploring-literary-landscapes.pdf)* (Optional)
+  * *[Walker, J., "The London Underground Diagram"](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/1979_walker_the_london_underground_diagram.pdf)* (Optional)
 
 ### Weeks 3 & 4: Maps and data
 September 23 & 30
