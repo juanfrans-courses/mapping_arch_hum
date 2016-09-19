@@ -26,7 +26,7 @@ No prior experience in mapping, design or data analysis is required for this cou
 * 20% Individual assignments and tutorials
 * 15% Midterm presentation
 * 20% Map critique
-* 35% Final project and final presentation and report
+* 35% Final project presentation
 
 ## Resources and Materials
 Course files, tutorials and presentations will be located on Courseworks, on the [Center for Spatial Research](http://c4sr.columbia.edu/) website and on this repository. In addition, students should also contact the Digital Social Science Center (DSSC) located in Lehman Library (SIPA) for extra information and data.

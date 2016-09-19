@@ -47,3 +47,5 @@
     * Natural Breaks (Jenks): tries to account for the variation in the data, groups similar variables and maximizes the difference between classes (not useful for comparing different maps or datasets)
     * Standard Deviation (for a normal distribution the standard deviation is 68, 95, 99.7) (shows variation around the standard deviation, shows outliers)
     * Pretty Breaks
+* Representing population density or other underlying phenomenon (ie. cell phone usage):
+  * https://adventuresinmapping.wordpress.com/2016/08/29/college-football-air-mile-index-2016/
