@@ -1,4 +1,4 @@
-## Notes - Maps and Data (2/5/2016)
+## Notes - Maps and Data (9/23/2016)
 
 ### 1. New Students, blog and software
 * New students? If so, blog, assignments, final project and syllabus
@@ -20,14 +20,22 @@
 * For blog postings for the week, only “subjective”, “propaganda”, “fictional” maps
 * Case study, Portuguese literature, what did you think?
 
-### 5. Assignment and final project
-* Two assignments (due February 17):
-  * Create a map of 311 data
-  * Create your own dataset and map it
-* How’s the formation of the groups for final projects going?
-* Proposal due on February 18 (group, topic, 1 paragraph)
+### 5. Final project proposal
+* Proposal due on September 30th (group, topic, 3 sections):
+  * Title, group members, programs and years
+  * Project description:
+    * What is the question that you will be exploring?
+    * Why is it important (so what?)?
+    * Why does it warant a mapping (spatial) exploration?
+  * Data:
+    * What datasets will you be using?
+    * Are these available? How will you acquire them?
+  * Timeline:
+    * List the tasks that you will perform?
+    * What will you achieve by the midterm and what will you achive by the final?
 
 ### 6. Presentation
+* Intro to mapping presentation
 * Data types:
   * String
   * Integer
