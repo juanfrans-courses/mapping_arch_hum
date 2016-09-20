@@ -196,6 +196,8 @@ December 16
 * Tactical Technology Creative, Visualizing Information for Advocacy
 * Orff, Kate, Petrochemical America
 * Dodge, Martin, Kitchin, Rob and Perkins, Chris, [The Map Reader](http://onlinelibrary.wiley.com/book/10.1002/9780470979587)
+* Monmonier, Mark, Drawing the Line: Tales of Maps and Cartocontroversies
+* Pickles, John, Ground Truth: The Social Implications of Geographic Information Systems
 
 ### Blogs & Websites
 * [List of Critical GIS articles](https://criticalgis.blogspot.com/p/critical-gis-bibliography.html)
