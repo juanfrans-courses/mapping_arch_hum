@@ -140,6 +140,7 @@ November 11
 * ***Assignment: [Tutorial 06](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/06_Working_With_Raster_Data.md) - Create the following maps***:
   * Change in population (based on the Gridded Population of the World datasets)
   * 3 different 'False Color Composite' maps based on Landsat imagery
+* Link: [Laser Scans Unveil a Network of Ancient Cities in Cambodia](http://www.nytimes.com/2016/09/20/science/angkor-wat-cambodia-archeaology.html?action=click&amp=&amp=&amp=&amp=&amp=&amp=&contentCollection=science&contentPlacement=1&em_pos=large&emc=edit_nn_20160921&module=package&nl=morning-briefing&nlid=45977136&pgtype=sectionfront&region=rank&version=highlights&_r=0)
 
 ### Week 11: Webmapping and crowdsourced data (part 1)
 November 18
