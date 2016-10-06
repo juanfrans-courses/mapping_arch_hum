@@ -89,6 +89,7 @@ September 23 & 30
 * Readings:
   * *[O'Beirne, J., Cartography Comparison: Google Maps & Apple Maps](http://www.justinobeirne.com/essay/cartography-comparison)* (Required)
   * *[Pavlovskaya, M., Non-quantitative GIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Readings/2009_pavlovskaya_non-quantitative-GIS.pdf)* (Required)
+  * *[Stamen Design, Watercolor Process](http://content.stamen.com/watercolor_process)* (Optional)
 
 ### Week 5: Working with census data 1
 October 7
