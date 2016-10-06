@@ -66,7 +66,7 @@ As you can see this table has data on where everyone was born and it comes in th
     * Naturalized U.S. citizen
     * Not a US citizen
 
-On the top, we have every single census tract with the corresponding value and a margin of error. It is important to note that these are not exact values, they are estimates based on the statistical methods the census is using. That's also why they include the margin of error. However, even though these numbers are not 100% accurate they still give us a pretty good idea of what is happening no the ground.
+On the top, we have every single census tract with the corresponding value and a margin of error. It is important to note that these are not exact values, they are estimates based on the statistical methods the census is using. That's also why they include the margin of error. However, even though these numbers are not 100% accurate they still give us a pretty good idea of what is happening no the ground. To learn more about the margin of error in the ACS take a look at [this](http://www.esri.com/~/media/Files/Pdfs/library/whitepapers/pdfs/the-american-community-survey.pdf#page=6) explanation by ESRI.
 
 The last thing we need to do is modify the table so that it fits the way data is organized in qGIS. If you remember when we opened attribute tables in qGIS, every row represented a feature and every column a different field. Here, it's the other way around, so we need to 'transpose' the table to make it match qGIS. To do this click on `Modify Table` at the top left and then on `Transpose Rows/Columns`. Now you should see the table with the census tracts on the left-hand column and the fields on the first row.
 
