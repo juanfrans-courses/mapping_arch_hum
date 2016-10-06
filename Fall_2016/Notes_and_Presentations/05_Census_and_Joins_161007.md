@@ -37,6 +37,7 @@
 * Create an indicator map (2nd data frame) tutorial step 20 [here](http://www.qgistutorials.com/en/docs/making_a_map.html)
 * How to package maps with layers through [QConsolidate](http://plugins.qgis.org/plugins/qconsolidate/)
 * [Changing color and size - symbology](http://qgis.spatialthoughts.com/2012/02/styling-vector-data-in-qgis-using-size.html)
+* [Representing elevation in maps](http://news.nationalgeographic.com/2016/09/mountain-elevation-maps-illustration/)
 
 ### 7. Census tutorial
 * Margin of error in the ACS:
