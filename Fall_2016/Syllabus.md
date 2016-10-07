@@ -100,6 +100,8 @@ October 7
 	* Census tracts and census block groups shapefiles
 	* PLUTO dataset
 * ***Assignment: Create your own dataset based on a humanities text and map it*** 
+* Readings:
+  * *[KML Primer](https://developers.google.com/kml/documentation/kml_tut?csw=1)* (Optional)
 
 ### Week 6: Working with census data 2
 October 14
