@@ -27,6 +27,8 @@ The left hand panel in this new view contains a title (`Untitled map`) and a lay
 
 ![Rename](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/05_Rename.png)
 
+#### Entering and Saving Locations
+
 Begin entering your list of locations into the search bar. Since I intend to map a list of landmarks in New York City, my first location will be `Columbia University`.
 
 ![Columbia University](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/06_Columbia.png)
@@ -39,6 +41,8 @@ Continue to enter locations into the search box, each time clicking `+ Add to ma
 
 ![Saved Locations](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/08_Saved_Locations.png)
 
+#### Exporting a .KML File
+
 The dataset is now ready for export. Select the menu to the right of the map title, and choose `Export to KML`.
 
 ![Export to KML](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/09_Export_to_KML.png)
@@ -46,6 +50,8 @@ The dataset is now ready for export. Select the menu to the right of the map tit
 Select the `Locations` layer that contains your saved list of places, and check the box below that says `Export to a .KML file`. Hit `Download`.
 
 ![Confirm](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/10_Confirm.png)
+
+#### Importing and Editing in QGIS
 
 Open up a new project in QGIS, and import your downloaded .KML file as a vector layer. Your points should show up just as they did in the Google Maps interface. 
 
