@@ -1,7 +1,7 @@
 ## Tutorial 03 - Creating a Dataset with Google Maps
 *Tutorial created by Emily Fuhrman (ef2512@columbia.edu) for the [Mapping for Architecture, Urbanism and the Humanities](https://github.com/juanfrans-courses/mapping_arch_hum) class at Columbia University*
 
-Google Maps (or Google Earth) is a helpful tool for manually extrapolating the latitude and longitude coordinates for a list of geographic locations. In this tutorial, we will walk through how to generate a Keyhole Markup Language (KML) file (or its compressed form, a KMZ file) from Google Maps, which you can then import into QGIS. 
+Google Maps (or Google Earth) enables you to easily extract the latitude and longitude coordinates from a list of geographic locations. In this tutorial, we will walk through how to generate a Keyhole Markup Language (KML) file (or its compressed form, a KMZ file) from Google Maps, which you can then import into QGIS. 
 
 KML is an XML format used to represent geographic information in 2-D and 3-D web-based maps. To read more about KML, check out this [helpful resource](https://developers.google.com/kml/).
 
