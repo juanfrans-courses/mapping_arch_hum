@@ -3,7 +3,7 @@
 
 Google Maps (or Google Earth) enables you to easily extract the latitude and longitude coordinates from a list of geographic locations. In this tutorial, we will walk through how to generate a Keyhole Markup Language (KML) file (or its compressed form, a KMZ file) from Google Maps, which you can then import into QGIS. 
 
-KML is an XML format used to represent geographic information in 2-D and 3-D web-based maps. To read more about KML, check out this [helpful resource](https://developers.google.com/kml/).
+KML is an XML format used to represent geographic information in 2-D and 3-D web-based maps. To learn more about KML, check out this [helpful resource](https://developers.google.com/kml/).
 
 ### Creating a Dataset of NYC Landmarks with Google Maps
 #### Creating a New Map
