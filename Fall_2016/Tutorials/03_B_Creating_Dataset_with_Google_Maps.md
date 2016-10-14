@@ -15,7 +15,7 @@ Click the menu to open up a left navigation panel. Select `Your places`.
 
 ![Menu Open](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/02_Menu_Open.png)
 
-You should see four categories along the top menu of the panel: `LABELED`, `SAVED`, `VISITED`, and `MAPS`. Select `MAPS` to bring up a list of any maps you have already created and saved. 
+Four categories will appear along the top menu of the panel: `LABELED`, `SAVED`, `VISITED`, and `MAPS`. Select `MAPS` to bring up a list of any maps you have already created and saved. 
 
 ![Your Places Maps](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/03_Your_Places_Maps.png)
 
@@ -23,7 +23,7 @@ Navigate to the very bottom of the panel, and select `CREATE MAP`. This should o
 
 ![Create Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/04_Create_Map.png)
 
-The left hand panel in this new view contains a title (currently `Untitled map`) and a layer for saved locations (currently `Untitled layer`). Click on the title to change it to a more sensible designation, if you like. Use the stacked three dots to the right of the `Untitled layer` row if you would like to change the name of the layer. I am going to change the name of `Untitled layer` to `Locations`, and the name of my map to `Sample map`. 
+The left hand panel in this new view contains a title (`Untitled map`) and a layer for saved locations (`Untitled layer`). Click on the title to change it to a more sensible designation, if you like. Use the stacked three dots to the right of the `Untitled layer` row if you would like to change the name of the layer, too. I am going to change the name of `Untitled layer` to `Locations`, and the name of my map to `Sample map`. 
 
 ![Rename](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/05_Rename.png)
 
@@ -31,15 +31,15 @@ Begin entering your list of locations into the search bar. Since I intend to map
 
 ![Columbia University](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/06_Columbia.png)
 
-Once Google Map finds the place you enter, an information box should show up above the pin marking its location. Select `+ Add to map` to save the location to the list in the left hand panel. 
+Once Google Map finds the place that you have entered, an information box will appear above the pin marking its location. Select `+ Add to map` to save the location to the list in the left hand panel. 
 
 ![Columbia University Saved](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/07_Columbia_Saved.png)
 
-Continue to enter locations in the search box, each time clicking `+ Add to map` to save the resultant pin to your growing list. I have entered and saved a series of locations in New York City of historic importance (`Columbia University`, `Empire State Building`, `Grand Central Terminal`, `New York Public Library`, and `Statue of Liberty`), for a total of five locations.
+Continue to enter locations into the search box, each time clicking `+ Add to map` to save the resultant pin to your growing list. I have entered and saved a series of locations of historic importance (`Columbia University`, `Empire State Building`, `Grand Central Terminal`, `New York Public Library`, and `Statue of Liberty`), for a total of five locations in NYC.
 
 ![Saved Locations](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/08_Saved_Locations.png)
 
-Your dataset is ready for export. Select the menu to the right of the title of your map, and choose `Export to KML`.
+The dataset is now ready for export. Select the menu to the right of the map title, and choose `Export to KML`.
 
 ![Export to KML](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/09_Export_to_KML.png)
 
@@ -51,7 +51,7 @@ Open up a new project in QGIS, and import your downloaded .KML file as a vector 
 
 ![Import Into QGIS](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/11_Import_Into_QGIS.png)
 
-If you open up the attribute table of this new layer, you will notice that it does not explicitly include columns for latitude and longitude. We will add those manually. Navigate to the abacus button on the far right of the top menu of icons to open the Field Calculator view. 
+If you open up the attribute table of this new layer, you will notice that it does not explicitly include columns for latitude and longitude. We will add those manually. Navigate to the abacus button on the far right of the top menu of icons, and open the Field Calculator. 
 
 ![Attribute Table Field Calculator](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/12_Attribute_Table_Open_Field_Calculator.png)
 
@@ -65,7 +65,7 @@ Open the `Geometry` section of the middle panel, where you can access the built-
 
 ![New Field](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/13_New_Field.png)
 
-In the middle panel, scroll down to `$y` _(NOTE: **Not** the same as `y` without the dollar sign ($)!)_. Double click on `$y`. Your output preview at the bottom left corner of the expression panel should update to a decimal number. 
+In this middle panel, scroll all the way down to `$y` _(NOTE: This is **not** identical to `y` &mdash; make sure to include the dollar sign ($)!)_. Double click on `$y`. Your output preview at the bottom left corner of the expression panel should update to a decimal number. 
 
 ![New Field Latitude](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/03_B_Creating_Dataset_with_Google_Maps/14_New_Field_Latitude.png)
 
