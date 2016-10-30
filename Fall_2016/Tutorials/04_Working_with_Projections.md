@@ -44,7 +44,7 @@ Next, open up the `Geographies` tab, and select `State - 040` from the dropdown 
 
 Finally, open up the `Topics` tab again. Click on the `People` section, open `Basic Count/Estimate`, and select `Population Total`. Select the dataset listed as `PEPANNRES` in the search results window, entitled `Annual Estimates of the Resident Population: April 1, 2010 to July 1, 2015.`
 
-![U.S. Census Data Population Estimates Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/04_Population_Estimates_Table.png)
+![U.S. Census Data Population Estimates Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/04_Population_Estimates_Table_Results.png)
 
 Click the link to navigate to the table. This view should include a column listing the full name of every U.S. state, as well as subsequent columns containing population estimates for 2010, 2011, 2012, 2013, 2014, and 2015. To download the data in CSV format, click the `Download` button in the `Actions` bar. 
 
