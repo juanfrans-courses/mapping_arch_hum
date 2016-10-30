@@ -1,7 +1,7 @@
 ## Tutorial 04 - Working with Projections
 *Tutorial created by Emily Fuhrman (ef2512@columbia.edu) for the [Mapping for Architecture, Urbanism and the Humanities](https://github.com/juanfrans-courses/mapping_arch_hum) class at Columbia University*
 
-Projections enable us to represent the earth on a flat surface. The WGS84 Geographic Coordinate System is the default projection in QGIS. This tutorial will walk through the process of creating a U.S. population density map in the Albers equal-area conic projection, which is a standard projection for representing the United States with minimal distortion.
+Projections enable us to represent the earth on a flat surface. The WGS84 Geographic Coordinate System is the default projection in QGIS. This tutorial will walk through the process of creating a U.S. population density map in the Albers equal-area conic projection, a standard way of representing the United States with minimal distortion.
 
 ### Datasets
 This tutorial will incorporate three datasets: one provided by Natural Earth, and two provided by the U.S. Census. First, download the current state administrative boundaries of the U.S. from Natural Earth, as well as 2016 state territories (both land and water) from the U.S. Census, listed below:
@@ -22,7 +22,7 @@ Two datasets that were originally referenced to different datums, but which are 
 A projection, or Coordinate Reference System (CRS), is used to describe geographic data. A projection is the set of transformations that converts a series of geographic coordinates, which are locations on a curved surface (the datum), into locations on a flat surface.
 
 #### A note re: QGIS 'on the fly' CRS Transformation
-The behavior for this option can be unpredictable, and QGIS has the annoying habit of resetting this option after certain types of data manipulation. The layer you currently have selected when you check or un-check this option impacts its effect. For this tutorial, you can avoid having to constantly check and un-check this option by closing the project that contains the original Natural Earth dataset and reopening a new project with the re-projected U.S. states as the first layer. This way, the project projection will be set by default to the Albers projection. 
+The behavior for this option can be unpredictable, and QGIS has the annoying habit of resetting it after certain types of data manipulation. The layer you currently have selected when you check or un-check the 'on the fly' box (`Project` > `Project Properties` > `CRS`) impacts its effect. For this tutorial, you can avoid having to constantly check and un-check the box by closing the project that contains the original Natural Earth dataset and reopening a new project with the re-projected U.S. states as the first layer. This way, the project projection will be set by default to the Albers projection.
 
 ### Creating a thematic population map of the U.S.
 #### Downloading Census state population data
