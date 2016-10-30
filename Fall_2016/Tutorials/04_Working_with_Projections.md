@@ -4,7 +4,7 @@
 Projections enable us to represent the earth on a flat surface. The WGS84 Geographic Coordinate System is the default projection in QGIS. This tutorial will walk through the process of creating a U.S. population density map in the Albers equal-area conic projection, a standard way of representing the United States with minimal distortion.
 
 ### Datasets
-This tutorial will incorporate three datasets: one provided by Natural Earth, and two provided by the U.S. Census. First, download the current state administrative boundaries of the U.S. from Natural Earth, as well as 2016 state territories (both land and water) from the U.S. Census, listed below:
+This tutorial will incorporate three datasets: one provided by Natural Earth, and two provided by the U.S. Census. First, download the current state administrative boundaries from Natural Earth, as well as 2016 state territories (both land and water) from the U.S. Census, listed below:
 
 * ne_10m_admin_1_states_provinces (Admin 1 – States, Provinces) - Internal administrative boundaries. Originally downloaded [here](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/).
 * tl_2016_us_state (States (and equivalent)) - Originally downloaded [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php).
@@ -53,7 +53,7 @@ Click the link to navigate to the table. This view should include a column listi
 Click `OK` when prompted to download the data, and then click the `Download` button once the popup window says the file is complete. The downloaded file will be named `PEP_2015_PEPANNRES`.
 
 #### Transforming Census state population data
-As always, there are many possible ways to transform data to fit the needs of your project. For this tutorial we will be working in Excel. We will reduce the dataset down to only the values we need, and then create a new column that will enable us to join the data to the Natural Earth shapefile.
+As always, there are many possible ways to transform data to fit the needs of your project. For this tutorial we will be working in Excel, or Google Sheets, to make the original file more manageable. We will reduce the dataset down to only the values we need, and then create a new column that will enable us to join the data to the Natural Earth shapefile.
 * Unzip the `PEP_2015_PEPANNRES` file, and open up the CSV called `PEP_2015_PEPANNRES_with_ann.csv`. The file should look something like this:
 
 ![U.S. Census Data Population Estimates Excel](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/06_Population_Data_Excel.png)
@@ -90,9 +90,7 @@ As always, there are many possible ways to transform data to fit the needs of yo
 * Now we are ready to bring all of the data together in QGIS.
 
 #### Re-projecting selected features from the Natural Earth dataset
-We will begin by importing the Natural Earth boundary data into a new QGIS project. Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. We will isolate these areas, then re-project them to a projection more suitable for a U.S.-specific thematic map. 
-
-Though Natural Earth data does not contain official state area measurements, the TIGER state boundaries do. If you open up the attribute table for the TIGER boundaries, you will see the columns `ALAND` and `AWATER`, which are the land and water areas in square meters for each polygon. 
+We will begin by importing the Natural Earth boundary data into a new QGIS project. Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. We will isolate these areas, join them to corresponding TIGER state boundary data, and then re-project them to a projection more suitable for a U.S.-specific thematic map. 
 
 * Open up a new project in QGIS and add the Natural Earth states and provinces data. The data is referenced to the WGS84 datum, which we can see by navigating to the `Metadata` section under `Layer Properties`. The definition for the layer's projection is under `Layer Spatial Reference System`.
 
@@ -119,14 +117,14 @@ Though Natural Earth data does not contain official state area measurements, the
 
 ![U.S. States Albers Projection](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/17_Check_US_Albers.png)
 
-* Go ahead and hide the full Natural Earth base layer in the left panel.
+* Go ahead and close this QGIS project and open a brand new one that contains only the re-projected Albers layer. This will prevent unexpected re-projection behavior from QGIS as you continue to create your map. 
 
-#### Preparing the U.S. Albers layer to be joined to the Census layer
-Earlier, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. Now, we are almost ready to import the state population CSV into QGIS, and join it to the re-projected `US_States_Albers` layer using the FIPS ID for each state. Before we join the data, however, we have to make one more quick adjustment to the `US_States_Albers` layer, which contains an ambiguous FIPS reference for Minnesota.
+#### Preparing the U.S. Albers layer for joins
+Earlier, we transformed the Census population data in Excel to prepare it to be joined to the Natural Earth vector boundaries. Now, we have to make one more quick adjustment to the `US_States_Albers` layer, which contains an ambiguous FIPS reference for Minnesota. Once we fix this, we will derive a column that will enable us to join the Albers layer to the TIGER layer, to which we can then finally join our population CSV. 
 
 ![FIPS Alt Value for Minnesota](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/18_MN_FIPS_Alt.png)
 
-In order for this shapefile to correspond to our CSV file, the FIPS code for Minnesota needs to be `US27`, the value in Minnesota's `fips_alt` column. We are going to edit this manually. 
+The FIPS code for Minnesota needs to be `US27`, the value in Minnesota's `fips_alt` column. We are going to edit this manually. 
 
 _**Note:** this is only required for Minnesota, despite the fact that other states also have a `fips_alt` value._
 
@@ -144,6 +142,22 @@ _**Note:** this is only required for Minnesota, despite the fact that other stat
 
 _**Note:** This change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the U.S. Albers layer and select `Zoom to Layer` in order to return to your previous view._
 
+Now, we need to create a new column in the attribute table of this layer to prepare it to be joined to the TIGER layer. Though we are using the aforementioned FIPS codes for each of these joins, sometimes the codes are represented in different forms. In both the U.S. Albers layer and our downloaded CSV, the FIPS code is formatted in the following way: `US##`. In the TIGER shapefile, however, the FIPS code is located in a column labeled `STATEFP`, and is formatted without `US` in the front of the value: `##`. To facilitate our upcoming join, we will create a new column in the U.S. Albers layer with only the `##` part of the `US##` value. 
+
+![Create a reformatted FIPS column](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/20_New_Column.png)
+
+* Open up the attribute table for the `US_States_Albers` layer.
+* Click the abacus icon to open up the field calculator window.
+* Check `Create a new field`.
+* In `Output field name`, enter `Join_FIPS`.
+* In `Output field type`, enter `Text (string)`.
+* In the `Expression` window, navigate to the `String` section in the middle panel, and select the `right` function. This will act in the same way as the function we entered in Excel. As explicated in the right panel, this function takes two values: the first is a string, and the second is a number specifying the number of characters to extract from the right side of the string. Our string will be the `STATEFP` column, and the number of characters will be `2`. This will enable us to create a new column wherein the FIPS ID, `US##`, will be represented as `##`.
+* Open the `Fields and values` section in the middle panel, and select `fips`. This will be the first value for the `right` function.
+* Next, type a comma (`,`), the number `2`, and a closing parenthesis (`)`). This tells the `right` function to represent only the last two digits of the value from the `fips` column. Your `Output preview` at the bottom should represent a two-digit number. Click `OK`.
+
+#### Joining the TIGER shapefile to the U.S. Albers layer
+Though Natural Earth data does not contain official state area measurements, the TIGER state boundaries do. On top of your newly projected U.S. Albers layer, add the `tl_2016_us_state` TIGER shapefile as a new vector layer. It should automatically adopt the Albers projection. If you open up the attribute table for the TIGER boundaries, you will see the columns `ALAND` and `AWATER`, which are the land and water areas in square meters for each polygon. These are the values that the Natural Earth dataset lacks.
+
 #### Joining Census data to Natural Earth boundaries
 Now that the `US_States_Albers` layer is ready, we can import the CSV file and join population values to each state. 
 * Click the top `Layer` menu, navigate to `Add Layer`, and select `Add Delimited Text Layer...`.
@@ -151,7 +165,7 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 * Click the `No geometry (attribute only table)` option.
 * Ensure the data looks correctly formatted, and click `OK`.
 
-![Import Populations CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/20_Import_CSV.png)
+![Import Populations CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/21_Import_CSV.png)
 
 * Now, double-click on the `US_States_Albers` layer to bring up the `Layer Properties` panel.
 * Navigate to the `Joins` section. 
@@ -161,7 +175,7 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 * Select `fips` as the `Target field`, which is the column name for the FIPS ID in the `US_States_Albers` layer.
 * If you like, create a short `Custom field name prefix` to differentiate your joined columns from the original ones.
 
-![Join CSV to the U.S. Albers Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/21_Join_CSV_and_Albers.png)
+![Join CSV to the U.S. Albers Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/22_Join_CSV_and_Albers.png)
 
 * Click `OK`.
 * Exit the `Layer Properties` panel, and open up the attribute table for the `US_States_Albers` layer. Confirm that three additional fields were added to the end.
@@ -170,11 +184,11 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 #### Representing population data
 For our final print export, we will be creating a choropleth-_style_ map that represents raw population counts for each state. Now that the U.S. Albers shapefile has been joined to the Census data, this simply requires navigating to the `US_States_Albers_JOINED` `Layer Properties` panel, and selecting a graduated color scale for the population count column. Your map should look something like this:
 
-![Population Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/22_Population_Map.png)
+![Population Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/23_Population_Map.png)
 
 Once you are finished with this step, adjust colors and strokes as needed. Finally, create a new print composer. Add a legend, title, explanation, source, and scale bar. Add new layers for Alaska and Hawaii to approach a more 'stereotypical' Albers view, and make sure to include a scale bar for each one so as to be transparent about any distortion. Export your map as a PDF file. Your final map should look something like this:
 
-![Final Map Example](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/23_Final_Map_Example.png)
+![Final Map Example](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/24_Final_Map_Example.png)
 
 #### Deliverables
 #### Additional notes
