@@ -1,10 +1,10 @@
 ## Tutorial 04 - Working with Projections
 *Tutorial created by Emily Fuhrman (ef2512@columbia.edu) for the [Mapping for Architecture, Urbanism and the Humanities](https://github.com/juanfrans-courses/mapping_arch_hum) class at Columbia University*
 
-Projections enable us to represent the earth on a flat surface. The WGS84 Geographic Coordinate System is the default projection in QGIS. 
+Projections enable us to represent the earth on a flat surface. The WGS84 Geographic Coordinate System is the default projection in QGIS. This tutorial will walk through the process of creating a U.S. population density map in the Albers equal-area conic projection, which is a standard projection for representing the United States with minimal distortion.
 
 ### Datasets
-This tutorial will incorporate three datasets, one provided by Natural Earth and two provided by the U.S. Census. First, download the current state administrative boundaries of the U.S. from Natural Earth, as well as 2016 state territories (both land and water) from the U.S. Census, listed below:
+This tutorial will incorporate three datasets: one provided by Natural Earth, and two provided by the U.S. Census. First, download the current state administrative boundaries of the U.S. from Natural Earth, as well as 2016 state territories (both land and water) from the U.S. Census, listed below:
 
 * ne_10m_admin_1_states_provinces (Admin 1 – States, Provinces) - Internal administrative boundaries. Originally downloaded [here](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/).
 * tl_2016_us_state (States (and equivalent)) - Originally downloaded [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php).
