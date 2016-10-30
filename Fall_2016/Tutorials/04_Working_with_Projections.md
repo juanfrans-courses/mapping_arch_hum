@@ -140,9 +140,9 @@ _**Note:** this is only required for Minnesota, despite the fact that other stat
 
 * Click `OK`. The `fips` value for Minnesota should now be `US27`, the same as its `fips_alt` value.
 
-_**Note:** This change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the U.S. Albers layer and select `Zoom to Layer` in order to return to your previous view._
+_**Note:** This change may cause your project to re-project the `US_States_Albers` layer back to WGS84. To undo this, select the `ne_10m_admin_1_states_provinces` layer in the left panel, navigate to the top `Project` menu, go to `Project Properties...`, and check then un-check `Enable 'on the fly' CRS transformation`. Right-click the `US_States_Albers` layer and select `Zoom to Layer` in order to return to your previous view._
 
-Now, we need to create a new column in the attribute table of this layer to prepare it to be joined to the TIGER layer. Though we are using the aforementioned FIPS codes for each of these joins, sometimes the codes are represented in different forms. In both the U.S. Albers layer and our downloaded CSV, the FIPS code is formatted in the following way: `US##`. In the TIGER shapefile, however, the FIPS code is located in a column labeled `STATEFP`, and is formatted without `US` in the front of the value: `##`. To facilitate our upcoming join, we will create a new column in the U.S. Albers layer with only the `##` part of the `US##` value. 
+Now, we need to create a new column in the attribute table of this layer to prepare it to be joined to the TIGER layer. Though we are using the aforementioned FIPS codes for each of these joins, sometimes the codes are represented in different forms. In both the `US_States_Albers` layer and our downloaded CSV, the FIPS code is formatted in the following way: `US##`. In the TIGER shapefile, however, the FIPS code is located in a column labeled `STATEFP`, and is formatted without `US` in the front of the value: `##`. To facilitate our upcoming join, we will create a new column in the `US_States_Albers` layer with only the `##` part of the `US##` value. 
 
 ![Create a reformatted FIPS column](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/20_New_Column_Right.png)
 
@@ -157,11 +157,11 @@ Now, we need to create a new column in the attribute table of this layer to prep
 * Before closing the attribute table, deselect the pencil icon in the top left corner to stop editing the shapefile. Click `Save` when prompted to save your changes.
 
 #### Joining the TIGER shapefile to the U.S. Albers layer
-Natural Earth data does not contain official state area measurements, but the TIGER state boundaries do. On top of your newly projected U.S. Albers layer, add the `tl_2016_us_state` TIGER shapefile as a new vector layer. It should automatically adopt the Albers projection. If you open up the attribute table for the TIGER boundaries, you will see the columns `ALAND` and `AWATER`, which are the land and water areas in square meters for each polygon. These are the values that the Natural Earth dataset lacks. The attribute table should also include a column labeled `STATEFP`, which is the one to which we will join our reformatted FIPS column. We are now ready to connect the TIGER shapefile to the U.S. Albers layer. 
+Natural Earth data does not contain official state area measurements, but the TIGER state boundaries do. On top of your newly projected `US_States_Albers` layer, add the `tl_2016_us_state` TIGER shapefile as a new vector layer. It should automatically adopt the Albers projection. If you open up the attribute table for the TIGER boundaries, you will see the columns `ALAND` and `AWATER`, which are the land and water areas in square meters for each polygon. These are the values that the Natural Earth dataset lacks. The attribute table should also include a column labeled `STATEFP`, which is the one to which we will join our reformatted FIPS column. We are now ready to connect the TIGER shapefile to the `US_States_Albers` layer. 
 
 ![Join TIGER shapefile and U.S. Albers layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/21_Join_TIGER.png)
 
-* Open up the `Properties` panel for the U.S. Albers layer. 
+* Open up the `Properties` panel for the `US_States_Albers` layer. 
 * In the left menu, select `Joins`.
 * Click the green `+` at the bottom of the window.
 * Under `Join layer`, select `tl_2016_us_state`.
@@ -170,7 +170,7 @@ Natural Earth data does not contain official state area measurements, but the TI
 * Check `Custom field name prefix`, and enter `J_`. 
 * Click `OK`.
 
-Open up the attribute table on the U.S. Albers layer. At the far right, after `Join_FIPS`, you should now see a series of additional columns, each prefaced with `J_`. These should include `J_ALAND` and `J_AWATER`, the area measurements of each state. Success! Go ahead and hide the TIGER shapefile layer.
+Open up the attribute table on the `US_States_Albers` layer. At the far right, after `Join_FIPS`, you should now see a series of additional columns, each prefaced with `J_`. These should include `J_ALAND` and `J_AWATER`, the area measurements of each state. Success! Go ahead and hide the TIGER shapefile layer.
 
 #### Joining Census data to Natural Earth boundaries
 Now that the `US_States_Albers` layer is ready, we can import the CSV file and join population values to each state. 
@@ -196,13 +196,30 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 * We now need to save the `US_States_Albers` layer as a new shapefile in order to retain the join. Right-click on the layer, choose `Save as...`, and name it `US_States_Albers_JOINED`. Make sure the selected CRS is still `North_America_Albers_Equal_Area_Conic (ESPG:102008)`, and keep `Add saved file to map` checked. Click `OK`. 
 
 #### Representing population data
-For our final print export, we will be creating a choropleth-_style_ map that represents raw population counts for each state. Now that the U.S. Albers shapefile has been joined to the Census data, this simply requires navigating to the `US_States_Albers_JOINED` `Layer Properties` panel, and selecting a graduated color scale for the population count column. Your map should look something like this:
+For our final print export, we will be creating a choropleth map that represents population density for each state. Now that we have joined the `US_States_Albers` layer to the Census data, we need to derive one more column that represents the population per km<sup>2</sup> for the land area of each polygon.
 
-![Population Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/23_Population_Map.png)
+![Calculate New Population Density Field](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/24_New_Column_Density.png)
+
+* Open up the attribute table for the `US_States_Albers_JOINED` layer. 
+* Click the abacus icon to open up the field calculator window.
+* Check `Create new field`.
+* For `Output field name`, enter `PopDensity`.
+* For `Output field type`, select `Decimal number (real)`.
+* For `Output field width`, select `10`, and set `Precision` to `10` as well.
+* In the `Expression` field, we want to calculate the number of people per km<sup>2</sup>. Navigate to `Fields and values` in the center panel, and double click the joined population value, which should be at the very end of the list. Because I chose `J2` as my join prefix, this value is `J2_Populat` for me.
+* Double click the `/` operator.
+* Navigate again to the `Fields and values` section in the center panel, and double click the land area value. For me, this is `J_ALAND`, since I chose `J` as my join prefix.
+* Since `J_ALAND` is in m<sup>2</sup>, but I want to calculate population density based on km<sup>2</sup>, I need to divide this value by 1000000. Enclose `J_ALAND` in parenthesis and add `/ 1000000`.
+* Your final expression should read `"J2_Populat" / ( "J_ALAND" / 1000000 )`.
+* Save your changes, and unclick the pencil icon to stop editing the shapefile.
+
+Now, we are ready to apply a color scale to this column. Navigate to the `US_States_Albers_JOINED` `Layer Properties` panel, and selecting a graduated color scale for your new `PopDensity` column. Set your number of classes to `8`, and choose the `Quantile (Equal Count)` option. Your map should look something like this:
+
+![Population Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/25_Population_Map.png)
 
 Once you are finished with this step, adjust colors and strokes as needed. Finally, create a new print composer. Add a legend, title, explanation, source, and scale bar. Add new layers for Alaska and Hawaii to approach a more 'stereotypical' Albers view, and make sure to include a scale bar for each one so as to be transparent about any distortion. Export your map as a PDF file. Your final map should look something like this:
 
-![Final Map Example](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/24_Final_Map_Example.png)
+![Final Map Example](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/26_Final_Map_Example.png)
 
 #### Deliverables
 #### Additional notes
