@@ -26,13 +26,13 @@ The behavior for this option can be unpredictable, and QGIS has the annoying hab
 
 ### Creating a thematic population map of the U.S.
 #### Downloading Census state population data
-The Natural Earth state boundaries will serve as the 'empty' geography files for this project. We will be mapping the population density for each U.S. state.
+The Natural Earth state boundaries will serve as the 'empty' geography files for this project, to which we will join both U.S. Census state area measurements and U.S. Census population counts. We will be mapping the population density for each U.S. state, and will therefore need the area of each state, as well as the number of people who live in each state.
 
 To download the data for this project, we will be returning again to the [American Fact Finder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) data portal. Navigate to the portal and click the `Advanced Search` option. Here we will select the following parameters within the `Topics` and `Geographies` levels:
 
-* Geography: All States within United States and Puerto Rico
-* Dataset: 2015 Population Estimates
-* Topic: Population Total
+* `Geography` > `State - 040` > `All States within United States and Puerto Rico`
+* `Topics` > `Dataset` > `2015 Population Estimates`
+* `Topics` > `People` > `Basic Count/Estimate` > `Population Total`
 
 On the left side of the `Advanced Search` window, and open up the `Topics` tab. Click the `Dataset` section, and select `2015 Population Estimates`. 
 
@@ -42,7 +42,7 @@ Next, open up the `Geographies` tab, and select `State - 040` from the dropdown 
 
 ![U.S. Census Data State Geography](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/03_Geography_US_States.png)
 
-Finally, open up the `Topics` tab again. Click on the `People` section, open `Basic Count/Estimate`, and select `Population Total`. One dataset should remain in the search results window, entitled `Annual Estimates of the Resident Population: April 1, 2010 to July 1, 2015.`
+Finally, open up the `Topics` tab again. Click on the `People` section, open `Basic Count/Estimate`, and select `Population Total`. Select the dataset listed as `PEPANNRES` in the search results window, entitled `Annual Estimates of the Resident Population: April 1, 2010 to July 1, 2015.`
 
 ![U.S. Census Data Population Estimates Table](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/04_Population_Estimates_Table.png)
 
