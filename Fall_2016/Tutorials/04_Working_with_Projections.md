@@ -170,7 +170,7 @@ Natural Earth data does not contain official state area measurements, but the TI
 * Check `Custom field name prefix`, and enter `J_`. 
 * Click `OK`.
 
-Open up the attribute table on the U.S. Albers layer. At the far right, after `Join_FIPS`, you should now see a series of additional columns, each prefaced with `J_`. These should include `J_ALAND` and `J_AWATER`, the area measurements of each state. Go ahead and hide the TIGER shapefile layer.
+Open up the attribute table on the U.S. Albers layer. At the far right, after `Join_FIPS`, you should now see a series of additional columns, each prefaced with `J_`. These should include `J_ALAND` and `J_AWATER`, the area measurements of each state. Success! Go ahead and hide the TIGER shapefile layer.
 
 #### Joining Census data to Natural Earth boundaries
 Now that the `US_States_Albers` layer is ready, we can import the CSV file and join population values to each state. 
@@ -179,17 +179,17 @@ Now that the `US_States_Albers` layer is ready, we can import the CSV file and j
 * Click the `No geometry (attribute only table)` option.
 * Ensure the data looks correctly formatted, and click `OK`.
 
-![Import Populations CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/21_Import_CSV.png)
+![Import Populations CSV](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/22_Import_CSV.png)
 
 * Now, double-click on the `US_States_Albers` layer to bring up the `Layer Properties` panel.
-* Navigate to the `Joins` section. 
+* Navigate again to the `Joins` section. Your previous join to the TIGER shapefile should be listed.
 * Click the `+` button at the bottom of the window to add a new join.
 * Select `StatePopulations`, your imported CSV file, as the join layer.
 * Select `FIPS_ID` as the `Join field`, which is the column name for the FIPS ID in the CSV file.
 * Select `fips` as the `Target field`, which is the column name for the FIPS ID in the `US_States_Albers` layer.
 * If you like, create a short `Custom field name prefix` to differentiate your joined columns from the original ones.
 
-![Join CSV to the U.S. Albers Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/22_Join_CSV_and_Albers.png)
+![Join CSV to the U.S. Albers Layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/23_Join_CSV_Albers.png)
 
 * Click `OK`.
 * Exit the `Layer Properties` panel, and open up the attribute table for the `US_States_Albers` layer. Confirm that three additional fields were added to the end.
