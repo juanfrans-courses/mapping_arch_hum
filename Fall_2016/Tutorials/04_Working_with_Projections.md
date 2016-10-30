@@ -144,7 +144,7 @@ _**Note:** This change may cause your project to re-project the `US_States_Alber
 
 Now, we need to create a new column in the attribute table of this layer to prepare it to be joined to the TIGER layer. Though we are using the aforementioned FIPS codes for each of these joins, sometimes the codes are represented in different forms. In both the U.S. Albers layer and our downloaded CSV, the FIPS code is formatted in the following way: `US##`. In the TIGER shapefile, however, the FIPS code is located in a column labeled `STATEFP`, and is formatted without `US` in the front of the value: `##`. To facilitate our upcoming join, we will create a new column in the U.S. Albers layer with only the `##` part of the `US##` value. 
 
-![Create a reformatted FIPS column](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/20_New_Column.png)
+![Create a reformatted FIPS column](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/20_New_Column_Right.png)
 
 * Open up the attribute table for the `US_States_Albers` layer.
 * Click the abacus icon to open up the field calculator window.
