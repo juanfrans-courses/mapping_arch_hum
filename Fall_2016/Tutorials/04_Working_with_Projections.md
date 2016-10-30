@@ -1,12 +1,15 @@
 ## Tutorial 04 - Working with Projections
+*Tutorial created by Emily Fuhrman (ef2512@columbia.edu) for the [Mapping for Architecture, Urbanism and the Humanities](https://github.com/juanfrans-courses/mapping_arch_hum) class at Columbia University*
+
 Projections enable us to represent the earth on a flat surface. The WGS84 Geographic Coordinate System is the default projection in QGIS. 
 
 ### Datasets
-This tutorial will incorporate two datasets, one provided by Natural Earth and one provided by the U.S. Census. First, download the current administrative boundaries of the U.S., listed below:
+This tutorial will incorporate three datasets, one provided by Natural Earth and two provided by the U.S. Census. First, download the current state administrative boundaries of the U.S. from Natural Earth, as well as 2016 state territories (both land and water) from the U.S. Census, listed below:
 
-* ne_10m_admin_1_states_provinces (Admin 1 – States, Provinces) - Internal administrative boundaries. Originally downloaded [here](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/). 
+* ne_10m_admin_1_states_provinces (Admin 1 – States, Provinces) - Internal administrative boundaries. Originally downloaded [here](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/).
+* tl_2016_us_state (States (and equivalent)) - Originally downloaded [here](https://www.census.gov/cgi-bin/geo/shapefiles/index.php).
 
-And before we start, a brief overview of some terminology.
+Before we start, a brief overview of some terminology.
 
 ### Datum, Projection, CRS
 #### Datum
@@ -19,16 +22,11 @@ Two datasets that were originally referenced to different datums, but which are 
 A projection, or Coordinate Reference System (CRS), is used to describe geographic data. A projection is the set of transformations that converts a series of geographic coordinates, which are locations on a curved surface (the datum), into locations on a flat surface.
 
 #### A note re: QGIS 'on the fly' CRS Transformation
-The behavior for this option can be unpredictable, and QGIS has the annoying habit of resetting this option after certain types of data manipulation. The layer you currently have selected when you check or un-check this option impacts its effect.
-* Typically, when you **un-check** `Enable 'on the fly' CRS Transformation` with the intention of undoing any unexpected transformations, you must have the _transformed_ layer highlighted in the left layer panel to undo its automatic re-projection. If this doesn't work, select the layer _to which_ the transformed layer was transformed, and check/un-check the option again.
-* Likewise, if you **check** `Enable 'on the fly' CRS Transformation`, you must typically have the layer with the projection you want to _match_ highlighted in the left panel.
-* For this tutorial, you can avoid having to constantly check and un-check this option by closing the project that contains the original Natural Earth dataset and reopening a new project with the re-projected U.S. states as the first layer. This way, the project projection will be set by default to the Albers projection. 
+The behavior for this option can be unpredictable, and QGIS has the annoying habit of resetting this option after certain types of data manipulation. The layer you currently have selected when you check or un-check this option impacts its effect. For this tutorial, you can avoid having to constantly check and un-check this option by closing the project that contains the original Natural Earth dataset and reopening a new project with the re-projected U.S. states as the first layer. This way, the project projection will be set by default to the Albers projection. 
 
 ### Creating a thematic population map of the U.S.
 #### Downloading Census state population data
-The Natural Earth state boundaries will serve as the 'empty' geography files for this project. As in Tutorial 03, we need to decide on the units of measurement we plan to use before opening a new QGIS project. For this tutorial, we will be mapping the population count for each U.S. state.
- 
-_**Note:** Due to the constraints of the Natural Earth data, this tutorial will only walk through the process of representing raw population count for each state, as opposed to population density. **Representing raw counts in this manner is considered bad practice. Choropleth maps should always represent values that lie on a continuous statistical surface, in the form of rates or ratios. [Here](https://en.wikipedia.org/wiki/Choropleth_map#/media/File:Choropleth-density.png) is a helpful visual that demonstrates the difference.** If you would like to visualize population density, download state area boundaries from the [TIGER](https://www.census.gov/cgi-bin/geo/shapefiles/index.php) database, which contain official state area measurements. Create a new column in the attribute table to concatenate a FIPS value for each state using the `STATEFP` column, and join the layer to the `US_States_Albers` layer we create below. Access the `ALAND` column for true state area values, which you can use to calculate population per square kilometer._
+The Natural Earth state boundaries will serve as the 'empty' geography files for this project. We will be mapping the population density for each U.S. state.
 
 To download the data for this project, we will be returning again to the [American Fact Finder](http://factfinder.census.gov/faces/nav/jsf/pages/index.xhtml) data portal. Navigate to the portal and click the `Advanced Search` option. Here we will select the following parameters within the `Topics` and `Geographies` levels:
 
@@ -93,6 +91,9 @@ As always, there are many possible ways to transform data to fit the needs of yo
 
 #### Re-projecting selected features from the Natural Earth dataset
 We will begin by importing the Natural Earth boundary data into a new QGIS project. Because we are creating a thematic map of the United States, we only need the portions of the Natural Earth shapefile that represent U.S. administrative boundaries. We will isolate these areas, then re-project them to a projection more suitable for a U.S.-specific thematic map. 
+
+Though Natural Earth data does not contain official state area measurements, the TIGER state boundaries do. If you open up the attribute table for the TIGER boundaries, you will see the columns `ALAND` and `AWATER`, which are the land and water areas in square meters for each polygon. 
+
 * Open up a new project in QGIS and add the Natural Earth states and provinces data. The data is referenced to the WGS84 datum, which we can see by navigating to the `Metadata` section under `Layer Properties`. The definition for the layer's projection is under `Layer Spatial Reference System`.
 
 ![Layer Projection Metadata](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/04_Working_with_Projections/12_Layer_Projection_Metadata.png)
