@@ -153,10 +153,24 @@ Now, we need to create a new column in the attribute table of this layer to prep
 * In `Output field type`, enter `Text (string)`.
 * In the `Expression` window, navigate to the `String` section in the middle panel, and select the `right` function. This will act in the same way as the function we entered in Excel. As explicated in the right panel, this function takes two values: the first is a string, and the second is a number specifying the number of characters to extract from the right side of the string. Our string will be the `STATEFP` column, and the number of characters will be `2`. This will enable us to create a new column wherein the FIPS ID, `US##`, will be represented as `##`.
 * Open the `Fields and values` section in the middle panel, and select `fips`. This will be the first value for the `right` function.
-* Next, type a comma (`,`), the number `2`, and a closing parenthesis (`)`). This tells the `right` function to represent only the last two digits of the value from the `fips` column. Your `Output preview` at the bottom should represent a two-digit number. Click `OK`.
+* Next, type a comma (`,`), the number `2`, and a closing parenthesis (`)`). This tells the `right` function to represent only the last two digits of the value from the `fips` column. Your `Output preview` at the bottom should represent a two-digit number. Click `OK`. A new column containing the reformatted FIPS values will now appear on the far right end of your attribute table.
+* Before closing the attribute table, deselect the pencil icon in the top left corner to stop editing the shapefile. Click `Save` when prompted to save your changes.
 
 #### Joining the TIGER shapefile to the U.S. Albers layer
-Though Natural Earth data does not contain official state area measurements, the TIGER state boundaries do. On top of your newly projected U.S. Albers layer, add the `tl_2016_us_state` TIGER shapefile as a new vector layer. It should automatically adopt the Albers projection. If you open up the attribute table for the TIGER boundaries, you will see the columns `ALAND` and `AWATER`, which are the land and water areas in square meters for each polygon. These are the values that the Natural Earth dataset lacks.
+Natural Earth data does not contain official state area measurements, but the TIGER state boundaries do. On top of your newly projected U.S. Albers layer, add the `tl_2016_us_state` TIGER shapefile as a new vector layer. It should automatically adopt the Albers projection. If you open up the attribute table for the TIGER boundaries, you will see the columns `ALAND` and `AWATER`, which are the land and water areas in square meters for each polygon. These are the values that the Natural Earth dataset lacks. The attribute table should also include a column labeled `STATEFP`, which is the one to which we will join our reformatted FIPS column. We are now ready to connect the TIGER shapefile to the U.S. Albers layer. 
+
+![Join TIGER shapefile and U.S. Albers layer](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/21_Join_TIGER.png)
+
+* Open up the `Properties` panel for the U.S. Albers layer. 
+* In the left menu, select `Joins`.
+* Click the green `+` at the bottom of the window.
+* Under `Join layer`, select `tl_2016_us_state`.
+* Under `Join field`, select `STATEFP`.
+* Under `Target field`, select `Join_FIPS`, our reformatted FIPS column.
+* Check `Custom field name prefix`, and enter `J_`. 
+* Click `OK`.
+
+Open up the attribute table on the U.S. Albers layer. At the far right, after `Join_FIPS`, you should now see a series of additional columns, each prefaced with `J_`. These should include `J_ALAND` and `J_AWATER`, the area measurements of each state. Go ahead and hide the TIGER shapefile layer.
 
 #### Joining Census data to Natural Earth boundaries
 Now that the `US_States_Albers` layer is ready, we can import the CSV file and join population values to each state. 
