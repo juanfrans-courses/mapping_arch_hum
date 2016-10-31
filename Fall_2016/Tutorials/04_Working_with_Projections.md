@@ -213,13 +213,17 @@ For our final print export, we will be creating a choropleth map that represents
 * Your final expression should read `"J2_Populat" / ( "J_ALAND" / 1000000 )`.
 * Save your changes, and unclick the pencil icon to stop editing the shapefile.
 
+Before visualizing our data, we need to filter out Washington D.C. Open the `Layer Properties` for `US_States_Albers_JOINED`, and navigate to the `General` tab. Click `Query Builder` in the bottom right hand corner. Type `"adm1_code" != 'USA-3556'` to show all polygons that do not have the Washington D.C. `adm1_code`, `USA-3556`. Click `OK`.
+
+![Filter Out Washington D.C.](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/25_DC_Filter.png)
+
 Now, we are ready to apply a color scale to this column. Navigate to the `US_States_Albers_JOINED` `Layer Properties` panel, and selecting a graduated color scale for your new `PopDensity` column. Set your number of classes to `8`, and choose the `Quantile (Equal Count)` option. Your map should look something like this:
 
-![Population Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/25_Population_Map.png)
+![Population Map](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/26_Population_Map.png)
 
 Once you are finished with this step, adjust colors and strokes as needed. Finally, create a new print composer. Add a legend, title, explanation, source, and scale bar. Add new layers for Alaska and Hawaii to approach a more traditional Albers view, and make sure to include a scale bar for each one so as to be transparent about any distortion. Export your map as a PDF file. Your final map should look something like this:
 
-![Final Map Example](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/26_Final_Map.png)
+![Final Map Example](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/Images/04_Working_with_Projections/27_Final_Map.png)
 
 #### Deliverables
 Upload your final (PDF) map to Courseworks.
