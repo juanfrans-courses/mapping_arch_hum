@@ -131,6 +131,7 @@ November 4
 * How to create and edit spatial data
 * ***Assignment: [Tutorial 05](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Fall_2016/Tutorials/05_Georeferencing_and_Creating_New_Shapefiles.md) - Georeference an existing map (old or new) and create new dataset from it***
 * ***Assignment: Create a sound map with data that you collect***
+* Link: [NYPL MapWarper](http://maps.nypl.org/warper/)
 
 ### Week 10: Working with raster data
 November 11
