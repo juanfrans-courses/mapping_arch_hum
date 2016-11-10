@@ -137,7 +137,7 @@ November 4
 November 11
 * Understanding the difference between vector and raster data
 * Understanding the different types of raster datasets
-* understanding raster bands
+* Understanding raster bands
 * Downloading Landsat images
 * Creating 'true color' and 'false color composite' images
 * Extracting data from raster files
