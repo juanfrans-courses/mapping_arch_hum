@@ -1,9 +1,12 @@
-## Notes - Web Mapping - Part 1 (04/08/2016)
+## Notes - Web Mapping - Part 1 (11/18/2016)
 
 ### 1. Open a CartoDB account:
 * Sing up [here](https://columbialibraries.cartodb.com/signup)
 
-### 2. Blog
+### 2. Other:
+* From last class: [Laser Scans Unveil a Network of Ancient Cities in Cambodia](http://www.nytimes.com/2016/09/20/science/angkor-wat-cambodia-archeaology.html?action=click&amp=&amp=&amp=&amp=&amp=&amp=&contentCollection=science&contentPlacement=1&em_pos=large&emc=edit_nn_20160921&module=package&nl=morning-briefing&nlid=45977136&pgtype=sectionfront&region=rank&version=highlights&_r=0)
+* Blog
+* Sound map
 
 ### 3. Webmapping concepts and tools:
 * Tiling:
@@ -26,3 +29,15 @@
   * [d3](https://d3js.org/): 'a JavaScript library for manipulating documents based on data.' Used for data visualization and for mapping.
 
 ### 4. Tutorial
+* Code snippets:
+```CartoCSS
+#mnmappluto_1{
+  [zoom = 8]{
+  polygon-fill: #FF6600;
+  polygon-opacity: 0.7;
+  line-color: #FFF;
+  line-width: 0;
+  line-opacity: 1;
+  }
+}
+```

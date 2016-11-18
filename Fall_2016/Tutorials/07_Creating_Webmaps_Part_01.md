@@ -8,7 +8,7 @@ In this tutorial we will create maps using two different types of datasets. We w
 ### Datasets
 We will be using three different datasets:
 * PLUTO for Manhattan - Originally downloaded from [here](http://www1.nyc.gov/site/planning/data-maps/open-data/dwn-pluto-mappluto.page)
-* Trees for Manhattan - Originally downloaded from [here](https://data.cityofnewyork.us/Environment/Street-Tree-Census-Manhattan-/e6n3-m3vc)
+* Trees for Manhattan - Originally downloaded from [here](https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh) - **Note: you have to filter the table to download only the trees for Manhattan, otherwise the dataset will be too big.**
 * Green taxi trips (6/10/2015) - You can find the dataset [here](https://github.com/juanfrans-courses/mapping_arch_hum/tree/master/Spring_2016/Class_Data/07_Web_Mapping) *Note: this file contains a subset of taxi trips (those for the 10th of June, 2015) of a much larger dataset that can be downloaded [here](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml). However, for this tutorial, please use this sample. The whole dataset is too large for the purposes of this tutorial.*
 
 ### Creating a building age map of Manhattan
@@ -121,21 +121,18 @@ Now we are going to use a different dataset to create a street tree map of Manha
 * First, import your tree dataset.
 * As opposed to the PLUTO dataset we used in the previous map, this dataset is a csv file, not a shapefile. However, CartoDB automatically identifies the field containing geographic coordinates and uses that to create the map.
 * If after uploading the file CartoDB takes you directly to the map, go back to the dataset view, using the `DATA VIEW` button at the top of the page, just to take a look at the fields in your dataset.
-* First will symbolize the trees by their condition. If you move to the right of the table you will see a field called `treecondit`, this is the one we will use.
+* First will symbolize the trees by their condition. If you move to the right of the table you will see a field called `health`, this is the one we will use.
 * Later, for our final tree map, we will sybolize them by density of healthy trees.
 * Return to the `MAP VIEW`.
 
 #### Symbolizing
 * First, go to the `Wizards` tab and choose the `CATEGORY` symbology.
-* Choose `treecondit` as the column to symbolize.
-* Notice how most of the street trees are in the '1', '2' or '3' categories. Most of them are in good health. However, just to check this go to the `Filters` tab.
-* Here, you will see a small histogram of the data. Choose `treecondit` as the column to analyze.
-* Notice how the histogram confirms what we were seeing in the map: the categories with the most trees are '1', '2' and '3'; after that the other categories don't have that many trees.
-
-![Histogram](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/06_Histogram.png)
-
+* Choose `health` as the column to symbolize.
+* Notice how most of the street trees are in the 'Good' or 'Fair' categories. Most of them are in good health. However, just to check this go to the `Filters` tab.
+* Here, you will see a small histogram or a list of the data. Choose `health` as the column to analyze. In our case, because the data is categorical, we won'd see a histogram but a list.
+* Notice how the list confirms what we were seeing in the map: the categories with the most trees are 'Good' or 'Fair'; after that the other categories ('Poor' or 'empty') don't have that many trees.
 * Now, since we are building a density map of healthy trees in Manhattan, we should get rid of the trees that are not that healthy. To do this clear any filters in the `filters` tab and go to the `SQL` tab.
-* We need to write a SQL query saying something like "From all the trees, select only the ones that have a tree condition of '1' '2' or '3'". In SQL this looks like this: `SELECT * FROM manhattantree_1 WHERE treecondit = '1' or treecondit = '2' or treecondit = '3'`.
+* We need to write a SQL query saying something like "From all the trees, select only the ones that have a tree condition of 'Good' or 'Fair'". In SQL this looks like this: `SELECT * FROM table_2015_street_tree_census_tree_data where health = 'Good' or health = 'Fair'`.
 * Write that query, hit `Apply query` and you should see your map filter the 'unhealthy' trees out.
 * Now we can create a density map just using the healthy trees.
 * In the `wizards` tab, select the `DENSITY` option (the last one on the right).
@@ -149,21 +146,19 @@ Now we are going to use a different dataset to create a street tree map of Manha
 ```
 /** density visualization */
 
-#manhattantree_1{
+#table_2015_street_tree_census_tree_data{
   polygon-fill: #005824;
   polygon-opacity: 0.7;
   line-color: #FFFFFF;
   line-width: 0.25;
   line-opacity: 1;
 }
-#manhattantree_1{
-  [points_density <= 0.0507169782056104] { polygon-fill: #005824;  }
-  [points_density <= 0.02] { polygon-fill: #238B45;  }
-  [points_density <= 0.015] { polygon-fill: #41AE76;  }
-  [points_density <= 0.01] { polygon-fill: #66C2A4;  }
-  [points_density <= 0.0075] { polygon-fill: #CCECE6;  }
-  [points_density <= 0.005] { polygon-fill: #D7FAF4;  }
-  [points_density <= 0.0025] { polygon-fill: #EDF8FB;  }
+#table_2015_street_tree_census_tree_data{
+  [points_density <= 0.0027263266849828] { polygon-fill: #005824;  }
+  [points_density <= 0.001] { polygon-fill: #66C2A4;  }
+  [points_density <= 0.0005] { polygon-fill: #CCECE6;  }
+  [points_density <= 0.00025] { polygon-fill: #D7FAF4;  }
+  [points_density <= 0.00015] { polygon-fill: #EDF8FB;  }
 
 }
 ```
