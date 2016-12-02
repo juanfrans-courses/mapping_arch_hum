@@ -132,11 +132,11 @@ Finally, we need to export our map.
 ![Final Map Mapbox](https://github.com/juanfrans-courses/mapping_arch_hum/blob/master/Spring_2016/Tutorials/Images/07_Web_Mapping/21_Final_Map_Part_01.png)
 
 #### Deliverables
-The deliverable for this tutorial is the web version of your personal map. This webmap needs to include the following:
+The deliverable for this tutorial is the web version of your sound map or your humanities dataset map. This webmap needs to include the following:
 * A 100% custom basemap created in Mapbox.
 * This map can use pre-loaded Mapbox layers or custom layers that you upload, but those layers need to be styled by you.
 * You should have at leas 3 different layers and some labels in this basemap.
-* In addition, you should use CartoDB to add your own personal data on top of this Mapbox map.
+* In addition, you should use CartoDB to add your own data (sound or humanities) on top of this Mapbox map.
 * Your submission needs to be two links:
   * Basemap from Mapbox
   * Full map from CartoDB (remember, the CartoDB map needs to be built on top of the Mapbox basemap).
