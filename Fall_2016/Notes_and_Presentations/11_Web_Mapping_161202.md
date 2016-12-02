@@ -26,14 +26,13 @@
 * [Mapbox Studio](https://www.mapbox.com/mapbox-studio/):
   * Is a modern design platform for managing your spatial data and creating custom map styles. Use Mapbox Studio to design a map to your exact specifications by using Mapbox-provided tilesets, uploading your own vector or raster data, adding custom fonts and images, or simply refining the built-in template map styles.
   * Browser application.
-* [Mapbox Editor](https://www.mapbox.com/editor/#style):
+* [Mapbox Editor](https://www.mapbox.com/editor/#style) (**Deprecated**):
   * Is an online interface where you can choose a Mapbox classic style as a basemap, drag and drop features, and share your project. Editor requires no coding skills and can be easily integrated into a web template. You can import GeoJSON, CSV, KML, or GPX files into Mapbox Editor. You can also export data in GeoJSON or KML format.
   * Browser application.
   * To customize the basemaps you need to use either Mapbox Studio or Mapbox Studio Classic.
-* [Mapbox Studio Classic](https://www.mapbox.com/mapbox-studio-classic/#darwin):
+* [Mapbox Studio Classic](https://www.mapbox.com/mapbox-studio-classic/#darwin) (**Deprecated**):
   * Is a desktop application for designing world maps. It allows you to design maps by using vector tiles and CartoCSS. Mapbox Studio Classic allows you to upload your map directly to your Mapbox account and then use your map style with our Developer tools.
   * Desktop application.
-  * Seems like it's being replaced by Mapbox Studio (web application).
 * Terminology:
   * Tilesets: data sources, like vector tile datasets or raster images.
   * Layers: layers are representations of data, like symbols or polygon fills (they contain references to tilesets).
